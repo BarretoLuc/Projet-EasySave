@@ -1,13 +1,13 @@
-﻿using EasySaveConsole.Services;
+﻿using EasySave.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySaveConsole.Models
+namespace EasySave.Models
 {
-    internal class FileModel
+    public class FileModel
     {
         private string name;
         private string path;

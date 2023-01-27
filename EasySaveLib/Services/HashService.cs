@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Security.Cryptography;
-using EasySaveConsole.Models;
+using EasySave.Models;
 
-namespace EasySaveConsole.Services
+namespace EasySave.Services
 {
-    internal class HashService
+    public class HashService
     {
         public string computeSHA256(
             FileModel fileModel

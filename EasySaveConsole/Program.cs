@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using EasySaveConsole.Models;
+using EasySave.Models;
 using System.Security.Cryptography;
 
 // Walk through the list of files in the directory and print names of the files.
