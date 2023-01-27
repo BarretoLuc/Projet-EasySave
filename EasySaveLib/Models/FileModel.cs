@@ -32,20 +32,9 @@ namespace EasySave.Models
             this.path = fullPath.Replace(this.name, "");
         }
 
-        public string FullPath
-        {
-            get
-            {
-                return this.path + this.name;
-            }
-        }
-
-        public string Hash
-        {
-            get
-            {
-                return (new HashService()).computeSHA256(this);
-            }
-        }
+        public string FullPath { get => path + name; }
+        public string Name { get => name; set => name = value; }
+        public string Path { get => path; set => path = value; }
+        public string? Hash { get => hash; set => hash = value; }
     }
 }
