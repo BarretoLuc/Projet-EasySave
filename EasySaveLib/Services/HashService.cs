@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Security.Cryptography;
-using EasySave.Models;
+using EasySaveLib.Models;
 
-namespace EasySave.Services
+namespace EasySaveLib.Services
 {
     public class HashService
     {

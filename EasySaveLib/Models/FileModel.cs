@@ -1,4 +1,4 @@
-﻿using EasySave.Services;
+﻿using EasySaveLib.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace EasySave.Models
+namespace EasySaveLib.Models
 {
     public class FileModel
     {
