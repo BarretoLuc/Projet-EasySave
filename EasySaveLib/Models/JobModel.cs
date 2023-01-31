@@ -17,11 +17,11 @@ namespace EasySaveLib.Models
         
         public JobModel(string name, string source, string destination, bool isEncrypted, bool isDifferential)
         {
-            this.Name = name;
-            this.Source = source;
-            this.Destination = destination;
-            this.IsEncrypted = isEncrypted;
-            this.IsDifferential = isDifferential;
+            Name = name;
+            Source = source;
+            Destination = destination;
+            IsEncrypted = isEncrypted;
+            IsDifferential = isDifferential;
         }
     }
 }
