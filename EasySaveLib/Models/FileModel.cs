@@ -1,25 +1,28 @@
 ﻿using EasySave.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace EasySave.Models
 {
     public class FileModel
     {
-        private string name;
-        private string path;
-        private string? hash;
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public string? Hash { get; set; }
+        public string FullPath { get => Path + Name; }
 
         public FileModel(
             string name,
             string path
         )
         {
-            this.name = name;
-            this.path = path;
+            this.Name = name;
+            this.Path = path;
         }
 
         public FileModel(
@@ -28,13 +31,8 @@ namespace EasySave.Models
         {
             // Transform fullpath of file in path + name
             string[] pathSplit = fullPath.Split('\\');
-            this.name = pathSplit[pathSplit.Length - 1];
-            this.path = fullPath.Replace(this.name, "");
+            this.Name = pathSplit[pathSplit.Length - 1];
+            this.Path = fullPath.Replace(this.Name, "");
         }
-
-        public string FullPath { get => path + name; }
-        public string Name { get => name; set => name = value; }
-        public string Path { get => path; set => path = value; }
-        public string? Hash { get => hash; set => hash = value; }
     }
 }
