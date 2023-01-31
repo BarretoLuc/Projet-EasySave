@@ -11,14 +11,14 @@ namespace EasySaveLib.Models
         public string Name { get; set; }
         public ulong Timestamp { get; set; }
         public bool Status { get; set; }
-        public int TotalFileNumber { get; set; }
-        public int TotalFileSize { get; set; }
-        public int RemainingFileNumber { get; set; }
-        public int RemainingFileSize { get; set; }
+        public uint TotalFileNumber { get; set; }
+        public ulong TotalFileSize { get; set; }
+        public uint RemainingFileNumber { get; set; }
+        public ulong RemainingFileSize { get; set; }
         public string Source { get; set; }
         public string Destination { get; set; }
         
-        public StatusJobModel(string name, ulong timestamp, bool status, int totalFileNumber, int totalFileSize, int remainingFileNumber, int remainingFileSize, string source, string destination)
+        public StatusJobModel(string name, ulong timestamp, bool status, int totalFileNumber, ulong totalFileSize, int remainingFileNumber, ulong remainingFileSize, string source, string destination)
         {
             Name = name;
             Timestamp = timestamp;
