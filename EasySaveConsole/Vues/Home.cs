@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EasySave.Controllers;
-using EasySave.Vues;
+using EasySaveLib.Controllers;
+using EasySaveLib.Vues;
 
 namespace EasySaveConsole.Vues
 {

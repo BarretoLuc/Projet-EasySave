@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySave.Controllers
+namespace EasySaveLib.Controllers
 {
     public class Home
     {

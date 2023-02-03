@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySave.Vues
+namespace EasySaveLib.Vues
 {
     public interface IHome
     {
