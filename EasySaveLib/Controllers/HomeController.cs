@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Controllers
 {
-    public class Home
+    public class HomeController
     {
     }
 }
