@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Models
 {
-    internal class JobModel
+    public class JobModel
     {
         public string Name { get; set; }
         public string Source { get; set; }
