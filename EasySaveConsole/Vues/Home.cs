@@ -7,7 +7,11 @@ using EasySave.Vues;
 
 namespace EasySaveConsole.Vues
 {
-    internal class Home: IHome
+    internal class Home : IHome
     {
+        public void show()
+        {
+            Console.WriteLine("Welcome to EasySave");
+        }
     }
 }

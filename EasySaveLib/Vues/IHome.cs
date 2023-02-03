@@ -8,5 +8,6 @@ namespace EasySave.Vues
 {
     public interface IHome
     {
+        public void show();
     }
 }
