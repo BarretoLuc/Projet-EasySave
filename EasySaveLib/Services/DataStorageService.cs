@@ -11,7 +11,7 @@ namespace EasySaveLib.Services
 {
     public class DataStorageService
     {
-        public List<JobModel> JobList { get; }
+        public List<JobModel> JobList { get; set; }
         private SerializerService serializer;
         private string jobPath;
 
@@ -46,6 +46,7 @@ namespace EasySaveLib.Services
         public void LoadJob()
         { 
             var json = System.IO.File.ReadAllText(jobPath);
+            JobList = serializer.Deserialize<List<JobModel>>(json);
         }
         public void SaveJob()
         {
