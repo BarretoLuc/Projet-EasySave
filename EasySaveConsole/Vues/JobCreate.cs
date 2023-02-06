@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EasySaveLib.Services;
 using EasySaveLib.Vues;
 
 namespace EasySaveConsole.Vues
 {
     internal class JobCreate : IJobCreate
     {
+        public DataStorageService Storage { get; }
+        
+        public JobCreate(DataStorageService StorageService)
+        {
+            this.Storage = StorageService;
+        }
+        
         public void show() 
         {
             Console.WriteLine("You have enterred the Job creation interface");
         }
+        
         public void newJob()
         {
             Console.WriteLine("To begin please enter a name :");

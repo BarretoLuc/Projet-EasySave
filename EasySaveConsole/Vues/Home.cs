@@ -21,11 +21,11 @@ namespace EasySaveConsole.Vues
             Console.WriteLine("Welcome to EasySave");
             Console.WriteLine("Please select the option you want using the menu below");
             Console.WriteLine("Press 1 to access the save");
-            int a = int.Parse(Console.ReadLine());
+            int a = int.Parse(Console.ReadLine() as string ?? "0");
             switch (a)
             {
                 case 1:
-                    accesssave();
+                    AccessSave();
                     break;
                 default:
                     Console.WriteLine("Bye");
@@ -33,12 +33,10 @@ namespace EasySaveConsole.Vues
             }
         }
 
-        public void accesssave() 
+        public void AccessSave() 
         {
-            JobCreate JobCreateView = new JobCreate();
+            JobCreate JobCreateView = new JobCreate(HomeController.Storage);
             JobCreateView.show();
-
-
         }
     }
 }

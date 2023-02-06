@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasySaveLib.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace EasySaveLib.Vues
 {
     public interface IJobCreate
     {
+        public DataStorageService Storage { get; }
         public void show();
         public void newJob();
 
