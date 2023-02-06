@@ -8,11 +8,11 @@ using EasySaveLib.Models;
 
 namespace EasySaveLib.Services
 {
-    public class DataStorage
+    public class DataStorageService
     {
         public List<JobModel> JobList { get; }
 
-        public DataStorage()
+        public DataStorageService()
         {
             JobList = new List<JobModel>();
         }
