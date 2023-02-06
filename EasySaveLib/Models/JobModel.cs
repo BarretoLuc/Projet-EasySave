@@ -11,16 +11,16 @@ namespace EasySaveLib.Models
         public string Name { get; set; }
         public string Source { get; set; }
         public string Destination { get; set; }
-        public bool IsEncrypted { get; set; }
-        public bool IsDifferential { get; set; }
-        
-        public JobModel(string name, string source, string destination, bool isEncrypted, bool isDifferential)
+        public bool? IsEncrypted { get; set; }
+        public bool? IsDifferential { get; set; }
+        public List<FileModel>? AllFiles { get; set; }
+
+
+        public JobModel(string name, string source, string destination)
         {
             Name = name;
             Source = source;
             Destination = destination;
-            IsEncrypted = isEncrypted;
-            IsDifferential = isDifferential;
         }
 
         public void ConvertPath()

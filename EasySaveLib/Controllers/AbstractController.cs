@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Controllers
 {
-    public class HomeController : AbstractController
+    public class AbstractController
     {
-        public new DataStorageService Storage { get; }
-
-        public HomeController()
+        public DataStorageService Storage { get; }
+        
+        public AbstractController()
         {
             Storage = new DataStorageService();
         }
         
+        public AbstractController(DataStorageService StorageService)
+        {
+            Storage = StorageService;
+        }
     }
 }
