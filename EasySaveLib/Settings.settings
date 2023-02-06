@@ -1,9 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EasySaveLib" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EasySaveLib.Settings" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="numberJob" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="dataStorageFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\EasySave\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
