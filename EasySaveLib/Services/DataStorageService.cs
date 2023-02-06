@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -26,15 +27,22 @@ namespace EasySaveLib.Services
             }
             JobList.Add(job);
         }
-        public void RemoveJobList() 
+        public void RemoveJobList(JobModel job) 
         {
-            // TODO : A implémenter 
+            foreach (var item in JobList)
+            {
+                if (job.Source == item.Source && job.Destination == item.Destination)
+                {
+                    JobList.Remove(item);
+                    return;
+                }
+            }
+            return;
         }
 
         public void LoadJob()
         {
             // TODO A implémenter 
-
         }
 
     }
