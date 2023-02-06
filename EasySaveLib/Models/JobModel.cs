@@ -13,7 +13,6 @@ namespace EasySaveLib.Models
         public string Destination { get; set; }
         public bool IsEncrypted { get; set; }
         public bool IsDifferential { get; set; }
-
         
         public JobModel(string name, string source, string destination, bool isEncrypted, bool isDifferential)
         {
@@ -23,5 +22,15 @@ namespace EasySaveLib.Models
             IsEncrypted = isEncrypted;
             IsDifferential = isDifferential;
         }
+
+        public void ConvertPath()
+        { 
+            if (!Source.EndsWith(@"\"))
+                Source = Source + @"\";
+
+            if (!Destination.EndsWith(@"\"))
+                Destination = Destination + @"\";
+        }
+
     }
 }
