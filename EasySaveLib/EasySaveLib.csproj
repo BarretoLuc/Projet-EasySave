@@ -23,6 +23,7 @@
     <None Update="Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>EasySaveLib.Settings</CustomToolNamespace>
     </None>
   </ItemGroup>
 
