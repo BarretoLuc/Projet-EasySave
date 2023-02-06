@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EasySaveLib.Models;
+using EasySaveLib.Settings;
 
 namespace EasySaveLib.Services
 {
@@ -13,7 +14,6 @@ namespace EasySaveLib.Services
     {
         public List<JobModel> JobList { get; set; }
         private SerializerService serializer;
-        private string jobPath;
 
         public DataStorageService()
         {
@@ -44,14 +44,14 @@ namespace EasySaveLib.Services
         }
 
         public void LoadJob()
-        { 
-            var json = System.IO.File.ReadAllText(jobPath);
+        {
+            var json = System.IO.File.ReadAllText(Settings.Settings.Default.dataStorageFolder);
             JobList = serializer.Deserialize<List<JobModel>>(json);
         }
         public void SaveJob()
         {
             var json = serializer.Serialize(JobList);
-            System.IO.File.WriteAllText(jobPath, json);
+            System.IO.File.WriteAllText(Settings.Settings.Default.dataStorageFolder, json);
         }
 
     }
