@@ -18,18 +18,25 @@ namespace EasySaveConsole.Vues
         
         public void show()
         {
+            string a = "";
             Console.WriteLine("Welcome to EasySave");
-            Console.WriteLine("Please select the option you want using the menu below");
-            Console.WriteLine("Press 1 to access the save");
-            int a = int.Parse(Console.ReadLine() as string ?? "0");
-            switch (a)
-            {
-                case 1:
-                    AccessSave();
-                    break;
-                default:
-                    Console.WriteLine("Bye");
-                    break;
+            while (a != "q")
+            {   
+                Console.WriteLine("Please select the option you want using the menu below");
+                Console.WriteLine("\n\n   'jc' => to create job");
+                Console.WriteLine("\n\nPress q to quit program\n");
+                a = Console.ReadLine() ?? "";
+                switch (a)
+                {
+                    case "jc":
+                        AccessSave();
+                        break;
+                    case "q":
+                        break;
+                    default:
+                        break;
+                }
+                Console.Clear();
             }
         }
 
