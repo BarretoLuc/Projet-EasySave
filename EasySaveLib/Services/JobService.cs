@@ -42,13 +42,20 @@ namespace EasySaveLib.Services
 
             foreach (string file in files)
             {
-                jobModel.AllFiles.Add(new FileModel(file));
+                var newFile = new FileModel(file);
+                newFile.Size = FileSize(newFile);
+                jobModel.AllFiles.Add(newFile);
             }
 
             foreach (string dir in dirs)
             {
                 WalkIntoDirectory(dir, jobModel);
             }
+        }
+
+        public ulong FileSize(FileModel fileModel)
+        {
+            return (ulong)(new FileInfo(fileModel.FullPath)).Length;
         }
     }
 }
