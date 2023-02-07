@@ -15,6 +15,7 @@ namespace EasySaveLib.Models
         public string Path { get; set; }
         public string? Hash { get; set; }
         public string FullPath { get => Path + Name; }
+        public ulong Size { get; set; }
 
         public FileModel(
             string name,
