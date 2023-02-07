@@ -15,20 +15,26 @@ namespace EasySaveLib.Services
             if (jobModel.AllFiles == null) throw new Exception("No files to copy");
             foreach (FileModel item in jobModel.AllFiles)
             {
-                CopyFile(item.FullPath, jobModel.Destination + item.Name);
+                string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
+                CopyFile(item.FullPath, destinationPath, item.Name);
             }
         }
-        
+
         /// <summary>
         ///     Copy a file from a source to a destination.
         /// </summary>
         /// <param name="source">Source file path.</param>
-        /// <param name="destination">Destination file path.</param>
-        private void CopyFile(string source, string destination)
+        /// <param name="destinationPath">Destination file path.</param>
+        /// <param name="destinationName">Destination file name.</param>
+        private void CopyFile(string source, string destinationPath, string destinationName)
         {
+            if (!Directory.Exists(destinationPath))
+            {
+                Directory.CreateDirectory(destinationPath);
+            }
             try
             {
-                File.Copy(source, destination);
+                File.Copy(source, destinationPath + destinationName);
             }
             catch (Exception ex) { Debug.WriteLine(ex); } 
         }
