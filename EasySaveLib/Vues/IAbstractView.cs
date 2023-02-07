@@ -1,5 +1,4 @@
 ﻿using EasySaveLib.Controllers;
-using EasySaveLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Vues
 {
-    public interface IJobRun : IAbstractView<JobRunController>
+    public interface IAbstractView<T>
     {
-        public JobModel ChooseJob(List<JobModel> jobs);
-        public void Show(JobModel JobModel);
+        public T Controller { get; set; }
     }
 }

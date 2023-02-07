@@ -9,15 +9,11 @@ using EasySaveLib.Vues;
 
 namespace EasySaveConsole.Vues
 {
-    internal class JobCreate : IJobCreate
+    internal class JobCreate : AbstractViewImpl<JobCreateController>, IJobCreate
     {
-        public DataStorageService Storage { get; }
-        public JobController JobController { get; }
 
-        public JobCreate(DataStorageService StorageService)
+        public JobCreate()
         {
-            this.Storage = StorageService;
-            this.JobController = new JobController(Storage);
         }
         
         public void show() 
@@ -42,7 +38,8 @@ namespace EasySaveConsole.Vues
 
             if (name == null || sourcepath == null || destinationpath == null) return;
 
-            this.JobController.CreateJob(name, sourcepath, destinationpath);
+            Controller.CreateJob(name, sourcepath, destinationpath);
         }
+        
     }
 }

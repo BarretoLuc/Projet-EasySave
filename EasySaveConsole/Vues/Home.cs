@@ -8,20 +8,19 @@ using EasySaveLib.Vues;
 
 namespace EasySaveConsole.Vues
 {
-    internal class Home : IHome
+    internal class Home : AbstractViewImpl<HomeController>, IHome
     {
-        private HomeController HomeController { get; set; }
-        
-        public Home() {
-            HomeController = new HomeController();
+
+        public Home()
+        {
         }
-        
-        public void show()
+
+        public void showMenu()
         {
             string a = "";
             Console.WriteLine("Welcome to EasySave");
             while (a != "q")
-            {   
+            {
                 Console.WriteLine("Please select the option you want using the menu below");
                 Console.WriteLine("\n\n   'jc' => to create a new job");
                 Console.WriteLine("   'je' => to execute a job");
@@ -30,10 +29,10 @@ namespace EasySaveConsole.Vues
                 switch (a)
                 {
                     case "jc":
-                        AccessSave();
+                        Controller.AccessSave(new JobCreate());
                         break;
                     case "je":
-                        ShowJobRun();
+                        Controller.ShowJobRun(new JobRun());
                         break;
                     case "q":
                         break;
@@ -43,18 +42,6 @@ namespace EasySaveConsole.Vues
                 Console.Clear();
             }
         }
-
-        public void AccessSave() 
-        {
-            JobCreate JobCreateView = new JobCreate(HomeController.Storage);
-            JobCreateView.show();
-        }
-
-        private void ShowJobRun()
-        {
-            JobRun JobRun = new JobRun(HomeController.Storage, HomeController.Storage.JobList[0]);
-            JobRun.Show();
-            Console.ReadKey(true);
-        }
+        
     }
 }

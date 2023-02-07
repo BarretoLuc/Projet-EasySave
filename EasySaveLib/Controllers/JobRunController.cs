@@ -1,5 +1,6 @@
 ﻿using EasySaveLib.Models;
 using EasySaveLib.Services;
+using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +9,26 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Controllers
 {
-    public class JobController : AbstractController
+    public class JobRunController : AbstractController<IJobRun, JobRunController>
     {
-        public new DataStorageService Storage { get; }
         public JobService JobService { get; set; }
 
-        public JobController(DataStorageService StorageService)
+        public JobRunController(IJobRun jobRun, DataStorageService StorageService) : base(jobRun)
         {
             Storage = StorageService;
             JobService = new JobService();
         }
 
-        public void CreateJob(string name, string sourcepath, string destinationpath)
+        public override void init()
         {
-            var newJob = new JobModel(name, sourcepath, destinationpath);
-            JobService.WalkIntoDirectory(sourcepath, newJob);
-            Storage.AddJobList(newJob);
+            JobModel job = View.ChooseJob(Storage.JobList);
+            ExecuteOneJob(job);
         }
-
+        
         public void ExecuteOneJob(JobModel Job)
         {
             JobService.CopyAllFiles(Job);
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using EasySaveLib.Services;
+﻿using EasySaveLib.Controllers;
+using EasySaveLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace EasySaveLib.Vues
 {
-    public interface IJobCreate
+    public interface IJobCreate : IAbstractView<JobCreateController>
     {
-        public DataStorageService Storage { get; }
         public void show();
         public void newJob();
 

@@ -10,22 +10,25 @@ using System.Threading.Tasks;
 
 namespace EasySaveConsole.Vues
 {
-    internal class JobRun : IJobRun
+    internal class JobRun : AbstractViewImpl<JobRunController>, IJobRun
     {
-        private JobModel JobModel { get; }
-        private JobController JobController { get; }
 
-        public JobRun(DataStorageService StorageService, JobModel Job)
+
+        public JobRun()
         {
-            this.JobModel = Job;
-            this.JobController = new JobController(StorageService);
         }
 
-        public void Show()
+        public void Show(JobModel JobModel)
         {
             Console.WriteLine("Job " + JobModel.Name + " is running...");
-            JobController.ExecuteOneJob(JobModel);
+            Controller.ExecuteOneJob(JobModel);
             Console.WriteLine("Job " + JobModel.Name + " is done.");
+        }
+        
+        public JobModel ChooseJob(List<JobModel> jobs)
+        {
+            //TODO
+            return jobs[0];
         }
     }
 }

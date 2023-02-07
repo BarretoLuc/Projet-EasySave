@@ -1,4 +1,5 @@
 ﻿using EasySaveConsole.Vues;
+using EasySaveLib.Controllers;
 using System;
 
 namespace EasySaveConsole
@@ -7,8 +8,8 @@ namespace EasySaveConsole
     {
         static void Main(string[] args)
         {
-            Home viewHome = new Home();
-            viewHome.show();
+            HomeController controller = new HomeController(new Home());
+            controller.init();
         }
     }
 }
