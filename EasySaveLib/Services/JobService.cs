@@ -32,5 +32,23 @@ namespace EasySaveLib.Services
             }
             catch (Exception ex) { Debug.WriteLine(ex); } 
         }
+
+        public void WalkIntoDirectory(string path, JobModel jobModel)
+        {
+            if (jobModel.AllFiles == null) jobModel.AllFiles = new List<FileModel>();
+            
+            string[] files = Directory.GetFiles(path);
+            string[] dirs = Directory.GetDirectories(path);
+
+            foreach (string file in files)
+            {
+                jobModel.AllFiles.Add(new FileModel(file));
+            }
+
+            foreach (string dir in dirs)
+            {
+                WalkIntoDirectory(dir, jobModel);
+            }
+        }
     }
 }

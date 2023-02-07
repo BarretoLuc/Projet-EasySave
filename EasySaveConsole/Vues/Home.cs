@@ -23,13 +23,17 @@ namespace EasySaveConsole.Vues
             while (a != "q")
             {   
                 Console.WriteLine("Please select the option you want using the menu below");
-                Console.WriteLine("\n\n   'jc' => to create job");
+                Console.WriteLine("\n\n   'jc' => to create a new job");
+                Console.WriteLine("   'je' => to execute a job");
                 Console.WriteLine("\n\nPress q to quit program\n");
                 a = Console.ReadLine() ?? "";
                 switch (a)
                 {
                     case "jc":
                         AccessSave();
+                        break;
+                    case "je":
+                        ShowJobRun();
                         break;
                     case "q":
                         break;
@@ -44,6 +48,13 @@ namespace EasySaveConsole.Vues
         {
             JobCreate JobCreateView = new JobCreate(HomeController.Storage);
             JobCreateView.show();
+        }
+
+        private void ShowJobRun()
+        {
+            JobRun JobRun = new JobRun(HomeController.Storage, HomeController.Storage.JobList[0]);
+            JobRun.Show();
+            Console.ReadKey(true);
         }
     }
 }

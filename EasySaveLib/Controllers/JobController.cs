@@ -11,17 +11,24 @@ namespace EasySaveLib.Controllers
     public class JobController : AbstractController
     {
         public new DataStorageService Storage { get; }
+        public JobService JobService { get; set; }
 
         public JobController(DataStorageService StorageService)
         {
             Storage = StorageService;
+            JobService = new JobService();
         }
 
         public void CreateJob(string name, string sourcepath, string destinationpath)
         {
-            Storage.AddJobList(
-                new JobModel(name, sourcepath, destinationpath)
-            );
+            var newJob = new JobModel(name, sourcepath, destinationpath);
+            JobService.WalkIntoDirectory(sourcepath, newJob);
+            Storage.AddJobList(newJob);
+        }
+
+        public void ExecuteOneJob(JobModel Job)
+        {
+            JobService.CopyAllFiles(Job);
         }
     }
 }
