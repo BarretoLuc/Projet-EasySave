@@ -34,5 +34,17 @@ namespace EasySaveLib.Settings {
                 this["numberJob"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\EasySave\\")]
+        public string dataStorageFolder {
+            get {
+                return ((string)(this["dataStorageFolder"]));
+            }
+            set {
+                this["dataStorageFolder"] = value;
+            }
+        }
     }
 }

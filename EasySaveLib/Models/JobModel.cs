@@ -22,5 +22,15 @@ namespace EasySaveLib.Models
             Source = source;
             Destination = destination;
         }
+
+        public void ConvertPath()
+        { 
+            if (!Source.EndsWith(@"\"))
+                Source = Source + @"\";
+
+            if (!Destination.EndsWith(@"\"))
+                Destination = Destination + @"\";
+        }
+
     }
 }
