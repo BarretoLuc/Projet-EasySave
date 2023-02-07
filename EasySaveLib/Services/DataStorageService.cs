@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace EasySaveLib.Services
                     return;
             }
             JobList.Add(job);
+            SaveJob();
         }
         public void RemoveJobList(JobModel job) 
         {
@@ -45,14 +47,29 @@ namespace EasySaveLib.Services
 
         public void LoadJob()
         {
-            var json = System.IO.File.ReadAllText(Settings.Settings.Default.dataStorageFolder);
+            var json = File.ReadAllText(Settings.Settings.Default.dataStorageFolder + "job.json"); 
             JobList = serializer.Deserialize<List<JobModel>>(json);
         }
         public void SaveJob()
         {
-            var json = serializer.Serialize(JobList);
-            System.IO.File.WriteAllText(Settings.Settings.Default.dataStorageFolder, json);
-        }
+            string folderPath = Settings.Settings.Default.dataStorageFolder;
+            string path = folderPath + "job.json";
 
+            foreach (var item in JobList)
+                item.AllFiles.Clear();
+            
+            var json = serializer.Serialize(JobList);
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            
+
+            using (FileStream fs = File.Open(path, FileMode.OpenOrCreate))
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(json);
+                fs.Write(bytes, 0, bytes.Length);
+            }
+
+        }
     }
 }
