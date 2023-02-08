@@ -17,6 +17,7 @@ namespace EasySaveLib.Services
             {
                 string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
                 CopyFile(item.FullPath, destinationPath, item.Name);
+                LogService.AddLogActionJob(jobModel.Name, jobModel.Source, item.FullPath, jobModel.Destination, item.Size, 1);
             }
         }
 
