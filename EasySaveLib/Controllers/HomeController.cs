@@ -1,13 +1,10 @@
 ﻿using EasySaveLib.Services;
-<<<<<<< HEAD
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-=======
->>>>>>> l_gestionLog
 
 namespace EasySaveLib.Controllers
 {
