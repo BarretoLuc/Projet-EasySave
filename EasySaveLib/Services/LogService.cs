@@ -23,7 +23,7 @@ namespace EasySaveLib.Services
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .WriteTo.File(new CompactJsonFormatter(), "Logs/information.json", restrictedToMinimumLevel: LogEventLevel.Information,fileSizeLimitBytes: 20000, rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                .WriteTo.File(new CompactJsonFormatter(), Settings.Settings.Default.dataStorageFolder + "Logs/information.json", restrictedToMinimumLevel: LogEventLevel.Information,fileSizeLimitBytes: 20000, rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
                 .CreateLogger();
         }
 
