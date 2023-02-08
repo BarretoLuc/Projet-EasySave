@@ -12,7 +12,9 @@ namespace EasySaveLib.Services
         /// <param name="jobModel">The job.</param>
         public void CopyAllFiles(JobModel jobModel)
         {
+            WalkIntoDirectory(jobModel.Source, jobModel);
             if (jobModel.AllFiles == null) throw new Exception("No files to copy");
+            if (jobModel.AllFiles.Count == 0) throw new Exception("TODO");
             foreach (FileModel item in jobModel.AllFiles)
             {
                 string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
@@ -40,7 +42,7 @@ namespace EasySaveLib.Services
             catch (Exception ex) { Debug.WriteLine(ex); } 
         }
 
-        public void WalkIntoDirectory(string path, JobModel jobModel)
+        private void WalkIntoDirectory(string path, JobModel jobModel)
         {
             if (jobModel.AllFiles == null) jobModel.AllFiles = new List<FileModel>();
             
