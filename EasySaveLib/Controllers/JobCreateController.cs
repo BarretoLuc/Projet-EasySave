@@ -22,7 +22,6 @@ namespace EasySaveLib.Controllers
         public void CreateJob(string name, string sourcepath, string destinationpath)
         {
             var newJob = new JobModel(name, sourcepath, destinationpath);
-            JobService.WalkIntoDirectory(sourcepath, newJob);
             Storage.AddJobList(newJob);
         }
         

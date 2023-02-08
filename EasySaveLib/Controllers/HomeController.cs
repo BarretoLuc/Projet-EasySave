@@ -15,6 +15,7 @@ namespace EasySaveLib.Controllers
         public HomeController(IHome View) : base(View)
         {
             Storage = new DataStorageService();
+            new LogService();
         }
 
         public override void init()
