@@ -1,9 +1,4 @@
 ﻿using EasySaveLib.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasySaveLib.Controllers
 {
@@ -14,6 +9,7 @@ namespace EasySaveLib.Controllers
         public HomeController()
         {
             Storage = new DataStorageService();
+            new LogService();
         }
         
     }
