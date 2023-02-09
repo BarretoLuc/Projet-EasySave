@@ -11,4 +11,28 @@
     <ProjectReference Include="..\EasySaveLib\EasySaveLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Ressources\Languages\english.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>english.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Ressources\Languages\francais.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>francais.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Ressources\Languages\english.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>english.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Ressources\Languages\francais.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>francais.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
