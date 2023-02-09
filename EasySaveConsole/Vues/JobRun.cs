@@ -18,14 +18,17 @@ namespace EasySaveConsole.Vues
         {
         }
 
-        public void Show(JobModel JobModel)
+        public void ShowStart(JobModel JobModel)
         {
             Console.WriteLine("Job " + JobModel.Name + " is running...");
-            Controller.ExecuteOneJob(JobModel);
+        }
+
+        public void ShowEnd(JobModel JobModel)
+        {
             Console.WriteLine("Job " + JobModel.Name + " is done.");
         }
-        
-        public JobModel ChooseJob(List<JobModel> jobs)
+
+            public JobModel ChooseJob(List<JobModel> jobs)
         {
             //TODO
             return jobs[0];
