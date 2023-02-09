@@ -24,6 +24,7 @@ namespace EasySaveConsole.Vues
                 Console.WriteLine("Please select the option you want using the menu below");
                 Console.WriteLine("\n\n   'jc' => to create a new job");
                 Console.WriteLine("   'je' => to execute a job");
+                Console.WriteLine("   'jv' => to view all job");
                 Console.WriteLine("\n\nPress q to quit program\n");
                 a = Console.ReadLine() ?? "";
                 switch (a)
@@ -33,6 +34,9 @@ namespace EasySaveConsole.Vues
                         break;
                     case "je":
                         Controller.ShowJobRun(new JobRun());
+                        break;
+                    case "jv":
+                        Controller.ShowJobViews(new JobView());
                         break;
                     case "q":
                         break;

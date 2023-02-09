@@ -24,7 +24,9 @@ namespace EasySaveLib.Controllers
         public override void init()
         {
             JobModel job = View.ChooseJob(Storage.JobList);
+            View.ShowStart(job);
             ExecuteOneJob(job);
+            View.ShowEnd(job);
         }
         
         public void ExecuteOneJob(JobModel job)
