@@ -27,6 +27,8 @@ namespace EasySaveLib.Models
         [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
         public State? State { get; set; }
 
+        public FileModel() { }
+
         public FileModel(
             string name,
             string path
