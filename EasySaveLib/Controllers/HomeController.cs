@@ -34,5 +34,10 @@ namespace EasySaveLib.Controllers
             jobRunController.init();
         }
 
+        public void ShowJobViews(IJobView jobView)
+        {
+            JobViewController jobViewController = new JobViewController(jobView, Storage);
+            jobViewController.init();
+        }
     }
 }
