@@ -16,6 +16,7 @@ namespace EasySaveLib.Services
             foreach (FileModel item in jobModel.AllFiles)
             {
                 string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
+                item.Time = CopyFile(item.FullPath, destinationPath, item.Name);
                 CopyFile(item.FullPath, destinationPath, item.Name);
                 LogService.AddLogActionJob(jobModel.Name, jobModel.Source, item.FullPath, jobModel.Destination, item.Size, 1);
             }
@@ -27,17 +28,22 @@ namespace EasySaveLib.Services
         /// <param name="source">Source file path.</param>
         /// <param name="destinationPath">Destination file path.</param>
         /// <param name="destinationName">Destination file name.</param>
-        private void CopyFile(string source, string destinationPath, string destinationName)
+        private long CopyFile(string source, string destinationPath, string destinationName)
         {
+            Stopwatch stopwatchfilecopy = new Stopwatch();
             if (!Directory.Exists(destinationPath))
             {
                 Directory.CreateDirectory(destinationPath);
             }
             try
             {
+                stopwatchfilecopy.Start();
                 File.Copy(source, destinationPath + destinationName);
+                stopwatchfilecopy.Stop();
             }
             catch (Exception ex) { Debug.WriteLine(ex); } 
+            
+            return stopwatchfilecopy.ElapsedMilliseconds;
         }
 
         public void WalkIntoDirectory(string path, JobModel jobModel)
