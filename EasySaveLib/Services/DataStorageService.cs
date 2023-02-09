@@ -54,11 +54,12 @@ namespace EasySaveLib.Services
         {
             string folderPath = Settings.Settings.Default.dataStorageFolder;
             string path = folderPath + "job.json";
+            var file = new List<JobModel>();
 
             foreach (var item in JobList)
-                item.AllFiles.Clear();
-            
-            var json = serializer.Serialize(JobList);
+                file.Add(new JobModel(item.Name, item.Source, item.Destination));
+                
+            var json = serializer.Serialize(file);
 
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
