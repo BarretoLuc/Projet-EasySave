@@ -37,6 +37,7 @@ namespace EasySaveConsole.Vues
                     case "q":
                         break;
                     default:
+                        Console.WriteLine("Please enter a valid option");
                         break;
                 }
                 Console.Clear();
