@@ -1,58 +1,73 @@
 ﻿using EasySaveLib.Models;
-using System.Diagnostics;
 
 namespace EasySaveLib.Services
 {
     public class JobService
     {
-        
-        /// <summary>
-        ///     Coppy all files of a job.
-        /// </summary>
-        /// <param name="jobModel">The job.</param>
-        public void CopyAllFiles(JobModel jobModel)
+        public List<FileModel> GetListActionFiles(JobModel jobModel)
         {
-            WalkIntoDirectory(jobModel.Source, jobModel);
-            if (jobModel.AllFiles == null) throw new Exception("No files to copy");
-            if (jobModel.AllFiles.Count == 0) throw new Exception("TODO");
-            foreach (FileModel item in jobModel.AllFiles)
+            var filesSource = WalkIntoDirectory(jobModel.Source);
+            var filesDestination = WalkIntoDirectory(jobModel.Destination);
+            var filesAction = new List<FileModel>();
+
+            ComputeHash(filesSource);
+            ComputeHash(filesDestination);
+            
+            return GetFilesToCopy(filesSource, filesDestination);
+        }
+
+        private List<FileModel> GetFilesToCopy(List<FileModel> filesSource, List<FileModel> filesDestination)
+        {
+            var filesToCopy = new List<FileModel>();
+            foreach (var fileSource in filesSource)
             {
-                string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
-                item.Time = CopyFile(item.FullPath, destinationPath, item.Name);
-                CopyFile(item.FullPath, destinationPath, item.Name);
-                item.State = State.Finished;
-                LogService.AddLogActionJob(jobModel.Name, jobModel.Source, item.FullPath, jobModel.Destination, item.Size, 1);
+                var fileDestination = filesDestination.Find(x => x.Hash == fileSource.Hash);
+
+                if (fileDestination == null)
+                {
+                    fileSource.State = State.Waiting;
+                    filesToCopy.Add(fileSource);
+                    continue;
+                }
+
+                filesDestination.Remove(fileDestination);
+
+                // check relative path
+                if (fileSource.RelativePath != fileDestination.RelativePath)
+                {
+                    fileSource.State = State.Moved;
+                    filesToCopy.Add(fileSource);
+                    continue;
+                }
+
+                fileSource.State = State.Finished;
+                filesToCopy.Add(fileSource);
+            }
+
+            // check file destination need to delete
+            foreach (var fileDestination in filesDestination)
+            {
+                fileDestination.State = State.Deleted;
+                filesToCopy.Add(fileDestination);
+            }
+
+            return filesToCopy;
+        }
+
+        private void ComputeHash(List<FileModel> files)
+        {
+            var hashService = new HashService();
+            foreach (var file in files)
+            {
+                file.Hash = hashService.computeSHA256(file);
             }
         }
 
-        /// <summary>
-        ///     Copy a file from a source to a destination.
-        /// </summary>
-        /// <param name="source">Source file path.</param>
-        /// <param name="destinationPath">Destination file path.</param>
-        /// <param name="destinationName">Destination file name.</param>
-        private long CopyFile(string source, string destinationPath, string destinationName)
+        private List<FileModel> WalkIntoDirectory(string path, List<FileModel>? Files = null, string? firstPath = null)
         {
-            Stopwatch stopwatchfilecopy = new Stopwatch();
-            if (!Directory.Exists(destinationPath))
-            {
-                Directory.CreateDirectory(destinationPath);
-            }
-            try
-            {
-                stopwatchfilecopy.Start();
-                File.Copy(source, destinationPath + destinationName);
-                stopwatchfilecopy.Stop();
-            }
-            catch (Exception ex) { Debug.WriteLine(ex); } 
-            
-            return stopwatchfilecopy.ElapsedMilliseconds;
-        }
+            if (Files == null) Files = new List<FileModel>();
+            if (firstPath == null) firstPath = path;
 
-        private void WalkIntoDirectory(string path, JobModel jobModel)
-        {
-            if (jobModel.AllFiles == null) jobModel.AllFiles = new List<FileModel>();
-            
             string[] files = Directory.GetFiles(path);
             string[] dirs = Directory.GetDirectories(path);
 
@@ -60,16 +75,19 @@ namespace EasySaveLib.Services
             {
                 var newFile = new FileModel(file);
                 newFile.Size = FileSize(newFile);
-                jobModel.AllFiles.Add(newFile);
+                newFile.RelativePath = (file.Replace(firstPath, "")).Replace(newFile.Name, "");
+                Files.Add(newFile);
             }
 
             foreach (string dir in dirs)
             {
-                WalkIntoDirectory(dir, jobModel);
+                WalkIntoDirectory(dir, Files, firstPath);
             }
+
+            return Files;
         }
 
-        public ulong FileSize(FileModel fileModel)
+        private ulong FileSize(FileModel fileModel)
         {
             return (ulong)(new FileInfo(fileModel.FullPath)).Length;
         }

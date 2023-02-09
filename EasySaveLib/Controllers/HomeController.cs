@@ -20,6 +20,7 @@ namespace EasySaveLib.Controllers
 
         public override void init()
         {
+            Storage.LoadJob();
             View.showMenu();
         }
         public void AccessSave(IJobCreate jobCreate)

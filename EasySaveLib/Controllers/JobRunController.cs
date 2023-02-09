@@ -11,24 +11,23 @@ namespace EasySaveLib.Controllers
 {
     public class JobRunController : AbstractController<IJobRun, JobRunController>
     {
-        public JobService JobService { get; set; }
+        public CopyService CopyService { get; set; }
 
         public JobRunController(IJobRun jobRun, DataStorageService StorageService) : base(jobRun)
         {
             Storage = StorageService;
-            JobService = new JobService();
+            CopyService = new CopyService();
         }
 
         public override void init()
         {
-            Storage.LoadJob();
             JobModel job = View.ChooseJob(Storage.JobList);
             ExecuteOneJob(job);
         }
         
         public void ExecuteOneJob(JobModel Job)
         {
-            JobService.CopyAllFiles(Job);
+            CopyService.CopyAllFiles(Job);
         }
 
     }

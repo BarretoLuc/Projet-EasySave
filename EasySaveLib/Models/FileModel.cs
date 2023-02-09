@@ -13,12 +13,11 @@ namespace EasySaveLib.Models
 {
     public class FileModel
     {
-        private State state;
-
         public string Name { get; set; }
         public string Path { get; set; }
         public string? Hash { get; set; }
         public string FullPath { get => Path + Name; }
+        public string RelativePath { get; set; }
         public ulong Size { get; set; }
         public long Time { get; set; }
 
