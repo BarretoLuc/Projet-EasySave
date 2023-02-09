@@ -72,5 +72,10 @@ namespace EasySaveLib.Services
             }
 
         }
+
+        public string GetText(string text)
+        {
+            return text;
+        }
     }
 }

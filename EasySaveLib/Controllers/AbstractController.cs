@@ -22,6 +22,9 @@ namespace EasySaveLib.Controllers
 
         public abstract void init();
         
-       
+       public string GetTranslation(string key)
+        {
+            return "TODO";
+        }
     }
 }
