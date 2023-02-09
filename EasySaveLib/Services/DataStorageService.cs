@@ -27,7 +27,7 @@ namespace EasySaveLib.Services
         {
             foreach(var item in JobList)
             {
-                if (job.Source == item.Source && job.Destination == item.Destination)
+                if (job.Source == item.Source && job.Destination == item.Destination && job.IsDifferential == item.IsDifferential)
                     return;
             }
             JobList.Add(job);
@@ -37,7 +37,7 @@ namespace EasySaveLib.Services
         {
             foreach (var item in JobList)
             {
-                if (job.Source == item.Source && job.Destination == item.Destination)
+                if (job.Source == item.Source && job.Destination == item.Destination && job.IsDifferential == item.IsDifferential)
                 {
                     JobList.Remove(item);
                     return;
@@ -57,7 +57,7 @@ namespace EasySaveLib.Services
             var file = new List<JobModel>();
 
             foreach (var item in JobList)
-                file.Add(new JobModel(item.Name, item.Source, item.Destination));
+                file.Add(new JobModel(item.Name, item.Source, item.Destination, item.IsDifferential));
 
             var json = serializer.Serialize(file);
 

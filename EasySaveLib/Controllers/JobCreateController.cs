@@ -19,9 +19,9 @@ namespace EasySaveLib.Controllers
             JobService = new JobService();
         }
 
-        public void CreateJob(string name, string sourcepath, string destinationpath)
+        public void CreateJob(string name, string sourcepath, string destinationpath, bool type)
         {
-            var newJob = new JobModel(name, sourcepath, destinationpath);
+            var newJob = new JobModel(name, sourcepath, destinationpath, type);
             Storage.AddJobList(newJob);
         }
         
