@@ -23,7 +23,9 @@ namespace EasySaveLib.Controllers
         {
             Storage.LoadJob();
             JobModel job = View.ChooseJob(Storage.JobList);
+            View.ShowStart(job);
             ExecuteOneJob(job);
+            View.ShowEnd(job);
         }
         
         public void ExecuteOneJob(JobModel Job)

@@ -1,4 +1,5 @@
-﻿using EasySaveLib.Models;
+﻿using EasySaveLib.Controllers;
+using EasySaveLib.Models;
 using EasySaveLib.Services;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,16 @@ using System.Xml.Linq;
 
 namespace EasySaveLib.Vues
 {
-    public interface IJobView
+    public interface IJobView : IAbstractView<JobViewController>
     {
-        public void show(JobModel job)
+        public void Show(JobModel job)
         {
-
+        }
+        public void ShowAll(List<JobModel> listJob)
+        {
+        }
+        public void Exit()
+        { 
         }
     }
 }
