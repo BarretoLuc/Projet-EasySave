@@ -11,6 +11,7 @@ namespace EasySaveLib.Vues
     public interface IJobRun : IAbstractView<JobRunController>
     {
         public JobModel ChooseJob(List<JobModel> jobs);
-        public void Show(JobModel JobModel);
+        public void ShowStart(JobModel JobModel);
+        public void ShowEnd(JobModel JobModel);
     }
 }
