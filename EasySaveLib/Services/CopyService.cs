@@ -6,14 +6,17 @@ namespace EasySaveLib.Services
     public class CopyService
     {
         public JobService JobService { get; set; }
+        private Stopwatch Stopwatch { get; set; }
 
         public CopyService()
         {
             JobService = new JobService();
+            Stopwatch = new Stopwatch();
         }
 
         public void ExecuteAction(JobModel job, FileModel file) 
         {
+            Stopwatch.Start();
             switch (file.State)
             {
                 case State.Waiting:
@@ -35,7 +38,11 @@ namespace EasySaveLib.Services
                 default:
                     break;
             }
+            Stopwatch.Stop();
+            file.Time = Stopwatch.ElapsedMilliseconds;
             file.State = State.Finished;
+            // TODO à revoir pour les logs
+            LogService.AddLogActionJob(job.Name, job.Source, file.FullPath, job.Destination, file.Size, (int)file.Time);
         }
 
         private void Rename(JobModel job, FileModel file)
@@ -58,52 +65,7 @@ namespace EasySaveLib.Services
         {
             string destinationPath = file.Path.Replace(job.Source, job.Destination);
             if (!Directory.Exists(destinationPath)) Directory.CreateDirectory(destinationPath);
-            CopyFile(file.FullPath, destinationPath, file.Name);
-        }
-
-
-
-        /// <summary>
-        ///     Coppy all files of a job.
-        /// </summary>
-        /// <param name="jobModel">The job.</param>
-        private void CopyAllFiles(JobModel jobModel)
-        {
-            //JobService.WalkIntoDirectory(jobModel.Source, jobModel);
-            if (jobModel.AllFiles == null) throw new Exception("No files to copy");
-            if (jobModel.AllFiles.Count == 0) throw new Exception("TODO");
-            foreach (FileModel item in jobModel.AllFiles)
-            {
-                string destinationPath = item.Path.Replace(jobModel.Source, jobModel.Destination);
-                item.Time = CopyFile(item.FullPath, destinationPath, item.Name);
-                CopyFile(item.FullPath, destinationPath, item.Name);
-                item.State = State.Finished;
-                LogService.AddLogActionJob(jobModel.Name, jobModel.Source, item.FullPath, jobModel.Destination, item.Size, 1);
-            }
-        }
-
-        /// <summary>
-        ///     Copy a file from a source to a destination.
-        /// </summary>
-        /// <param name="source">Source file path.</param>
-        /// <param name="destinationPath">Destination file path.</param>
-        /// <param name="destinationName">Destination file name.</param>
-        private long CopyFile(string source, string destinationPath, string destinationName)
-        {
-            Stopwatch stopwatchfilecopy = new Stopwatch();
-            if (!Directory.Exists(destinationPath))
-            {
-                Directory.CreateDirectory(destinationPath);
-            }
-            try
-            {
-                stopwatchfilecopy.Start();
-                File.Copy(source, destinationPath + destinationName);
-                stopwatchfilecopy.Stop();
-            }
-            catch (Exception ex) { Debug.WriteLine(ex); }
-
-            return stopwatchfilecopy.ElapsedMilliseconds;
+            File.Copy(file.FullPath, destinationPath + file.Name);
         }
     }
 }
