@@ -20,8 +20,10 @@ namespace EasySaveLib.Models
         public string RelativePath { get; set; }
         public ulong Size { get; set; }
         public long Time { get; set; }
+        public string? NewName { get; set; }
+        public string? NewPath { get; set; }
 
-        
+
         [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
         public State? State { get; set; }
 

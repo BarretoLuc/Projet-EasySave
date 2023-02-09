@@ -10,9 +10,10 @@ namespace EasySaveLib.Models
 {
     public enum State 
     { 
-        Waiting, 
+        Waiting,
         Finished,
         Moved,
         Deleted,
+        Renamed,
     }
 }

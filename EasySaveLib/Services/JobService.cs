@@ -7,8 +7,10 @@ namespace EasySaveLib.Services
         public List<FileModel> GetListActionFiles(JobModel jobModel)
         {
             var filesSource = WalkIntoDirectory(jobModel.Source);
+
+            if (!jobModel.IsDifferential) return filesSource;
+
             var filesDestination = WalkIntoDirectory(jobModel.Destination);
-            var filesAction = new List<FileModel>();
 
             ComputeHash(filesSource);
             ComputeHash(filesDestination);
@@ -31,12 +33,22 @@ namespace EasySaveLib.Services
                 }
 
                 filesDestination.Remove(fileDestination);
-
+                
                 // check relative path
                 if (fileSource.RelativePath != fileDestination.RelativePath)
                 {
-                    fileSource.State = State.Moved;
-                    filesToCopy.Add(fileSource);
+                    fileDestination.State = State.Moved;
+                    fileDestination.NewPath = fileSource.RelativePath;
+                    fileDestination.NewName = fileSource.Name;
+                    filesToCopy.Add(fileDestination);
+                    continue;
+                }
+
+                if (fileSource.Name != fileDestination.Name)
+                {
+                    fileDestination.State = State.Renamed;
+                    fileDestination.NewName = fileSource.Name;
+                    filesToCopy.Add(fileDestination);
                     continue;
                 }
 
