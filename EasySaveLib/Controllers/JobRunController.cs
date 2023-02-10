@@ -19,6 +19,7 @@ namespace EasySaveLib.Controllers
         {
             CopyService = new CopyService();
             JobService = new JobService();
+            StateService = new StateService();
         }
 
         public override void init()
