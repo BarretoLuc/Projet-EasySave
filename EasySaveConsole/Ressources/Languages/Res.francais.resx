@@ -117,7 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Choose_langage" xml:space="preserve">
-    <value>Choose a langage : 1. French, 2. English</value>
+  <data name="home_showMenu_errorEnterValidOption" xml:space="preserve">
+    <value>Merci de rentrer une option valide </value>
+  </data>
+  <data name="home_showMenu_jc" xml:space="preserve">
+    <value>'jc' =&gt; Pour créer un nouveau Job</value>
+  </data>
+  <data name="home_showMenu_je" xml:space="preserve">
+    <value>'je' =&gt; Pour exécuter un Job</value>
+  </data>
+  <data name="home_showMenu_jv" xml:space="preserve">
+    <value>'je' =&gt; Pour voir tous les Job</value>
+  </data>
+  <data name="home_showMenu_quitProgram" xml:space="preserve">
+    <value>Appuyez sur 'q' pour quitter le programme </value>
+  </data>
+  <data name="home_showMenu_selectOption" xml:space="preserve">
+    <value>Merci de sélectionner l'option que vous souhaitez</value>
+  </data>
+  <data name="home_showMenu_welcome" xml:space="preserve">
+    <value>Bienvenue sur EasySave !</value>
+  </data>
+  <data name="jobCreate_newJob_enterDestPath" xml:space="preserve">
+    <value>Entrer le chemin de destination du nouveau Job</value>
+  </data>
+  <data name="jobCreate_newJob_enterName" xml:space="preserve">
+    <value>Entrer le nom du nouveau Job</value>
+  </data>
+  <data name="jobCreate_newJob_enterSourcePath" xml:space="preserve">
+    <value>Entrer le chemin de source du nouveau Job</value>
+  </data>
+  <data name="jobCreate_show_enterringJobCreationI" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de création des Job</value>
+  </data>
+  <data name="jobRun_showEnd_isRunning" xml:space="preserve">
+    <value>en cours d'exécution...</value>
+  </data>
+  <data name="jobRun_showEnd_job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="jobView_exit_exitMenu" xml:space="preserve">
+    <value>Appuyer sur n'importe quelle touche pour quitter le menu de visualisation</value>
+  </data>
+  <data name="jobView_exit_space" xml:space="preserve">
+    <value>-----------------------------------</value>
+  </data>
+  <data name="jobView_show_destPath" xml:space="preserve">
+    <value>Le chemin destination est :</value>
+  </data>
+  <data name="jobView_show_nameJob" xml:space="preserve">
+    <value>Le nom du Job est :</value>
+  </data>
+  <data name="jobView_show_sourcePath" xml:space="preserve">
+    <value>Le chemin source est :</value>
+  </data>
+  <data name="jobView_show_space" xml:space="preserve">
+    <value>-----------------------------------</value>
+  </data>
+  <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
+    <value>Choisir une langue : 1. Français, 2. Anglais</value>
+  </data>
+  <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
+    <value>Vous êtes dans l'interface de paramètres </value>
   </data>
 </root>

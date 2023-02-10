@@ -18,10 +18,10 @@ namespace EasySaveConsole.Vues
 
         public void Show(JobModel job)
         {
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Job's name : " + job.Name);
-            Console.WriteLine("Job's source path :" + job.Source);
-            Console.WriteLine("Job's destination path : " + job.Destination);
+            Console.WriteLine(Controller.GetTranslation("jobView_show_space"));
+            Console.WriteLine(Controller.GetTranslation("jobView_show_nameJob") + job.Name);
+            Console.WriteLine(Controller.GetTranslation("jobView_show_sourcePath") + job.Source);
+            Console.WriteLine(Controller.GetTranslation("jobView_show_destPath") + job.Destination);
         }
 
         public void ShowAll(List<JobModel> listjob)
@@ -34,8 +34,8 @@ namespace EasySaveConsole.Vues
 
         public void Exit()
         {
-            Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Press any key to exit the view menu.");
+            Console.WriteLine(Controller.GetTranslation("jobView_exit_space"));
+            Console.WriteLine(Controller.GetTranslation("jobView_exit_exitMenu"));
             Console.Read();
         }
 
