@@ -27,7 +27,10 @@ namespace EasySaveConsole.Vues
 
         public void ShowAll(List<JobModel> listjob)
         {
-            foreach(JobModel job in listjob)
+            Console.Clear();
+            Console.WriteLine("You have enterred the Job creation interface\n");
+            Console.WriteLine("List of jobs : \n");
+            foreach (JobModel job in listjob)
             {
                 Show(job);
             }
@@ -36,7 +39,7 @@ namespace EasySaveConsole.Vues
         public void Exit()
         {
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Press any key to exit the view menu.");
+            Console.WriteLine("\nPress any key to exit the view menu.");
             Console.Read();
         }
 
