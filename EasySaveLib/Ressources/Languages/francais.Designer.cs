@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySaveConsole.Ressources.Languages {
+namespace EasySaveLib.Ressources.Languages {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EasySaveConsole.Ressources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Res_francais {
+    internal class francais {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Res_francais() {
+        internal francais() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EasySaveConsole.Ressources.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveConsole.Ressources.Languages.Res.francais", typeof(Res_francais).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveLib.Ressources.Languages.francais", typeof(francais).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

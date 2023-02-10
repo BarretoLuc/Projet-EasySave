@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySaveConsole.Ressources.Languages {
+namespace EasySaveLib.Ressources.Languages {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EasySaveConsole.Ressources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Res_francais {
+    internal class english {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Res_francais() {
+        internal english() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EasySaveConsole.Ressources.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveConsole.Ressources.Languages.Res.francais", typeof(Res_francais).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveLib.Ressources.Languages.english", typeof(english).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Merci de rentrer une option valide .
+        ///   Recherche une chaîne localisée semblable à Please enter a valid option.
         /// </summary>
         internal static string home_showMenu_errorEnterValidOption {
             get {
@@ -70,7 +70,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;jc&apos; =&gt; Pour créer un nouveau Job.
+        ///   Recherche une chaîne localisée semblable à &apos;jc&apos; =&gt; To create a new Job.
         /// </summary>
         internal static string home_showMenu_jc {
             get {
@@ -79,7 +79,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; Pour exécuter un Job.
+        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; To execute a Job.
         /// </summary>
         internal static string home_showMenu_je {
             get {
@@ -88,7 +88,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; Pour voir tous les Job.
+        ///   Recherche une chaîne localisée semblable à &apos;jv&apos; =&gt; To see all Job.
         /// </summary>
         internal static string home_showMenu_jv {
             get {
@@ -97,7 +97,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;q&apos; pour quitter le programme .
+        ///   Recherche une chaîne localisée semblable à Press &apos;q&apos; to leave the program.
         /// </summary>
         internal static string home_showMenu_quitProgram {
             get {
@@ -106,7 +106,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Merci de sélectionner l&apos;option que vous souhaitez.
+        ///   Recherche une chaîne localisée semblable à Please select the option you want using the menu below.
         /// </summary>
         internal static string home_showMenu_selectOption {
             get {
@@ -115,7 +115,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Bienvenue sur EasySave !.
+        ///   Recherche une chaîne localisée semblable à Welcome on EasySave !.
         /// </summary>
         internal static string home_showMenu_welcome {
             get {
@@ -124,7 +124,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Entrer le chemin de destination du nouveau Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a destination path for the new Job.
         /// </summary>
         internal static string jobCreate_newJob_enterDestPath {
             get {
@@ -133,7 +133,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Entrer le nom du nouveau Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a name for the new Job.
         /// </summary>
         internal static string jobCreate_newJob_enterName {
             get {
@@ -142,7 +142,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Entrer le chemin de source du nouveau Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a source path for the new Job.
         /// </summary>
         internal static string jobCreate_newJob_enterSourcePath {
             get {
@@ -151,7 +151,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous venez d&apos;accéder au portail de création des Job.
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job creation portal.
         /// </summary>
         internal static string jobCreate_show_enterringJobCreationI {
             get {
@@ -160,7 +160,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à en cours d&apos;exécution....
+        ///   Recherche une chaîne localisée semblable à is running....
         /// </summary>
         internal static string jobRun_showEnd_isRunning {
             get {
@@ -178,7 +178,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Appuyer sur n&apos;importe quelle touche pour quitter le menu de visualisation.
+        ///   Recherche une chaîne localisée semblable à Press any key to exit the view menu..
         /// </summary>
         internal static string jobView_exit_exitMenu {
             get {
@@ -196,7 +196,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le chemin destination est :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s destionation path is :.
         /// </summary>
         internal static string jobView_show_destPath {
             get {
@@ -205,7 +205,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le nom du Job est :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s name is :.
         /// </summary>
         internal static string jobView_show_nameJob {
             get {
@@ -214,7 +214,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le chemin source est :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s source path is :.
         /// </summary>
         internal static string jobView_show_sourcePath {
             get {
@@ -232,7 +232,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Choisir une langue : 1. Français, 2. Anglais.
+        ///   Recherche une chaîne localisée semblable à Choose a langage : 1. French, 2. English.
         /// </summary>
         internal static string settings_showMenu_choiceLanguage {
             get {
@@ -241,7 +241,7 @@ namespace EasySaveConsole.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous êtes dans l&apos;interface de paramètres .
+        ///   Recherche une chaîne localisée semblable à You have enterred the Settings interface.
         /// </summary>
         internal static string settings_showMenu_welcomeMessage {
             get {
