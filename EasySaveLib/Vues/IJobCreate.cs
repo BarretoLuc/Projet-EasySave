@@ -10,8 +10,7 @@ namespace EasySaveLib.Vues
 {
     public interface IJobCreate : IAbstractView<JobCreateController>
     {
-        public void show();
-        public void newJob();
-
+        public void Show();
+        public void NewJob();
     }
 }
