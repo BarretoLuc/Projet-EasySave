@@ -106,6 +106,15 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;s&apos; =&gt; Menu settings.
+        /// </summary>
+        internal static string home_showMenu_s {
+            get {
+                return ResourceManager.GetString("home_showMenu_s", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Please select the option you want using the menu below.
         /// </summary>
         internal static string home_showMenu_selectOption {
