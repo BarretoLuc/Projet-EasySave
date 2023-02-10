@@ -16,38 +16,62 @@ namespace EasySaveConsole.Vues
         {
         }
 
-        public void show()
+        public void Show()
         {
-            Console.WriteLine("\nYou have enterred the Job creation interface\n");
-            newJob();
+            Console.Clear();
+            Console.WriteLine("You have enterred the Job creation interface");
+            NewJob();
         }
 
-        public void newJob()
+        public void NewJob()
         {
-            Console.WriteLine("To begin please enter a name :");
-            string? name = Console.ReadLine();
-            Console.WriteLine(name);
+            string? name;
+            while (true)
+            {
+                Console.WriteLine("\nTo begin please enter a name :");
+                name = Console.ReadLine();
+                if(name != null && name != "")
+                {
+                    break;
+                }
+                Console.WriteLine("Please enter a name that is not null or empty.");
+            }
 
-            Console.WriteLine("Please enter a source path :");
-            string? sourcepath = Console.ReadLine();
-            Console.WriteLine(sourcepath);
+            string? sourcepath;
+            while (true)
+            {
+                Console.WriteLine("\nPlease enter a source path :");
+                sourcepath = Console.ReadLine();
+                if (sourcepath != null && sourcepath != "")
+                {
+                    break;
+                }
+                Console.WriteLine("The source path is not valid.");
+            }
 
-            Console.WriteLine("Please enter a destination path :");
-            string? destinationpath = Console.ReadLine();
-            Console.WriteLine(destinationpath);
+            string? destinationpath;
+            while (true)
+            {
+                Console.WriteLine("\nPlease enter a destination path :");
+                destinationpath = Console.ReadLine();
+                if (destinationpath != null && destinationpath != "")
+                {
+                    break;
+                }
+                Console.WriteLine("The destination path is not valid.");
+            }
 
             bool type;
             while (true)
             {
-                Console.WriteLine("Please choose if the job should be saved in differential or in full (Enter 'd' or 'f') :");
+                Console.WriteLine("\nPlease choose if the job should be saved in differential or in full (Enter 'd' or 'f') :");
                 string? typeString = Console.ReadLine();
-                Console.WriteLine(typeString);
-                if(typeString == "d" || typeString == "f")
+                if(typeString != null && (typeString == "d" || typeString == "f"))
                 {
                     type = (typeString == "d") ? true : false;
                     break;
                 }
-                Console.WriteLine("Please enter a valid option.");
+                Console.WriteLine("This is not a valid option.");
             }
 
             if (name == null || sourcepath == null || destinationpath == null) return;

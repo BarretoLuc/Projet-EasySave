@@ -28,7 +28,7 @@ namespace EasySaveLib.Controllers
 
         public override void init()
         {
-            View.show();
+            View.Show();
         }
     }
 }

@@ -23,12 +23,18 @@ namespace EasySaveLib.Controllers
 
         public override void init()
         {
-            JobModel job = View.ChooseJob(Storage.JobList);
-            View.ShowStart(job);
-            ExecuteOneJob(job);
-            View.ShowEnd(job);
+            View.Show(Storage.JobList);
         }
-        
+
+        public void ExecuteAllJob()
+        {
+            foreach (JobModel job in Storage.JobList)
+            {
+                ExecuteOneJob(job);
+            }
+        }
+
+
         public void ExecuteOneJob(JobModel job)
         {
             job.AllFiles = JobService.GetListActionFiles(job);
