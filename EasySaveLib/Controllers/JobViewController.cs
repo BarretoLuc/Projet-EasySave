@@ -11,10 +11,7 @@ namespace EasySaveLib.Controllers
     public class JobViewController : AbstractController<IJobView, JobViewController>
     {
 
-        public JobViewController(IJobView jobView, DataStorageService StorageService) : base(jobView)
-        {
-            Storage = StorageService;
-        }
+        public JobViewController(IJobView View, DataStorageService StorageService) : base(View, StorageService) { }
 
         public override void init()
         {

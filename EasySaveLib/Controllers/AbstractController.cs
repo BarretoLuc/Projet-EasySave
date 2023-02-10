@@ -13,11 +13,11 @@ namespace EasySaveLib.Controllers
         public DataStorageService Storage { get; set; }
         public T View { get; set; }
 
-        public AbstractController(IAbstractView<CTRLERCLASS> view)
+        public AbstractController(IAbstractView<CTRLERCLASS> view, DataStorageService? StorageService = null)
         {
-            Storage = new DataStorageService();
+            Storage = StorageService ?? new DataStorageService();
             View = (T)view;
-            view.Controller = (CTRLERCLASS) this;
+            view.Controller = (CTRLERCLASS)this;
         }
 
         public abstract void init();

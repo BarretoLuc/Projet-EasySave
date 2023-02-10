@@ -14,9 +14,8 @@ namespace EasySaveLib.Controllers
         public JobService JobService { get; set; }
         public CopyService CopyService { get; set; }
 
-        public JobRunController(IJobRun jobRun, DataStorageService StorageService) : base(jobRun)
+        public JobRunController(IJobRun View, DataStorageService StorageService) : base(View, StorageService)
         {
-            Storage = StorageService;
             CopyService = new CopyService();
             JobService = new JobService();
         }

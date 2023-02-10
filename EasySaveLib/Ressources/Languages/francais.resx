@@ -132,6 +132,9 @@
   <data name="home_showMenu_quitProgram" xml:space="preserve">
     <value>Appuyez sur 'q' pour quitter le programme </value>
   </data>
+  <data name="home_showMenu_s" xml:space="preserve">
+    <value>'s' =&gt; Menu paramètre</value>
+  </data>
   <data name="home_showMenu_selectOption" xml:space="preserve">
     <value>Merci de sélectionner l'option que vous souhaitez</value>
   </data>

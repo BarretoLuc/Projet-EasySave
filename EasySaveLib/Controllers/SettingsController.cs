@@ -13,9 +13,7 @@ namespace EasySaveLib.Controllers
 {
     public class SettingsController : AbstractController<ISettings, SettingsController>
     {
-        public SettingsController(ISettings View) : base(View)
-        {
-        }
+        public SettingsController(ISettings View, DataStorageService StorageService) : base(View, StorageService) { }
 
         public override void init()
         {
