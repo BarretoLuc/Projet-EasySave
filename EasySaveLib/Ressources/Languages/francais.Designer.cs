@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EasySaveConsole.Ressources.Languages {
+namespace EasySaveLib.Ressources.Languages {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EasySaveConsole.Ressources.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveConsole.Ressources.Languages.francais", typeof(francais).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EasySaveLib.Ressources.Languages.francais", typeof(francais).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
