@@ -44,7 +44,7 @@ namespace EasySaveLib.Controllers
             foreach (FileModel file in filesToDelete) CopyService.ExecuteAction(job, file);
             // extract and execute file no delete
             List<FileModel> filesToCopy = job.AllFiles.Where(file => file.State != State.Deleted).ToList();
-            foreach (FileModel file in filesToCopy) CopyService.ExecuteAction(job, file);
+            foreach (FileModel file in filesToCopy) ThreadPool.QueueUserWorkItem((a) => { CopyService.ExecuteAction(job, file); });
         }
 
     }
