@@ -48,8 +48,14 @@ namespace EasySaveLib.Services
 
         public void LoadJob()
         {
+            if (!File.Exists(Settings.Settings.Default.dataStorageFolder + "job.json"))
+            {
+                JobList = new List<JobModel>();
+                return;
+            }
             var json = File.ReadAllText(Settings.Settings.Default.dataStorageFolder + "job.json"); 
             JobList = serializer.Deserialize<List<JobModel>>(json);
+                
         }
         public void SaveJob()
         {
