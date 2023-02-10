@@ -22,6 +22,7 @@ namespace EasySaveConsole.Vues
             Console.WriteLine("Job's name : " + job.Name);
             Console.WriteLine("Job's source path :" + job.Source);
             Console.WriteLine("Job's destination path : " + job.Destination);
+            Console.WriteLine("Job's type : " + (job.IsDifferential ? "Differential" : "Full"));
         }
 
         public void ShowAll(List<JobModel> listjob)
