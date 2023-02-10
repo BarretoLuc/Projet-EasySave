@@ -20,12 +20,12 @@ namespace EasySaveConsole.Vues
 
         public void ShowStart(JobModel JobModel)
         {
-            Console.WriteLine(Controller.GetTranslation("jobRun_showEnd_job") + JobModel.Name + Controller.GetTranslation("jobRun_showEnd_isRunning"))
+            Console.WriteLine(Controller.GetTranslation("jobRun_showEnd_job") + JobModel.Name + Controller.GetTranslation("jobRun_showEnd_isRunning"));
         }
 
         public void ShowEnd(JobModel JobModel)
         {
-            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_enterName")) + ();
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_enterName"));
         }
 
             public JobModel ChooseJob(List<JobModel> jobs)
