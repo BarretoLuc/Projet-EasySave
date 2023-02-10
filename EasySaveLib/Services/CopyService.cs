@@ -7,14 +7,16 @@ namespace EasySaveLib.Services
     {
         public JobService JobService { get; set; }
         private Stopwatch Stopwatch { get; set; }
+        private StateService StateService { get; set; }
 
         public CopyService()
         {
             JobService = new JobService();
             Stopwatch = new Stopwatch();
+            StateService = new StateService();
         }
 
-        public void ExecuteAction(JobModel job, FileModel file) 
+        public void ExecuteAction(JobModel job, FileModel file, DataStorageService Storage)
         {
             Stopwatch.Start();
             switch (file.State)
@@ -43,6 +45,7 @@ namespace EasySaveLib.Services
             file.State = State.Finished;
             // TODO à revoir pour les logs
             LogService.AddLogActionJob(job.Name, job.Source, file.FullPath, job.Destination, file.Size, (int)file.Time);
+            StateService.SaveJob(Storage.JobList);
         }
 
         private void Rename(JobModel job, FileModel file)

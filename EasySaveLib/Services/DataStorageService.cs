@@ -16,15 +16,14 @@ namespace EasySaveLib.Services
     public class DataStorageService
     {
         public List<JobModel> JobList { get; set; }
-        private SerializerService serializer;
         private ResourceManager ResourceManager { get; set; }
-        private string folderPath = Settings.Settings.Default.dataStorageFolder;
+        private StateService StateService { get; set; }
 
         public DataStorageService()
         {
             JobList = new List<JobModel>();
-            serializer = new SerializerService();
             ResourceManager = new ResourceManager("EasySaveLib.Ressources.Languages." + Settings.Settings.Default.language, Assembly.GetExecutingAssembly());
+            StateService = new StateService();
         }
 
         public void AddJobList(JobModel job) 
@@ -35,7 +34,7 @@ namespace EasySaveLib.Services
                     return;
             }
             JobList.Add(job);
-            SaveJob();
+            StateService.SaveJob(JobList);
         }
         public void RemoveJobList(JobModel job) 
         {
@@ -48,41 +47,6 @@ namespace EasySaveLib.Services
                 }
             }
             return;
-        }
-
-        public void LoadJob()
-        {
-            if (!File.Exists(Settings.Settings.Default.dataStorageFolder + "job.json"))
-            {
-                JobList = new List<JobModel>();
-                return;
-            }
-            var json = File.ReadAllText(Settings.Settings.Default.dataStorageFolder + "job.json"); 
-            JobList = serializer.Deserialize<List<JobModel>>(json);
-                
-        }
-        public void SaveJob()
-        {
-            string path = folderPath + "job.json";
-            //var file = new List<JobModel>();
-
-            //foreach (var item in JobList)
-            //    file.Add(new JobModel(item.Name, item.Source, item.Destination, item.IsDifferential));
-
-            //var json = serializer.Serialize(file);
-            var json = serializer.Serialize(JobList);
-
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
-            
-
-            using (FileStream fs = File.Open(path, FileMode.OpenOrCreate))
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(json);
-                fs.Write(bytes, 0, bytes.Length);
-                fs.Close();
-            }
-
         }
 
         public void ChangeLanguage(string language)
