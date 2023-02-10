@@ -20,6 +20,9 @@ namespace EasySaveLib.Controllers
 
         public void CreateJob(string name, string sourcepath, string destinationpath, bool type)
         {
+            if (Settings.Settings.Default.numberJob >= Storage.JobList.Count)
+                return;
+            
             var newJob = new JobModel(name, sourcepath, destinationpath, type);
             Storage.AddJobList(newJob);
         }
