@@ -41,7 +41,6 @@ namespace EasySaveLib.Services
             Stopwatch.Stop();
             file.Time = Stopwatch.ElapsedMilliseconds;
             file.State = State.Finished;
-            // TODO à revoir pour les logs
             LogService.AddLogActionJob(job.Name, job.Source, file.FullPath, job.Destination, file.Size, (int)file.Time);
         }
 
