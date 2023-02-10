@@ -22,13 +22,13 @@ namespace EasySaveConsole.Vues
         public void Show(List<JobModel> jobs)
         {
             Console.Clear();
-            Console.WriteLine("You have enterred the Job execution interface.");
-            Console.WriteLine("Enter 'q' to quit the Job execution interface.\n");
+            Console.WriteLine(Controller.GetTranslation("jobRun_show_enterringJobRun"));
+            Console.WriteLine(Controller.GetTranslation("jobRun_show_exitMenu") + "\n");
 
             string? exe;
             while (true)
             {
-                Console.WriteLine("Do you want to run all jobs sequentially ('s') or just one job ('o') ? \nPlease enter your option :");
+                Console.WriteLine(Controller.GetTranslation("jobRun_show_selectOption") + "\n" + Controller.GetTranslation("jobRun_show_requestOption"));
                 exe = Console.ReadLine();
                 switch (exe)
                 {
@@ -42,14 +42,12 @@ namespace EasySaveConsole.Vues
                     case "q":
                         return;
                     default:
-                        Console.WriteLine("\nThis is not a valid option (enter 's', 'o' or 'q')\n");
+                        Console.WriteLine("\n"+ Controller.GetTranslation("jobRun_show_errorEnterValidOption") +"\n");
                         break;
                 }
             }
         }
-
-        //FAIRE LES RETOURS DES MENUS.
-        //AFFICHER UN AVANCEMENT
+       
         public JobModel ChooseJob(List<JobModel> jobs)
         {
             Console.Clear();
@@ -60,17 +58,17 @@ namespace EasySaveConsole.Vues
             {
                 id[j] = j++;
                 Console.WriteLine("-----------------------------------");
-                Console.WriteLine("ID of job : " + j);
-                Console.WriteLine("Job's name : " + job.Name);
-                Console.WriteLine("Job's source path :" + job.Source);
-                Console.WriteLine("Job's destination path : " + job.Destination);
-                Console.WriteLine("Job's type : " + (job.IsDifferential ? "Differential" : "Full"));
+                Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_id") + j);
+                Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_name") + job.Name);
+                Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_source") + job.Source);
+                Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_dest") + job.Destination);
+                Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_type") + (job.IsDifferential ? Controller.GetTranslation("jobRun_chooseJob_typeDiff") : Controller.GetTranslation("jobRun_chooseJob_typeFull")));
             }
             Console.WriteLine("-----------------------------------");
             int idInt;
             while (true)
             {
-                Console.WriteLine("\nPlease enter the id of the job you want :");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobRun_chooseJob_requestId"));
                 string? idString = Console.ReadLine();
                 if (idString != null && idString != "")
                 {
@@ -81,9 +79,15 @@ namespace EasySaveConsole.Vues
                     }
                     catch (System.FormatException) { }
                 }
-                Console.WriteLine("\nThis is not a valid job id.");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobRun_chooseJob_errorEnterValidId"));
             }
             return jobs[idInt-1];
+        }
+        
+        public void Progress(JobModel job)
+        {
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation("jobRun_progress_jobProgress") + job.Name);
         }
     }
 }

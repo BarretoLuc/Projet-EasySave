@@ -61,7 +61,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter a valid option.
+        ///   Recherche une chaîne localisée semblable à Please enter a valid option..
         /// </summary>
         internal static string home_showMenu_errorEnterValidOption {
             get {
@@ -70,7 +70,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;jc&apos; =&gt; To create a new Job.
+        ///   Recherche une chaîne localisée semblable à &apos;jc&apos; =&gt; To create a new Job..
         /// </summary>
         internal static string home_showMenu_jc {
             get {
@@ -79,7 +79,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; To execute a Job.
+        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; To execute a Job..
         /// </summary>
         internal static string home_showMenu_je {
             get {
@@ -88,7 +88,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;jv&apos; =&gt; To see all Job.
+        ///   Recherche une chaîne localisée semblable à &apos;jv&apos; =&gt; To see all Job..
         /// </summary>
         internal static string home_showMenu_jv {
             get {
@@ -97,7 +97,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Press &apos;q&apos; to leave the program.
+        ///   Recherche une chaîne localisée semblable à Press &apos;q&apos; to leave the program..
         /// </summary>
         internal static string home_showMenu_quitProgram {
             get {
@@ -133,7 +133,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter a destination path for the new Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a destination path for the new Job : .
         /// </summary>
         internal static string jobCreate_newJob_enterDestPath {
             get {
@@ -142,7 +142,16 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter a name for the new Job.
+        ///   Recherche une chaîne localisée semblable à Please choose if the job should be saved in differential or in full (Enter &apos;d&apos; or &apos;f&apos;) : .
+        /// </summary>
+        internal static string jobCreate_newJob_enterDifferentialOrFull {
+            get {
+                return ResourceManager.GetString("jobCreate_newJob_enterDifferentialOrFull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter a name for the new Job : .
         /// </summary>
         internal static string jobCreate_newJob_enterName {
             get {
@@ -151,7 +160,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter a source path for the new Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a source path for the new Job : .
         /// </summary>
         internal static string jobCreate_newJob_enterSourcePath {
             get {
@@ -160,34 +169,205 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à You have enterred the Job creation portal.
+        ///   Recherche une chaîne localisée semblable à This is not a valid option..
         /// </summary>
-        internal static string jobCreate_show_enterringJobCreationI {
+        internal static string jobCreate_newJob_errorEnterDifferentialOrFull {
             get {
-                return ResourceManager.GetString("jobCreate_show_enterringJobCreationI", resourceCulture);
+                return ResourceManager.GetString("jobCreate_newJob_errorEnterDifferentialOrFull", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à is running....
+        ///   Recherche une chaîne localisée semblable à The destination path is not valid..
         /// </summary>
-        internal static string jobRun_showEnd_isRunning {
+        internal static string jobCreate_newJob_errorEnterValidDestPath {
             get {
-                return ResourceManager.GetString("jobRun_showEnd_isRunning", resourceCulture);
+                return ResourceManager.GetString("jobCreate_newJob_errorEnterValidDestPath", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Job.
+        ///   Recherche une chaîne localisée semblable à Please enter a name that is not null or empty..
         /// </summary>
-        internal static string jobRun_showEnd_job {
+        internal static string jobCreate_newJob_errorEnterValidName {
             get {
-                return ResourceManager.GetString("jobRun_showEnd_job", resourceCulture);
+                return ResourceManager.GetString("jobCreate_newJob_errorEnterValidName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Press any key to exit the view menu..
+        ///   Recherche une chaîne localisée semblable à The source path is not valid..
+        /// </summary>
+        internal static string jobCreate_newJob_errorEnterValidSourcePath {
+            get {
+                return ResourceManager.GetString("jobCreate_newJob_errorEnterValidSourcePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enter &apos;q&apos; to exit the job creation interface..
+        /// </summary>
+        internal static string jobCreate_newJob_exitMenu {
+            get {
+                return ResourceManager.GetString("jobCreate_newJob_exitMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job creation portal..
+        /// </summary>
+        internal static string jobCreate_newJob_menuJobCreation {
+            get {
+                return ResourceManager.GetString("jobCreate_newJob_menuJobCreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job creation portal..
+        /// </summary>
+        internal static string jobCreate_show_enterringJobCreation {
+            get {
+                return ResourceManager.GetString("jobCreate_show_enterringJobCreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job&apos;s destination path : .
+        /// </summary>
+        internal static string jobRun_chooseJob_dest {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_dest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à This is not a valid Job id..
+        /// </summary>
+        internal static string jobRun_chooseJob_errorEnterValidId {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_errorEnterValidId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ID of job : .
+        /// </summary>
+        internal static string jobRun_chooseJob_id {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job&apos;s name : .
+        /// </summary>
+        internal static string jobRun_chooseJob_name {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter the id of the job you want : .
+        /// </summary>
+        internal static string jobRun_chooseJob_requestId {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_requestId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job&apos;s source path : .
+        /// </summary>
+        internal static string jobRun_chooseJob_source {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job&apos;s type : .
+        /// </summary>
+        internal static string jobRun_chooseJob_type {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Differential.
+        /// </summary>
+        internal static string jobRun_chooseJob_typeDiff {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_typeDiff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Full.
+        /// </summary>
+        internal static string jobRun_chooseJob_typeFull {
+            get {
+                return ResourceManager.GetString("jobRun_chooseJob_typeFull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job in progress : .
+        /// </summary>
+        internal static string jobRun_progress_jobProgress {
+            get {
+                return ResourceManager.GetString("jobRun_progress_jobProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job execution portal..
+        /// </summary>
+        internal static string jobRun_show_enterringJobRun {
+            get {
+                return ResourceManager.GetString("jobRun_show_enterringJobRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à This is not a valid option (enter &apos;s&apos;, &apos;o&apos; or &apos;q&apos;).
+        /// </summary>
+        internal static string jobRun_show_errorEnterValidOption {
+            get {
+                return ResourceManager.GetString("jobRun_show_errorEnterValidOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Enter &apos;q&apos; to quit the Job execution interface..
+        /// </summary>
+        internal static string jobRun_show_exitMenu {
+            get {
+                return ResourceManager.GetString("jobRun_show_exitMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter your option : .
+        /// </summary>
+        internal static string jobRun_show_requestOption {
+            get {
+                return ResourceManager.GetString("jobRun_show_requestOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Do you want to run all jobs sequentially (&apos;s&apos;) or just one job (&apos;o&apos;) ?.
+        /// </summary>
+        internal static string jobRun_show_selectOption {
+            get {
+                return ResourceManager.GetString("jobRun_show_selectOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Press &apos;Enter&apos; to exit the view menu..
         /// </summary>
         internal static string jobView_exit_exitMenu {
             get {
@@ -196,16 +376,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à -----------------------------------.
-        /// </summary>
-        internal static string jobView_exit_space {
-            get {
-                return ResourceManager.GetString("jobView_exit_space", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à The Job&apos;s destionation path is :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s destionation path is : .
         /// </summary>
         internal static string jobView_show_destPath {
             get {
@@ -214,7 +385,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The Job&apos;s name is :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s name is : .
         /// </summary>
         internal static string jobView_show_nameJob {
             get {
@@ -223,7 +394,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The Job&apos;s source path is :.
+        ///   Recherche une chaîne localisée semblable à The Job&apos;s source path is : .
         /// </summary>
         internal static string jobView_show_sourcePath {
             get {
@@ -232,11 +403,20 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à -----------------------------------.
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job view portal..
         /// </summary>
-        internal static string jobView_show_space {
+        internal static string jobView_showAll_enterringJobView {
             get {
-                return ResourceManager.GetString("jobView_show_space", resourceCulture);
+                return ResourceManager.GetString("jobView_showAll_enterringJobView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à List of job : .
+        /// </summary>
+        internal static string jobView_showAll_listJob {
+            get {
+                return ResourceManager.GetString("jobView_showAll_listJob", resourceCulture);
             }
         }
         

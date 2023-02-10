@@ -18,14 +18,17 @@ namespace EasySaveConsole.Vues
         public void showMenu()
         {
             string a = "";
-            Console.WriteLine(Controller.GetTranslation("home_showMenu_welcome"));
             while (a != "q")
             {
+                Console.Clear();
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_welcome"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_selectOption"));
+                Console.WriteLine();
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_jc"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_je"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_jv"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_s"));
+                Console.WriteLine();
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_quitProgram"));
                 a = Console.ReadLine() ?? "";
                 switch (a)
@@ -45,10 +48,11 @@ namespace EasySaveConsole.Vues
                     case "q":
                         break;
                     default:
+                        Console.Clear();
                         Console.WriteLine(Controller.GetTranslation("home_showMenu_errorEnterValidOption"));
+                        Console.WriteLine();
                         break;
                 }
-                Console.Clear();
             }
         }
         

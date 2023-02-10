@@ -31,13 +31,13 @@ namespace EasySaveLib.Controllers
             foreach (JobModel job in Storage.JobList)
             {
                 ExecuteOneJob(job);
-                //Mettre une vue d'information de l'avancement.
             }
         }
 
 
         public void ExecuteOneJob(JobModel job)
         {
+            View.Progress(job);
             job.AllFiles = JobService.GetListActionFiles(job);
             StateService.SaveJob(Storage.JobList);
             // extract and execute file to delete

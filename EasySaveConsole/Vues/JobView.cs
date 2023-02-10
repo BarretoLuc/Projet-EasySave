@@ -18,7 +18,7 @@ namespace EasySaveConsole.Vues
 
         public void Show(JobModel job)
         {
-            Console.WriteLine(Controller.GetTranslation("jobView_show_space"));
+            Console.WriteLine("-----------------------------------");
             Console.WriteLine(Controller.GetTranslation("jobView_show_nameJob") + job.Name);
             Console.WriteLine(Controller.GetTranslation("jobView_show_sourcePath") + job.Source);
             Console.WriteLine(Controller.GetTranslation("jobView_show_destPath") + job.Destination);
@@ -27,8 +27,8 @@ namespace EasySaveConsole.Vues
         public void ShowAll(List<JobModel> listjob)
         {
             Console.Clear();
-            Console.WriteLine("You have enterred the Job creation interface\n");
-            Console.WriteLine("List of jobs : \n");
+            Console.WriteLine(Controller.GetTranslation("jobView_showAll_enterringJobView") + "\n");
+            Console.WriteLine(Controller.GetTranslation("jobView_showAll_listJob") + "\n");
             foreach (JobModel job in listjob)
             {
                 Show(job);

@@ -118,64 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="home_showMenu_errorEnterValidOption" xml:space="preserve">
-    <value>Merci de rentrer une option valide </value>
+    <value>Merci de rentrer une option valide.</value>
   </data>
   <data name="home_showMenu_jc" xml:space="preserve">
-    <value>'jc' =&gt; Pour créer un nouveau Job</value>
+    <value>'jc' =&gt; Pour créer un nouveau Job.</value>
   </data>
   <data name="home_showMenu_je" xml:space="preserve">
-    <value>'je' =&gt; Pour exécuter un Job</value>
+    <value>'je' =&gt; Pour exécuter un Job.</value>
   </data>
   <data name="home_showMenu_jv" xml:space="preserve">
-    <value>'je' =&gt; Pour voir tous les Job</value>
+    <value>'je' =&gt; Pour voir tous les Job.</value>
   </data>
   <data name="home_showMenu_quitProgram" xml:space="preserve">
-    <value>Appuyez sur 'q' pour quitter le programme </value>
+    <value>Appuyez sur 'q' pour quitter le programme.</value>
   </data>
   <data name="home_showMenu_s" xml:space="preserve">
     <value>'s' =&gt; Menu paramètre</value>
   </data>
   <data name="home_showMenu_selectOption" xml:space="preserve">
-    <value>Merci de sélectionner l'option que vous souhaitez</value>
+    <value>Merci de sélectionner l'option que vous souhaitez : </value>
   </data>
   <data name="home_showMenu_welcome" xml:space="preserve">
     <value>Bienvenue sur EasySave !</value>
   </data>
   <data name="jobCreate_newJob_enterDestPath" xml:space="preserve">
-    <value>Entrer le chemin de destination du nouveau Job</value>
+    <value>Entrer le chemin de destination du nouveau Job : </value>
+  </data>
+  <data name="jobCreate_newJob_enterDifferentialOrFull" xml:space="preserve">
+    <value>Veuillez choisir si le travail doit être sauvegardé en différentiel ou en entier (Entrez 'd' ou 'f') : </value>
   </data>
   <data name="jobCreate_newJob_enterName" xml:space="preserve">
-    <value>Entrer le nom du nouveau Job</value>
+    <value>Entrer le nom du nouveau Job : </value>
   </data>
   <data name="jobCreate_newJob_enterSourcePath" xml:space="preserve">
-    <value>Entrer le chemin de source du nouveau Job</value>
+    <value>Entrer le chemin de source du nouveau Job : </value>
   </data>
-  <data name="jobCreate_show_enterringJobCreationI" xml:space="preserve">
-    <value>Vous venez d'accéder au portail de création des Job</value>
+  <data name="jobCreate_newJob_errorEnterDifferentialOrFull" xml:space="preserve">
+    <value>L'option saisie n'est pas valide.</value>
   </data>
-  <data name="jobRun_showEnd_isRunning" xml:space="preserve">
-    <value>en cours d'exécution...</value>
+  <data name="jobCreate_newJob_errorEnterValidDestPath" xml:space="preserve">
+    <value>Le chemin de la destination n'est pas valide.</value>
   </data>
-  <data name="jobRun_showEnd_job" xml:space="preserve">
-    <value>Job</value>
+  <data name="jobCreate_newJob_errorEnterValidName" xml:space="preserve">
+    <value>Entrez un nom qui n'est pas null ou vide.</value>
+  </data>
+  <data name="jobCreate_newJob_errorEnterValidSourcePath" xml:space="preserve">
+    <value>Le chemin de la source n'est pas valide.</value>
+  </data>
+  <data name="jobCreate_newJob_exit" xml:space="preserve">
+    <value>Saisissez 'q' pour quitter l'interface de création des Job.</value>
+  </data>
+  <data name="jobCreate_newJob_menuJobCreation" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de création des Job.</value>
+  </data>
+  <data name="jobCreate_show_enterringJobCreation" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de création des Job.</value>
+  </data>
+  <data name="jobRun_chooseJob_dest" xml:space="preserve">
+    <value>Chemin destination du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_errorEnterValidId" xml:space="preserve">
+    <value>Ce n'est pas un identifiant de Job valide.</value>
+  </data>
+  <data name="jobRun_chooseJob_id" xml:space="preserve">
+    <value>ID du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_name" xml:space="preserve">
+    <value>Nom du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_requestId" xml:space="preserve">
+    <value>Veuillez entrer l'identifiant de Job que vous souhaitez : </value>
+  </data>
+  <data name="jobRun_chooseJob_source" xml:space="preserve">
+    <value>Chemin source du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_type" xml:space="preserve">
+    <value>Type du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_typeDiff" xml:space="preserve">
+    <value>Différentiel</value>
+  </data>
+  <data name="jobRun_chooseJob_typeFull" xml:space="preserve">
+    <value>Complet</value>
+  </data>
+  <data name="jobRun_progress_jobProgress" xml:space="preserve">
+    <value>Job en cours de traitement : </value>
+  </data>
+  <data name="jobRun_show_enterringJobRun" xml:space="preserve">
+    <value>Vous venez d'accéder au portail d'exécution des Job.</value>
+  </data>
+  <data name="jobRun_show_errorEnterValidOption" xml:space="preserve">
+    <value>Cette option n'est pas valide (entrez 's', 'o' ou 'q').</value>
+  </data>
+  <data name="jobRun_show_exitMenu" xml:space="preserve">
+    <value>Saisissez 'q' pour quitter l'interface d'exécution des Job.</value>
+  </data>
+  <data name="jobRun_show_requestOption" xml:space="preserve">
+    <value>Veuillez saisir votre option : </value>
+  </data>
+  <data name="jobRun_show_selectOption" xml:space="preserve">
+    <value>Voulez-vous exécuter tous les Job séquentiellement ('s') ou seulement un Job('o') ?</value>
   </data>
   <data name="jobView_exit_exitMenu" xml:space="preserve">
-    <value>Appuyer sur n'importe quelle touche pour quitter le menu de visualisation</value>
+    <value>Appuyez sur 'Enter' pour quitter le menu de visualisation.</value>
   </data>
-  <data name="jobView_exit_space" xml:space="preserve">
-    <value>-----------------------------------</value>
+  <data name="jobView_showAll_enterringJobView" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de visualisation des Jobs.</value>
+  </data>
+  <data name="jobView_showAll_listJob" xml:space="preserve">
+    <value>Liste des Job : </value>
   </data>
   <data name="jobView_show_destPath" xml:space="preserve">
-    <value>Le chemin destination est :</value>
+    <value>Le chemin destination est : </value>
   </data>
   <data name="jobView_show_nameJob" xml:space="preserve">
-    <value>Le nom du Job est :</value>
+    <value>Le nom du Job est : </value>
   </data>
   <data name="jobView_show_sourcePath" xml:space="preserve">
-    <value>Le chemin source est :</value>
-  </data>
-  <data name="jobView_show_space" xml:space="preserve">
-    <value>-----------------------------------</value>
+    <value>Le chemin source est : </value>
   </data>
   <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
     <value>Choisir une langue : 1. Français, 2. Anglais</value>

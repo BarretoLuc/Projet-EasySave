@@ -12,5 +12,6 @@ namespace EasySaveLib.Vues
     {
         public JobModel ChooseJob(List<JobModel> jobs);
         public void Show(List<JobModel> jobs);
+        public void Progress(JobModel job);
     }
 }

@@ -15,68 +15,96 @@ namespace EasySaveConsole.Vues
         {
         }
 
+        //Leave
         public void Show()
         {
             Console.Clear();
-            Console.WriteLine(Controller.GetTranslation("jobCreate_show_enterringJobCreationI"));
+            Console.WriteLine(Controller.GetTranslation("jobCreate_show_enterringJobCreation"));
             NewJob();
         }
 
         public void NewJob()
         {
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_exitMenu"));
             string? name;
             while (true)
             {
-                Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_enterName"));
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_enterName"));
                 name = Console.ReadLine();
-                if(name != null && name != "")
+                if (name == "q")
+                {
+                    return;
+                }
+                if (name != null && name != "")
                 {
                     break;
                 }
-                Console.WriteLine("Please enter a name that is not null or empty.");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_errorEnterValidName"));
             }
 
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_menuJobCreation"));
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_exitMenu"));
             string? sourcepath;
             while (true)
             {
-                Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_enterSourcePath"));
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_enterSourcePath"));
                 sourcepath = Console.ReadLine();
+                if (sourcepath == "q")
+                {
+                    return;
+                }
                 if (sourcepath != null && sourcepath != "")
                 {
                     break;
                 }
-                Console.WriteLine("The source path is not valid.");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_errorEnterValidSourcePath"));
             }
 
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_menuJobCreation"));
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_exitMenu"));
             string? destinationpath;
             while (true)
             {
-                Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_enterDestPath"));
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_enterDestPath"));
                 destinationpath = Console.ReadLine();
+                if (destinationpath == "q")
+                {
+                    return;
+                }
                 if (destinationpath != null && destinationpath != "")
                 {
                     break;
                 }
-                Console.WriteLine("The destination path is not valid.");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_errorEnterValidDestPath"));
             }
 
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_menuJobCreation"));
+            Console.WriteLine(Controller.GetTranslation("jobCreate_newJob_exitMenu"));
             bool type;
             while (true)
             {
-                Console.WriteLine("\nPlease choose if the job should be saved in differential or in full (Enter 'd' or 'f') :");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_enterDifferentialOrFull"));
                 string? typeString = Console.ReadLine();
-                if(typeString != null && (typeString == "d" || typeString == "f"))
+                if (typeString == "q")
+                {
+                    return;
+                }
+                if (typeString != null && (typeString == "d" || typeString == "f"))
                 {
                     type = (typeString == "d") ? true : false;
                     break;
                 }
-                Console.WriteLine("This is not a valid option.");
+                Console.WriteLine("\n" + Controller.GetTranslation("jobCreate_newJob_errorEnterDifferentialOrFull"));
             }
 
             if (name == null || sourcepath == null || destinationpath == null) return;
 
             Controller.CreateJob(name, sourcepath, destinationpath, type);
-        }
 
+            Console.Clear();
+        }
     }
 }
