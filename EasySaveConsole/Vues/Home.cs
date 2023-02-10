@@ -18,14 +18,14 @@ namespace EasySaveConsole.Vues
         public void showMenu()
         {
             string a = "";
-            Console.WriteLine("Welcome to EasySave");
+            Console.WriteLine(Controller.GetTranslation("home_showMenu_welcome"));
             while (a != "q")
             {
-                Console.WriteLine("Please select the option you want using the menu below");
-                Console.WriteLine("\n\n   'jc' => to create a new job");
-                Console.WriteLine("   'je' => to execute a job");
-                Console.WriteLine("   'jv' => to view all job");
-                Console.WriteLine("\n\nPress q to quit program\n");
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_selectOption"));
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_jc"));
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_je"));
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_jv"));
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_quitProgram"));
                 a = Console.ReadLine() ?? "";
                 switch (a)
                 {
@@ -41,7 +41,7 @@ namespace EasySaveConsole.Vues
                     case "q":
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid option");
+                        Console.WriteLine(Controller.GetTranslation("home_showMenu_errorEnterValidOption"));
                         break;
                 }
                 Console.Clear();

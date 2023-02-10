@@ -17,11 +17,13 @@ namespace EasySaveLib.Controllers
         {
             View = (T)view;
             view.Controller = (CTRLERCLASS) this;
-            Storage = new DataStorageService();
         }
 
         public abstract void init();
         
-       
+       public string GetTranslation(string key)
+        {
+            return Storage.GetTranslation(key);
+        }
     }
 }

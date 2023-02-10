@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using EasySaveLib.Models;
 using EasySaveLib.Settings;
+using System.Resources;
+using System.Reflection;
 
 namespace EasySaveLib.Services
 {
@@ -15,12 +17,14 @@ namespace EasySaveLib.Services
     {
         public List<JobModel> JobList { get; set; }
         private SerializerService serializer;
+        private ResourceManager ResourceManager { get; set; }
         private string folderPath = Settings.Settings.Default.dataStorageFolder;
 
         public DataStorageService()
         {
             JobList = new List<JobModel>();
             serializer = new SerializerService();
+            ResourceManager = new ResourceManager("EasySaveLib.Ressources.Languages." + Settings.Settings.Default.language, Assembly.GetExecutingAssembly());
         }
 
         public void AddJobList(JobModel job) 
@@ -79,6 +83,18 @@ namespace EasySaveLib.Services
                 fs.Close();
             }
 
+        }
+
+        public void ChangeLanguage(string language)
+        {
+            ResourceManager = new ResourceManager("EasySaveLib.Ressources.Languages." + language, Assembly.GetExecutingAssembly());
+            Settings.Settings.Default.language = language;
+            Settings.Settings.Default.Save();
+        }
+
+        public string GetTranslation(string key)
+        {
+            return ResourceManager.GetString(key) ?? throw new KeyNotFoundException();
         }
     }
 }
