@@ -6,8 +6,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Resources;
-using System.Globalization;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -15,7 +13,6 @@ namespace EasySaveLib.Controllers
 {
     public class SettingsController : AbstractController<ISettings, SettingsController>
     {
-        private ResourceManager rm;
         public SettingsController(ISettings View) : base(View)
         {
         }
@@ -24,15 +21,9 @@ namespace EasySaveLib.Controllers
         {
             View.showMenu();
         }
-        public void ChooseLangage(int choice)
+        public void ChooseLangage(string lang)
         {
-            if (choice== 1)
-            {
-                rm = new ResourceManager("EasySaveConsole.Ressources.Languages.english", Assembly.GetExecutingAssembly());
-            } else
-            {
-                rm = new ResourceManager("EasySaveConsole.Ressources.Languages.francais", Assembly.GetExecutingAssembly());
-            }
+            Storage.ChangeLanguage(lang);
         }
     }
     
