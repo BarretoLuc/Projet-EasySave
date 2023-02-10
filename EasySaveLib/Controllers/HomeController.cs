@@ -10,13 +10,7 @@ namespace EasySaveLib.Controllers
 {
     public class HomeController : AbstractController<IHome, HomeController>
     {
-        public new DataStorageService Storage { get; }
-
-        public HomeController(IHome View) : base(View)
-        {
-            Storage = new DataStorageService();
-            new LogService();
-        }
+        public HomeController(IHome View) : base(View, new DataStorageService()) { }
 
         public override void init()
         {
@@ -39,6 +33,12 @@ namespace EasySaveLib.Controllers
         {
             JobViewController jobViewController = new JobViewController(jobView, Storage);
             jobViewController.init();
+        }
+
+        public void ShowSettings(ISettings settings)
+        {
+            SettingsController settingsController = new SettingsController(settings, Storage);
+            settingsController.init();
         }
     }
 }

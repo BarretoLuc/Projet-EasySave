@@ -13,9 +13,8 @@ namespace EasySaveLib.Controllers
     {
         public JobService JobService { get; set; }
 
-        public JobCreateController(IJobCreate View,DataStorageService StorageService) : base(View)
+        public JobCreateController(IJobCreate View, DataStorageService StorageService) : base(View, StorageService)
         {
-            Storage = StorageService;
             JobService = new JobService();
         }
 
