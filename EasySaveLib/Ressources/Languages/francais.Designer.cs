@@ -88,6 +88,15 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;ju&apos; =&gt; Pour modifier un job.
+        /// </summary>
+        internal static string home_showMenu_ju {
+            get {
+                return ResourceManager.GetString("home_showMenu_ju", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; Pour voir tous les Job.
         /// </summary>
         internal static string home_showMenu_jv {

@@ -126,6 +126,9 @@
   <data name="home_showMenu_je" xml:space="preserve">
     <value>'je' =&gt; To execute a Job</value>
   </data>
+  <data name="home_showMenu_ju" xml:space="preserve">
+    <value>'ju' =&gt; To update a job</value>
+  </data>
   <data name="home_showMenu_jv" xml:space="preserve">
     <value>'jv' =&gt; To see all Job</value>
   </data>
