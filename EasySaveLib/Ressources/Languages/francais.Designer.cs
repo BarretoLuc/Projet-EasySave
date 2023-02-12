@@ -214,7 +214,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Appuyez sur une touche pour revenir au menu principale.
+        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;Entrer&apos; pour revenir au menu principale.
         /// </summary>
         internal static string jobUpdate_exit_exitMenu {
             get {

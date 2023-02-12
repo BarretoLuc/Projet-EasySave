@@ -214,7 +214,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Press any key to ger back to the main menu.
+        ///   Recherche une chaîne localisée semblable à Press &apos;Enter&apos; to get back to the main menu.
         /// </summary>
         internal static string jobUpdate_exit_exitMenu {
             get {

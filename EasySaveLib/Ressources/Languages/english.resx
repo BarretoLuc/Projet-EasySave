@@ -169,7 +169,7 @@
     <value>Please enter a number within the limit of the job list</value>
   </data>
   <data name="jobUpdate_exit_exitMenu" xml:space="preserve">
-    <value>Press any key to ger back to the main menu</value>
+    <value>Press 'Enter' to get back to the main menu</value>
   </data>
   <data name="jobUpdate_ShowAll_EnterMessage" xml:space="preserve">
     <value>You have enterred the Job update interface</value>
