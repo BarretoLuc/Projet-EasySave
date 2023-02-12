@@ -15,7 +15,6 @@ namespace EasySaveLib.Controllers
 
         public override void init()
         {
-            Storage.LoadJob();
             View.ShowAll(Storage.JobList);
             View.Exit();
         }

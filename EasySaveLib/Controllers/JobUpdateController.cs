@@ -28,7 +28,9 @@ namespace EasySaveLib.Controllers
                 View.Exit();
                 return;
             }
-            Storage.JobList[choice - 1] = View.UpdateJob(Storage.JobList[choice - 1]);
+            //Storage.JobList[choice - 1] = View.UpdateJob(Storage.JobList[choice - 1]);
+            JobModel job = View.UpdateJob(Storage.JobList[choice - 1]);
+            Storage.UpdateJobList(job, choice - 1);
             //Storage.SaveJob();
             View.Exit();
         }
