@@ -22,8 +22,14 @@ namespace EasySaveLib.Controllers
         {
             View.Show();
             View.ShowAll(Storage.JobList);
-            int choice = View.AskUpdate();
+            int choice = View.AskUpdate(Storage.JobList.Count);
+            if (choice == 0)
+            {
+                View.Exit();
+                return;
+            }
             Storage.JobList[choice - 1] = View.UpdateJob(Storage.JobList[choice - 1]);
+            //Storage.SaveJob();
             View.Exit();
         }
     }

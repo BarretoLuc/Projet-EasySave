@@ -162,6 +162,30 @@
   <data name="jobRun_showEnd_job" xml:space="preserve">
     <value>Job</value>
   </data>
+  <data name="jobUpdate_AskUpdate_WichJob" xml:space="preserve">
+    <value>What job do you want to change ?</value>
+  </data>
+  <data name="JobUpdate_ErrorMessage_Choice" xml:space="preserve">
+    <value>Please enter a number within the limit of the job list</value>
+  </data>
+  <data name="jobUpdate_exit_exitMenu" xml:space="preserve">
+    <value>Press any key to ger back to the main menu</value>
+  </data>
+  <data name="jobUpdate_ShowAll_EnterMessage" xml:space="preserve">
+    <value>You have enterred the Job update interface</value>
+  </data>
+  <data name="jobUpdate_ShowAll_ListOfJobs" xml:space="preserve">
+    <value>List of jobs : </value>
+  </data>
+  <data name="jobUpdate_showJob_destPath" xml:space="preserve">
+    <value>Job destination path = </value>
+  </data>
+  <data name="jobUpdate_showJob_nameJob" xml:space="preserve">
+    <value>Job name = </value>
+  </data>
+  <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
+    <value>Job source path = </value>
+  </data>
   <data name="jobView_exit_exitMenu" xml:space="preserve">
     <value>Press any key to exit the view menu.</value>
   </data>

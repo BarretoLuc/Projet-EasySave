@@ -13,7 +13,7 @@ namespace EasySaveLib.Vues
         public void Show();
         public void ShowAll(List<JobModel> listjob);
         public void Exit();
-        public int AskUpdate();
+        public int AskUpdate(int listJobLength);
         public JobModel UpdateJob(JobModel job);
     }
 }

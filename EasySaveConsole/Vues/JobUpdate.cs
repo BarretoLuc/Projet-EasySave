@@ -15,34 +15,42 @@ namespace EasySaveConsole.Vues
         public void Show()
         {
             Console.Clear();
-            Console.WriteLine("Test");
         }
         public void ShowJob(JobModel job)
         {
-            Console.WriteLine("jobCreate_showJob_space");
-            Console.WriteLine("jobCreate_showJob_nameJob" + job.Name);
-            Console.WriteLine("jobCreate_showJob_sourcePath" + job.Source);
-            Console.WriteLine("jobCreate_showJob_destPath" + job.Destination);
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_showJob_nameJob") + job.Name);
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_showJob_sourcePath") + job.Source);
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_showJob_destPath") + job.Destination);
             Console.WriteLine("-----------------------------------");
         }
         public void ShowAll(List<JobModel> listjob)
         {
             Console.Clear();
-            Console.WriteLine("You have enterred the Job update interface\n");
-            Console.WriteLine("List of jobs : \n");
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_ShowAll_EnterMessage") + "\n");
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_ShowAll_ListOfJobs") + "\n");
             foreach (JobModel job in listjob)
             {
                 ShowJob(job);
             }
         }
-        public int AskUpdate()
+        public int AskUpdate(int listJobLength)
         {
-            Console.WriteLine("\nQuel job veut tu modif ?\n");
-            int choice = Int32.Parse(Console.ReadLine());
-            return choice;
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_AskUpdate_WichJob"));
+            string? choice = "";
+            while(choice != "q")
+            {
+                choice = Console.ReadLine();
+                if (Int32.TryParse(choice, out int choiceInt))
+                    if(choiceInt <= listJobLength)
+                        return choiceInt;
+                if (choice != "q")
+                    Console.WriteLine(Controller.GetTranslation("JobUpdate_ErrorMessage_Choice"));
+            }
+            return 0;
         }
         public JobModel UpdateJob(JobModel job)
         {
+            Console.Clear();
             string? name;
             while (true)
             {
@@ -101,7 +109,7 @@ namespace EasySaveConsole.Vues
 
         public void Exit()
         {
-            Console.WriteLine("jobView_exit_exitMenu");
+            Console.WriteLine(Controller.GetTranslation("jobUpdate_exit_exitMenu"));
             Console.Read();
         }
     }

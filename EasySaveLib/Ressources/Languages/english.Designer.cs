@@ -196,6 +196,78 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à What job do you want to change ?.
+        /// </summary>
+        internal static string jobUpdate_AskUpdate_WichJob {
+            get {
+                return ResourceManager.GetString("jobUpdate_AskUpdate_WichJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the job list.
+        /// </summary>
+        internal static string JobUpdate_ErrorMessage_Choice {
+            get {
+                return ResourceManager.GetString("JobUpdate_ErrorMessage_Choice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Press any key to ger back to the main menu.
+        /// </summary>
+        internal static string jobUpdate_exit_exitMenu {
+            get {
+                return ResourceManager.GetString("jobUpdate_exit_exitMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job update interface.
+        /// </summary>
+        internal static string jobUpdate_ShowAll_EnterMessage {
+            get {
+                return ResourceManager.GetString("jobUpdate_ShowAll_EnterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à List of jobs : .
+        /// </summary>
+        internal static string jobUpdate_ShowAll_ListOfJobs {
+            get {
+                return ResourceManager.GetString("jobUpdate_ShowAll_ListOfJobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job destination path = .
+        /// </summary>
+        internal static string jobUpdate_showJob_destPath {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_destPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job name = .
+        /// </summary>
+        internal static string jobUpdate_showJob_nameJob {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_nameJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job source path = .
+        /// </summary>
+        internal static string jobUpdate_showJob_sourcePath {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_sourcePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Press any key to exit the view menu..
         /// </summary>
         internal static string jobView_exit_exitMenu {
