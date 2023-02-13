@@ -186,6 +186,9 @@
   <data name="jobRun_chooseJob_id" xml:space="preserve">
     <value>ID du Job : </value>
   </data>
+  <data name="jobRun_chooseJob_listJobs" xml:space="preserve">
+    <value>Liste des Jobs</value>
+  </data>
   <data name="jobRun_chooseJob_name" xml:space="preserve">
     <value>Nom du Job : </value>
   </data>
@@ -246,6 +249,21 @@
   <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
     <value>Chemin source du job = </value>
   </data>
+  <data name="jobUpdate_updateJob_choiceDiffOrFull" xml:space="preserve">
+    <value>Merci de choisir entre une sauvegarde différentielle ou complète (entrer 'd' ou 'f') :</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorDestPathUnvalid" xml:space="preserve">
+    <value>Le chemin de destination n'est pas valide.</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorInvalidOption" xml:space="preserve">
+    <value>Option non valide</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorNameNotNullOrEmpty" xml:space="preserve">
+    <value>Merci d'entrer un nom qui n'est ni nul ni vide</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorSourcePathUnvalid" xml:space="preserve">
+    <value>Le chemin de source n'est pas valide.</value>
+  </data>
   <data name="jobView_exit_exitMenu" xml:space="preserve">
     <value>Appuyez sur 'Enter' pour quitter le menu de visualisation.</value>
   </data>
@@ -266,6 +284,9 @@
   </data>
   <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
     <value>Choisir une langue : 1. Français, 2. Anglais</value>
+  </data>
+  <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
+    <value>Merci d'entrer un choix valide</value>
   </data>
   <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
     <value>Vous êtes dans l'interface de paramètres </value>

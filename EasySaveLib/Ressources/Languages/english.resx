@@ -186,6 +186,9 @@
   <data name="jobRun_chooseJob_id" xml:space="preserve">
     <value>ID of job : </value>
   </data>
+  <data name="jobRun_chooseJob_listJobs" xml:space="preserve">
+    <value>List of Jobs</value>
+  </data>
   <data name="jobRun_chooseJob_name" xml:space="preserve">
     <value>Job's name : </value>
   </data>
@@ -246,6 +249,21 @@
   <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
     <value>Job source path = </value>
   </data>
+  <data name="jobUpdate_updateJob_choiceDiffOrFull" xml:space="preserve">
+    <value>Please choose if the job should be saved in differential or in full (Enter 'd' or 'f') :</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorDestPathUnvalid" xml:space="preserve">
+    <value>The destination path is not valid.</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorInvalidOption" xml:space="preserve">
+    <value>This is not a valid option.</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorNameNotNullOrEmpty" xml:space="preserve">
+    <value>Please enter a name that is not null or empty.</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorSourcePathUnvalid" xml:space="preserve">
+    <value>The source path is not valid.</value>
+  </data>
   <data name="jobView_exit_exitMenu" xml:space="preserve">
     <value>Press 'Enter' to exit the view menu.</value>
   </data>
@@ -266,6 +284,9 @@
   </data>
   <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
     <value>Choose a langage : 1. French, 2. English</value>
+  </data>
+  <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
+    <value>Please enter a valid choice</value>
   </data>
   <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
     <value>You have enterred the Settings interface</value>

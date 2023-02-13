@@ -61,7 +61,7 @@ namespace EasySaveConsole.Vues
                     job.Name = name;
                     break;
                 }
-                Console.WriteLine("Please enter a name that is not null or empty.");
+                Console.WriteLine(Controller.GetTranslation("jobUpdate_updateJob_errorNameNotNullOrEmpty"));
             }
 
             string? sourcepath;
@@ -74,7 +74,7 @@ namespace EasySaveConsole.Vues
                     job.Source = sourcepath;
                     break;
                 }
-                Console.WriteLine("The source path is not valid.");
+                Console.WriteLine(Controller.GetTranslation("jobUpdate_updateJob_errorSourcePathUnvalid"));
             }
 
             string? destinationpath;
@@ -87,13 +87,13 @@ namespace EasySaveConsole.Vues
                     job.Destination = destinationpath;
                     break;
                 }
-                Console.WriteLine("The destination path is not valid.");
+                Console.WriteLine(Controller.GetTranslation("jobUpdate_updateJob_errorDestPathUnvalid"));
             }
 
             bool type;
             while (true)
             {
-                Console.WriteLine("\nPlease choose if the job should be saved in differential or in full (Enter 'd' or 'f') :");
+                Console.WriteLine(Controller.GetTranslation("\njobUpdate_updateJob_choiceDiffOrFull"));
                 string? typeString = Console.ReadLine();
                 if (typeString != null && (typeString == "d" || typeString == "f"))
                 {
@@ -101,7 +101,7 @@ namespace EasySaveConsole.Vues
                     job.IsDifferential = type;
                     break;
                 }
-                Console.WriteLine("This is not a valid option.");
+                Console.WriteLine(Controller.GetTranslation("jobUpdate_updateJob_errorInvalidOption"));
             }
 
             return job;
