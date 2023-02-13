@@ -88,6 +88,24 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;jr&apos; =&gt; To remove a job.
+        /// </summary>
+        internal static string home_showMenu_jr {
+            get {
+                return ResourceManager.GetString("home_showMenu_jr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;ju&apos; =&gt; To update a job.
+        /// </summary>
+        internal static string home_showMenu_ju {
+            get {
+                return ResourceManager.GetString("home_showMenu_ju", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à &apos;ju&apos; =&gt; To update a job.
         /// </summary>
         internal static string home_showMenu_ju {
@@ -237,6 +255,60 @@ namespace EasySaveLib.Ressources.Languages {
         internal static string jobCreate_show_enterringJobCreation {
             get {
                 return ResourceManager.GetString("jobCreate_show_enterringJobCreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the job list.
+        /// </summary>
+        internal static string jobRemove_chooseJob_errorChoice {
+            get {
+                return ResourceManager.GetString("jobRemove_chooseJob_errorChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à What job do you want to remove ?.
+        /// </summary>
+        internal static string jobRemove_chooseJob_WichJob {
+            get {
+                return ResourceManager.GetString("jobRemove_chooseJob_WichJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The job has been deleted !.
+        /// </summary>
+        internal static string jobRemove_endMessage_success {
+            get {
+                return ResourceManager.GetString("jobRemove_endMessage_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You don&apos;t have a job yet!.
+        /// </summary>
+        internal static string jobRemove_error_jobListEmpty {
+            get {
+                return ResourceManager.GetString("jobRemove_error_jobListEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job number :.
+        /// </summary>
+        internal static string jobRemove_showJobs_id {
+            get {
+                return ResourceManager.GetString("jobRemove_showJobs_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job remove portal..
+        /// </summary>
+        internal static string jobRemove_showJobs_title {
+            get {
+                return ResourceManager.GetString("jobRemove_showJobs_title", resourceCulture);
             }
         }
         

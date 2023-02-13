@@ -47,5 +47,11 @@ namespace EasySaveLib.Controllers
             jobUpdateController.init();
         }
 
+        public void ShowJobRemove(IJobRemove jobRemove)
+        {
+            JobRemoveController jobRemoveController = new JobRemoveController(jobRemove, Storage);
+            jobRemoveController.init();
+        }
+
     }
 }

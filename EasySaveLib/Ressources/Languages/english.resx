@@ -126,6 +126,9 @@
   <data name="home_showMenu_je" xml:space="preserve">
     <value>'je' =&gt; To execute a Job.</value>
   </data>
+  <data name="home_showMenu_jr" xml:space="preserve">
+    <value>'jr' =&gt; To remove a job</value>
+  </data>
   <data name="home_showMenu_ju" xml:space="preserve">
     <value>'ju' =&gt; To update a job</value>
   </data>
@@ -176,6 +179,24 @@
   </data>
   <data name="jobCreate_show_enterringJobCreation" xml:space="preserve">
     <value>You have enterred the Job creation portal.</value>
+  </data>
+  <data name="jobRemove_chooseJob_errorChoice" xml:space="preserve">
+    <value>Please enter a number within the limit of the job list</value>
+  </data>
+  <data name="jobRemove_chooseJob_WichJob" xml:space="preserve">
+    <value>What job do you want to remove ?</value>
+  </data>
+  <data name="jobRemove_endMessage_success" xml:space="preserve">
+    <value>The job has been deleted !</value>
+  </data>
+  <data name="jobRemove_error_jobListEmpty" xml:space="preserve">
+    <value>You don't have a job yet!</value>
+  </data>
+  <data name="jobRemove_showJobs_id" xml:space="preserve">
+    <value>Job number :</value>
+  </data>
+  <data name="jobRemove_showJobs_title" xml:space="preserve">
+    <value>You have enterred the Job remove portal.</value>
   </data>
   <data name="jobRun_chooseJob_dest" xml:space="preserve">
     <value>Job's destination path : </value>
