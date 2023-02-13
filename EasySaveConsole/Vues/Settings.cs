@@ -16,19 +16,19 @@ namespace EasySaveConsole.Vues
 
         public void showMenu()
         {
-            Console.WriteLine("\nYou have enterred the Settings interface\n");
-            Console.WriteLine("Choose a langage : 1. French, 2. English");
+            Console.WriteLine(Controller.GetTranslation("\nsettings_showMenu_welcomeMessage\n"));
+            Console.WriteLine(Controller.GetTranslation("settings_showMenu_choiceLanguage"));
 
             switch (Console.ReadLine())
             {
                 case "1":
-                    Controller.ChooseLangage("francais");
+                    Controller.ChooseLangage("Francais");
                     break;
                 case "2":
-                    Controller.ChooseLangage("english");
+                    Controller.ChooseLangage("English");
                     break;
                 default:
-                    Console.WriteLine("Please enter a valid choice");
+                    Console.WriteLine(Controller.GetTranslation("settings_showMenu_errorUnvalidChoice"));
                     break;
             }
         }
