@@ -15,5 +15,6 @@ namespace EasySaveLib.Vues
         public void Exit();
         public int AskUpdate(int listJobLength);
         public JobModel UpdateJob(JobModel job);
+        public void ShowError(string key);
     }
 }

@@ -184,16 +184,16 @@
     <value>Please enter a number within the limit of the job list</value>
   </data>
   <data name="jobRemove_chooseJob_WichJob" xml:space="preserve">
-    <value>What job do you want to remove ?</value>
+    <value>Which Job do you want to remove ?</value>
   </data>
   <data name="jobRemove_endMessage_success" xml:space="preserve">
-    <value>The job has been deleted !</value>
+    <value>The Job has been deleted !</value>
   </data>
   <data name="jobRemove_error_jobListEmpty" xml:space="preserve">
-    <value>You don't have a job yet!</value>
+    <value>You don't have a Job yet!</value>
   </data>
   <data name="jobRemove_showJobs_id" xml:space="preserve">
-    <value>Job number :</value>
+    <value>Job's number :</value>
   </data>
   <data name="jobRemove_showJobs_title" xml:space="preserve">
     <value>You have enterred the Job remove portal.</value>
@@ -205,16 +205,16 @@
     <value>This is not a valid Job id.</value>
   </data>
   <data name="jobRun_chooseJob_id" xml:space="preserve">
-    <value>ID of job : </value>
+    <value>ID of Job : </value>
   </data>
   <data name="jobRun_chooseJob_listJobs" xml:space="preserve">
-    <value>List of Jobs</value>
+    <value>List of Job</value>
   </data>
   <data name="jobRun_chooseJob_name" xml:space="preserve">
     <value>Job's name : </value>
   </data>
   <data name="jobRun_chooseJob_requestId" xml:space="preserve">
-    <value>Please enter the id of the job you want : </value>
+    <value>Please enter the id of the Job you want : </value>
   </data>
   <data name="jobRun_chooseJob_source" xml:space="preserve">
     <value>Job's source path : </value>
@@ -235,7 +235,7 @@
     <value>You have enterred the Job execution portal.</value>
   </data>
   <data name="jobRun_show_errorEnterValidOption" xml:space="preserve">
-    <value>This is not a valid option (enter 's', 'o' or 'q')</value>
+    <value>This is not a valid option (enter 's', 'o' or 'q').</value>
   </data>
   <data name="jobRun_show_exitMenu" xml:space="preserve">
     <value>Enter 'q' to quit the Job execution interface.</value>
@@ -247,10 +247,10 @@
     <value>Do you want to run all jobs sequentially ('s') or just one job ('o') ?</value>
   </data>
   <data name="jobUpdate_AskUpdate_WichJob" xml:space="preserve">
-    <value>What job do you want to change ?</value>
+    <value>What Job do you want to change ?</value>
   </data>
   <data name="JobUpdate_ErrorMessage_Choice" xml:space="preserve">
-    <value>Please enter a number within the limit of the job list</value>
+    <value>Please enter a number within the limit of the Job list</value>
   </data>
   <data name="jobUpdate_exit_exitMenu" xml:space="preserve">
     <value>Press 'Enter' to get back to the main menu</value>
@@ -259,19 +259,19 @@
     <value>You have enterred the Job update interface</value>
   </data>
   <data name="jobUpdate_ShowAll_ListOfJobs" xml:space="preserve">
-    <value>List of jobs : </value>
+    <value>List of Job : </value>
   </data>
   <data name="jobUpdate_showJob_destPath" xml:space="preserve">
-    <value>Job destination path = </value>
+    <value>Job destination path :</value>
   </data>
   <data name="jobUpdate_showJob_nameJob" xml:space="preserve">
-    <value>Job name = </value>
+    <value>Job name :</value>
   </data>
   <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
-    <value>Job source path = </value>
+    <value>Job source path :</value>
   </data>
   <data name="jobUpdate_updateJob_choiceDiffOrFull" xml:space="preserve">
-    <value>Please choose if the job should be saved in differential or in full (Enter 'd' or 'f') :</value>
+    <value>Please choose if the Job should be saved in differential or in full (Enter 'd' or 'f') :</value>
   </data>
   <data name="jobUpdate_updateJob_errorDestPathUnvalid" xml:space="preserve">
     <value>The destination path is not valid.</value>
@@ -292,7 +292,7 @@
     <value>You have enterred the Job view portal.</value>
   </data>
   <data name="jobView_showAll_listJob" xml:space="preserve">
-    <value>List of job : </value>
+    <value>List of Job : </value>
   </data>
   <data name="jobView_show_destPath" xml:space="preserve">
     <value>The Job's destionation path is : </value>

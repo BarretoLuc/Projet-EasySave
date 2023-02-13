@@ -259,7 +259,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à What job do you want to remove ?.
+        ///   Recherche une chaîne localisée semblable à Which Job do you want to remove ?.
         /// </summary>
         internal static string jobRemove_chooseJob_WichJob {
             get {
@@ -268,7 +268,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The job has been deleted !.
+        ///   Recherche une chaîne localisée semblable à The Job has been deleted !.
         /// </summary>
         internal static string jobRemove_endMessage_success {
             get {
@@ -277,7 +277,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à You don&apos;t have a job yet!.
+        ///   Recherche une chaîne localisée semblable à You don&apos;t have a Job yet!.
         /// </summary>
         internal static string jobRemove_error_jobListEmpty {
             get {
@@ -286,7 +286,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Job number :.
+        ///   Recherche une chaîne localisée semblable à Job&apos;s number :.
         /// </summary>
         internal static string jobRemove_showJobs_id {
             get {
@@ -322,7 +322,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à ID of job : .
+        ///   Recherche une chaîne localisée semblable à ID of Job : .
         /// </summary>
         internal static string jobRun_chooseJob_id {
             get {
@@ -331,7 +331,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of Jobs.
+        ///   Recherche une chaîne localisée semblable à List of Job.
         /// </summary>
         internal static string jobRun_chooseJob_listJobs {
             get {
@@ -349,7 +349,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter the id of the job you want : .
+        ///   Recherche une chaîne localisée semblable à Please enter the id of the Job you want : .
         /// </summary>
         internal static string jobRun_chooseJob_requestId {
             get {
@@ -412,7 +412,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à This is not a valid option (enter &apos;s&apos;, &apos;o&apos; or &apos;q&apos;).
+        ///   Recherche une chaîne localisée semblable à This is not a valid option (enter &apos;s&apos;, &apos;o&apos; or &apos;q&apos;)..
         /// </summary>
         internal static string jobRun_show_errorEnterValidOption {
             get {
@@ -448,7 +448,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à What job do you want to change ?.
+        ///   Recherche une chaîne localisée semblable à What Job do you want to change ?.
         /// </summary>
         internal static string jobUpdate_AskUpdate_WichJob {
             get {
@@ -457,7 +457,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the job list.
+        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the Job list.
         /// </summary>
         internal static string JobUpdate_ErrorMessage_Choice {
             get {
@@ -484,7 +484,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of jobs : .
+        ///   Recherche une chaîne localisée semblable à List of Job : .
         /// </summary>
         internal static string jobUpdate_ShowAll_ListOfJobs {
             get {
@@ -493,7 +493,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Job destination path = .
+        ///   Recherche une chaîne localisée semblable à Job destination path :.
         /// </summary>
         internal static string jobUpdate_showJob_destPath {
             get {
@@ -502,7 +502,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Job name = .
+        ///   Recherche une chaîne localisée semblable à Job name :.
         /// </summary>
         internal static string jobUpdate_showJob_nameJob {
             get {
@@ -511,7 +511,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Job source path = .
+        ///   Recherche une chaîne localisée semblable à Job source path :.
         /// </summary>
         internal static string jobUpdate_showJob_sourcePath {
             get {
@@ -520,7 +520,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please choose if the job should be saved in differential or in full (Enter &apos;d&apos; or &apos;f&apos;) :.
+        ///   Recherche une chaîne localisée semblable à Please choose if the Job should be saved in differential or in full (Enter &apos;d&apos; or &apos;f&apos;) :.
         /// </summary>
         internal static string jobUpdate_updateJob_choiceDiffOrFull {
             get {
@@ -610,7 +610,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à List of job : .
+        ///   Recherche une chaîne localisée semblable à List of Job : .
         /// </summary>
         internal static string jobView_showAll_listJob {
             get {

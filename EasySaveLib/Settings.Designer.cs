@@ -37,7 +37,7 @@ namespace EasySaveLib.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\EasySave\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("./data/")]
         public string dataStorageFolder {
             get {
                 return ((string)(this["dataStorageFolder"]));

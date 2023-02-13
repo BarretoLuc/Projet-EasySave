@@ -6,7 +6,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="dataStorageFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\EasySave\</Value>
+      <Value Profile="(Default)">./data/</Value>
     </Setting>
     <Setting Name="language" Type="System.String" Scope="User">
       <Value Profile="(Default)">english</Value>

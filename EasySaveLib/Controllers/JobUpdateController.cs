@@ -23,6 +23,12 @@ namespace EasySaveLib.Controllers
 
         public override void init()
         {
+            if (Storage.JobList.Count == 0)
+            {
+                View.ShowError("jobRemove_error_jobListEmpty");
+                View.Exit();
+                return;
+            }
             View.Show();
             View.ShowAll(Storage.JobList);
             int choice = View.AskUpdate(Storage.JobList.Count);

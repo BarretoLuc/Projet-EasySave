@@ -124,7 +124,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;s&apos; =&gt; Menu paramètre.
+        ///   Recherche une chaîne localisée semblable à &apos;s&apos; =&gt; Menu paramètres.
         /// </summary>
         internal static string home_showMenu_s {
             get {
@@ -250,7 +250,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Veuillez entrez un nombre dans la limite de la liste de job.
+        ///   Recherche une chaîne localisée semblable à Veuillez entrer un nombre dans la limite de la liste de job..
         /// </summary>
         internal static string jobRemove_chooseJob_errorChoice {
             get {
@@ -259,7 +259,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Quel job souhaitez vous supprimer ?.
+        ///   Recherche une chaîne localisée semblable à Quel job souhaitez-vous supprimer ?.
         /// </summary>
         internal static string jobRemove_chooseJob_WichJob {
             get {
@@ -304,7 +304,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Chemin destination du Job : .
+        ///   Recherche une chaîne localisée semblable à Chemin de destination du Job : .
         /// </summary>
         internal static string jobRun_chooseJob_dest {
             get {
@@ -331,7 +331,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Liste des Jobs.
+        ///   Recherche une chaîne localisée semblable à Liste des Jobs :.
         /// </summary>
         internal static string jobRun_chooseJob_listJobs {
             get {
@@ -448,7 +448,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Quel job souhaitez vous modifier ?.
+        ///   Recherche une chaîne localisée semblable à Quel job souhaitez-vous modifier ?.
         /// </summary>
         internal static string jobUpdate_AskUpdate_WichJob {
             get {
@@ -457,7 +457,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Veuillez entrez un nombre dans la limite de la liste de job.
+        ///   Recherche une chaîne localisée semblable à Veuillez entrer un nombre dans la limite de la liste de job..
         /// </summary>
         internal static string JobUpdate_ErrorMessage_Choice {
             get {
@@ -466,7 +466,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;Entrer&apos; pour revenir au menu principale.
+        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;Entrée&apos; pour revenir au menu principal.
         /// </summary>
         internal static string jobUpdate_exit_exitMenu {
             get {
@@ -475,7 +475,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous venez d&apos;entrer dans le menu de modification de job.
+        ///   Recherche une chaîne localisée semblable à Vous venez d&apos;entrer dans le menu de modification de job..
         /// </summary>
         internal static string jobUpdate_ShowAll_EnterMessage {
             get {
@@ -493,7 +493,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Chemin de destination du job = .
+        ///   Recherche une chaîne localisée semblable à Chemin de destination du job :.
         /// </summary>
         internal static string jobUpdate_showJob_destPath {
             get {
@@ -502,7 +502,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nom du job = .
+        ///   Recherche une chaîne localisée semblable à Nom du job :.
         /// </summary>
         internal static string jobUpdate_showJob_nameJob {
             get {
@@ -511,7 +511,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Chemin source du job = .
+        ///   Recherche une chaîne localisée semblable à Chemin source du job :.
         /// </summary>
         internal static string jobUpdate_showJob_sourcePath {
             get {
@@ -565,7 +565,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;Enter&apos; pour quitter le menu de visualisation..
+        ///   Recherche une chaîne localisée semblable à Appuyez sur &apos;Entrée&apos; pour quitter le menu de visualisation..
         /// </summary>
         internal static string jobView_exit_exitMenu {
             get {
