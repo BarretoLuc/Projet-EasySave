@@ -88,6 +88,24 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;jr&apos; =&gt; To remove a job.
+        /// </summary>
+        internal static string home_showMenu_jr {
+            get {
+                return ResourceManager.GetString("home_showMenu_jr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &apos;ju&apos; =&gt; To update a job.
+        /// </summary>
+        internal static string home_showMenu_ju {
+            get {
+                return ResourceManager.GetString("home_showMenu_ju", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à &apos;jv&apos; =&gt; To see all Job..
         /// </summary>
         internal static string home_showMenu_jv {
@@ -115,7 +133,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Please select the option you want using the menu below.
+        ///   Recherche une chaîne localisée semblable à Please select the option you want using the menu below : .
         /// </summary>
         internal static string home_showMenu_selectOption {
             get {
@@ -228,6 +246,42 @@ namespace EasySaveLib.Ressources.Languages {
         internal static string jobCreate_show_enterringJobCreation {
             get {
                 return ResourceManager.GetString("jobCreate_show_enterringJobCreation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the job list.
+        /// </summary>
+        internal static string jobRemove_chooseJob_errorChoice {
+            get {
+                return ResourceManager.GetString("jobRemove_chooseJob_errorChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à What job do you want to remove ?.
+        /// </summary>
+        internal static string jobRemove_chooseJob_WichJob {
+            get {
+                return ResourceManager.GetString("jobRemove_chooseJob_WichJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The job has been deleted !.
+        /// </summary>
+        internal static string jobRemove_endMessage_success {
+            get {
+                return ResourceManager.GetString("jobRemove_endMessage_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job number :.
+        /// </summary>
+        internal static string jobRemove_showJobs_id {
+            get {
+                return ResourceManager.GetString("jobRemove_showJobs_id", resourceCulture);
             }
         }
         
@@ -363,6 +417,78 @@ namespace EasySaveLib.Ressources.Languages {
         internal static string jobRun_show_selectOption {
             get {
                 return ResourceManager.GetString("jobRun_show_selectOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à What job do you want to change ?.
+        /// </summary>
+        internal static string jobUpdate_AskUpdate_WichJob {
+            get {
+                return ResourceManager.GetString("jobUpdate_AskUpdate_WichJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please enter a number within the limit of the job list.
+        /// </summary>
+        internal static string JobUpdate_ErrorMessage_Choice {
+            get {
+                return ResourceManager.GetString("JobUpdate_ErrorMessage_Choice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Press &apos;Enter&apos; to get back to the main menu.
+        /// </summary>
+        internal static string jobUpdate_exit_exitMenu {
+            get {
+                return ResourceManager.GetString("jobUpdate_exit_exitMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You have enterred the Job update interface.
+        /// </summary>
+        internal static string jobUpdate_ShowAll_EnterMessage {
+            get {
+                return ResourceManager.GetString("jobUpdate_ShowAll_EnterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à List of jobs : .
+        /// </summary>
+        internal static string jobUpdate_ShowAll_ListOfJobs {
+            get {
+                return ResourceManager.GetString("jobUpdate_ShowAll_ListOfJobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job destination path = .
+        /// </summary>
+        internal static string jobUpdate_showJob_destPath {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_destPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job name = .
+        /// </summary>
+        internal static string jobUpdate_showJob_nameJob {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_nameJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Job source path = .
+        /// </summary>
+        internal static string jobUpdate_showJob_sourcePath {
+            get {
+                return ResourceManager.GetString("jobUpdate_showJob_sourcePath", resourceCulture);
             }
         }
         

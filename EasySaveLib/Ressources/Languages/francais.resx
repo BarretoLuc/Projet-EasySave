@@ -126,6 +126,9 @@
   <data name="home_showMenu_je" xml:space="preserve">
     <value>'je' =&gt; Pour exécuter un Job.</value>
   </data>
+  <data name="home_showMenu_jr" xml:space="preserve">
+    <value>'je' =&gt; Pour supprimer un Job.</value>
+  </data>
   <data name="home_showMenu_ju" xml:space="preserve">
     <value>'ju' =&gt; Pour modifier un job</value>
   </data>
@@ -176,6 +179,18 @@
   </data>
   <data name="jobCreate_show_enterringJobCreation" xml:space="preserve">
     <value>Vous venez d'accéder au portail de création des Job.</value>
+  </data>
+  <data name="jobRemove_chooseJob_errorChoice" xml:space="preserve">
+    <value>Veuillez entrez un nombre dans la limite de la liste de job</value>
+  </data>
+  <data name="jobRemove_chooseJob_WichJob" xml:space="preserve">
+    <value>Quel job souhaitez vous supprimer ?</value>
+  </data>
+  <data name="jobRemove_endMessage_success" xml:space="preserve">
+    <value>Le job a été supprimé !</value>
+  </data>
+  <data name="jobRemove_showJobs_id" xml:space="preserve">
+    <value>Job numéro : </value>
   </data>
   <data name="jobRun_chooseJob_dest" xml:space="preserve">
     <value>Chemin destination du Job : </value>
