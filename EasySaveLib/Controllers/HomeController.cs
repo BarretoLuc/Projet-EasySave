@@ -10,7 +10,10 @@ namespace EasySaveLib.Controllers
 {
     public class HomeController : AbstractController<IHome, HomeController>
     {
-        public HomeController(IHome View) : base(View, new DataStorageService()) { }
+        public HomeController(IHome View) : base(View, new DataStorageService()) 
+        {
+            new LogService();
+        }
 
         public override void init()
         {
