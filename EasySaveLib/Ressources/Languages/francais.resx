@@ -171,7 +171,7 @@
   <data name="jobCreate_newJob_errorEnterValidSourcePath" xml:space="preserve">
     <value>Le chemin de la source n'est pas valide.</value>
   </data>
-  <data name="jobCreate_newJob_exit" xml:space="preserve">
+  <data name="jobCreate_newJob_exitMenu" xml:space="preserve">
     <value>Saisissez 'q' pour quitter l'interface de création des Job.</value>
   </data>
   <data name="jobCreate_newJob_menuJobCreation" xml:space="preserve">

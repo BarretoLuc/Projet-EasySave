@@ -225,9 +225,9 @@ namespace EasySaveLib.Ressources.Languages {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Saisissez &apos;q&apos; pour quitter l&apos;interface de création des Job..
         /// </summary>
-        internal static string jobCreate_newJob_exit {
+        internal static string jobCreate_newJob_exitMenu {
             get {
-                return ResourceManager.GetString("jobCreate_newJob_exit", resourceCulture);
+                return ResourceManager.GetString("jobCreate_newJob_exitMenu", resourceCulture);
             }
         }
         
