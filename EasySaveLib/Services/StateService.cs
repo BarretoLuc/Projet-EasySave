@@ -38,6 +38,7 @@ namespace EasySaveLib.Services
 
             using (FileStream fs = File.Open(path, FileMode.OpenOrCreate))
             {
+                fs.SetLength(0);
                 byte[] bytes = Encoding.UTF8.GetBytes(json);
                 fs.Write(bytes, 0, bytes.Length);
                 fs.Close();
