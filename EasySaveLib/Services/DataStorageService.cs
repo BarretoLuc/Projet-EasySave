@@ -26,10 +26,6 @@ namespace EasySaveLib.Services
             serializer = new SerializerService();
             ResourceManager = new ResourceManager("EasySaveLib.Ressources.Languages." + Settings.Settings.Default.language, Assembly.GetExecutingAssembly());
         }
-        public void UpdateJobList(JobModel job, int choice)
-        {
-            JobList[choice] = job;
-        }
 
         public void AddJobList(JobModel job) 
         {
