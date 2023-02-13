@@ -40,5 +40,12 @@ namespace EasySaveLib.Controllers
             SettingsController settingsController = new SettingsController(settings, Storage);
             settingsController.init();
         }
+
+        public void ShowJobUpdate(IJobUpdate jobUpdate)
+        {
+            JobUpdateController jobUpdateController = new JobUpdateController(jobUpdate, Storage);
+            jobUpdateController.init();
+        }
+
     }
 }

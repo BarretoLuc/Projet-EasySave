@@ -27,6 +27,7 @@ namespace EasySaveConsole.Vues
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_jc"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_je"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_jv"));
+                Console.WriteLine(Controller.GetTranslation("home_showMenu_ju"));
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_s"));
                 Console.WriteLine();
                 Console.WriteLine(Controller.GetTranslation("home_showMenu_quitProgram"));
@@ -41,6 +42,9 @@ namespace EasySaveConsole.Vues
                         break;
                     case "jv":
                         Controller.ShowJobViews(new JobView());
+                        break;
+                    case "ju":
+                        Controller.ShowJobUpdate(new JobUpdate());
                         break;
                     case "s":
                         Controller.ShowSettings(new Settings());
