@@ -18,6 +18,8 @@ namespace EasySaveConsole.Vues
 
         public void ShowJobs(List<JobModel> jobs)
         {
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation("jobRemove_showJobs_title") + "\n\n");
             int i = 1;
             foreach (JobModel job in jobs)
             {
@@ -46,9 +48,17 @@ namespace EasySaveConsole.Vues
             return 0;
         }
 
-        public void EndMessage()
+        public void EndMessage(bool success = false)
         {
+            if (success) Console.WriteLine(Controller.GetTranslation("jobRemove_endMessage_success"));
             Console.WriteLine(Controller.GetTranslation("jobUpdate_exit_exitMenu"));
+            Console.ReadLine();
+        }
+
+        public void ShowError(string key)
+        {
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation(key) + "\n\n");
         }
     }
 }

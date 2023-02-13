@@ -277,11 +277,29 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous n&apos;avez pas encore de Job !.
+        /// </summary>
+        internal static string jobRemove_error_jobListEmpty {
+            get {
+                return ResourceManager.GetString("jobRemove_error_jobListEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Job numéro : .
         /// </summary>
         internal static string jobRemove_showJobs_id {
             get {
                 return ResourceManager.GetString("jobRemove_showJobs_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous venez d&apos;accéder au portail de suppression des Job..
+        /// </summary>
+        internal static string jobRemove_showJobs_title {
+            get {
+                return ResourceManager.GetString("jobRemove_showJobs_title", resourceCulture);
             }
         }
         

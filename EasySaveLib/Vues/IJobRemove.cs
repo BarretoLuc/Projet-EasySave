@@ -12,6 +12,7 @@ namespace EasySaveLib.Vues
     {
         public void ShowJobs(List<JobModel> jobs);
         public int ChooseJob(int listJobLength);
-        public void EndMessage();
+        public void EndMessage(bool success = false);
+        public void ShowError(string key);
     }
 }

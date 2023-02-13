@@ -189,8 +189,14 @@
   <data name="jobRemove_endMessage_success" xml:space="preserve">
     <value>Le job a été supprimé !</value>
   </data>
+  <data name="jobRemove_error_jobListEmpty" xml:space="preserve">
+    <value>Vous n'avez pas encore de Job !</value>
+  </data>
   <data name="jobRemove_showJobs_id" xml:space="preserve">
     <value>Job numéro : </value>
+  </data>
+  <data name="jobRemove_showJobs_title" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de suppression des Job.</value>
   </data>
   <data name="jobRun_chooseJob_dest" xml:space="preserve">
     <value>Chemin destination du Job : </value>
