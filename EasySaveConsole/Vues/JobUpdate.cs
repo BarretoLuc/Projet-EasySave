@@ -115,6 +115,12 @@ namespace EasySaveConsole.Vues
             Console.WriteLine(Controller.GetTranslation("jobUpdate_exit_exitMenu"));
             Console.Read();
         }
+
+        public void ShowError(string key)
+        {
+            Console.Clear();
+            Console.WriteLine(Controller.GetTranslation(key) + "\n\n");
+        }
     }
 
 }
