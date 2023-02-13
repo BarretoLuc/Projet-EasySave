@@ -628,11 +628,65 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choose a format to modify: 1. Json, 2. Xml or &apos;q&apos; to exit the settings..
+        /// </summary>
+        internal static string settings_showMenu_choiceLogFormat {
+            get {
+                return ResourceManager.GetString("settings_showMenu_choiceLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choose what you want to change (1. Language, 2. Log Format) : .
+        /// </summary>
+        internal static string settings_showMenu_choiceSettings {
+            get {
+                return ResourceManager.GetString("settings_showMenu_choiceSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Please enter a valid choice.
         /// </summary>
         internal static string settings_showMenu_errorUnvalidChoice {
             get {
                 return ResourceManager.GetString("settings_showMenu_errorUnvalidChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Current language : .
+        /// </summary>
+        internal static string settings_showMenu_stateLanguage {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Current log format : .
+        /// </summary>
+        internal static string settings_showMenu_stateLog {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Json enabled : .
+        /// </summary>
+        internal static string settings_showMenu_stateLogJson {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLogJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Xml enabled : .
+        /// </summary>
+        internal static string settings_showMenu_stateLogXml {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLogXml", resourceCulture);
             }
         }
         
