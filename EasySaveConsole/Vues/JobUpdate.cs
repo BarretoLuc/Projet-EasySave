@@ -28,8 +28,11 @@ namespace EasySaveConsole.Vues
             Console.Clear();
             Console.WriteLine(Controller.GetTranslation("jobUpdate_ShowAll_EnterMessage") + "\n");
             Console.WriteLine(Controller.GetTranslation("jobUpdate_ShowAll_ListOfJobs") + "\n");
+            int i = 0;
             foreach (JobModel job in listjob)
             {
+                i++;
+                Console.WriteLine(i + ".");
                 ShowJob(job);
             }
         }

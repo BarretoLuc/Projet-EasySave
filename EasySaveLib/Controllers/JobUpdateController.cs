@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace EasySaveLib.Controllers
 {
@@ -30,10 +31,16 @@ namespace EasySaveLib.Controllers
                 View.Exit();
                 return;
             }
-            JobModel job = View.UpdateJob(Storage.JobList[choice - 1]);
+            UpdateJob(View.UpdateJob(Storage.JobList[choice - 1]), choice);
             Storage.UpdateJobList(job, choice - 1);
             StateService.SaveJob(Storage.JobList);
             View.Exit();
         }
+        
+        public void UpdateJob(JobModel job, int choice)
+        {
+            Storage.JobList[choice - 1] = job;     
+        }
+        
     }
 }

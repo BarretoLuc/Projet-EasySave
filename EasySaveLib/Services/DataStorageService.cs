@@ -25,10 +25,6 @@ namespace EasySaveLib.Services
             ResourceManager = new ResourceManager("EasySaveLib.Ressources.Languages." + Settings.Settings.Default.language, Assembly.GetExecutingAssembly());
             StateService = new StateService();
         }
-        public void UpdateJobList(JobModel job, int choice)
-        {
-            JobList[choice] = job;
-        }
 
         public void AddJobList(JobModel job) 
         {
