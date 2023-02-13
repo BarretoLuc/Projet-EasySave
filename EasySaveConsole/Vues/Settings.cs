@@ -16,7 +16,7 @@ namespace EasySaveConsole.Vues
 
         public void showMenu()
         {
-            Console.WriteLine(Controller.GetTranslation("\nsettings_showMenu_welcomeMessage\n"));
+            Console.WriteLine(Controller.GetTranslation("settings_showMenu_welcomeMessage"));
             Console.WriteLine(Controller.GetTranslation("settings_showMenu_choiceLanguage"));
 
             switch (Console.ReadLine())

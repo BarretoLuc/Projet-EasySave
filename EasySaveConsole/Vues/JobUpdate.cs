@@ -93,7 +93,7 @@ namespace EasySaveConsole.Vues
             bool type;
             while (true)
             {
-                Console.WriteLine(Controller.GetTranslation("\njobUpdate_updateJob_choiceDiffOrFull"));
+                Console.WriteLine(Controller.GetTranslation("jobUpdate_updateJob_choiceDiffOrFull"));
                 string? typeString = Console.ReadLine();
                 if (typeString != null && (typeString == "d" || typeString == "f"))
                 {

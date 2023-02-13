@@ -127,13 +127,13 @@
     <value>'je' =&gt; Pour exécuter un Job.</value>
   </data>
   <data name="home_showMenu_jr" xml:space="preserve">
-    <value>'je' =&gt; Pour supprimer un Job.</value>
+    <value>'jr' =&gt; Pour supprimer un Job.</value>
   </data>
   <data name="home_showMenu_ju" xml:space="preserve">
     <value>'ju' =&gt; Pour modifier un job</value>
   </data>
   <data name="home_showMenu_jv" xml:space="preserve">
-    <value>'je' =&gt; Pour voir tous les Job.</value>
+    <value>'jv' =&gt; Pour voir tous les Job.</value>
   </data>
   <data name="home_showMenu_quitProgram" xml:space="preserve">
     <value>Appuyez sur 'q' pour quitter le programme.</value>

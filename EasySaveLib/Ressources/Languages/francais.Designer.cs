@@ -88,7 +88,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; Pour supprimer un Job..
+        ///   Recherche une chaîne localisée semblable à &apos;jr&apos; =&gt; Pour supprimer un Job..
         /// </summary>
         internal static string home_showMenu_jr {
             get {
@@ -106,7 +106,7 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à &apos;je&apos; =&gt; Pour voir tous les Job..
+        ///   Recherche une chaîne localisée semblable à &apos;jv&apos; =&gt; Pour voir tous les Job..
         /// </summary>
         internal static string home_showMenu_jv {
             get {

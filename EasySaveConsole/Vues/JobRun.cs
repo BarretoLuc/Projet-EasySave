@@ -51,7 +51,7 @@ namespace EasySaveConsole.Vues
         public JobModel ChooseJob(List<JobModel> jobs)
         {
             Console.Clear();
-            Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_listJobs\n"));
+            Console.WriteLine(Controller.GetTranslation("jobRun_chooseJob_listJobs"));
             int[] id = new int[jobs.Count];
             int j = 0;
             foreach (JobModel job in jobs)
