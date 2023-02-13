@@ -139,7 +139,7 @@
     <value>Appuyez sur 'q' pour quitter le programme.</value>
   </data>
   <data name="home_showMenu_s" xml:space="preserve">
-    <value>'s' =&gt; Menu paramètre</value>
+    <value>'s' =&gt; Menu paramètres</value>
   </data>
   <data name="home_showMenu_selectOption" xml:space="preserve">
     <value>Merci de sélectionner l'option que vous souhaitez : </value>
@@ -181,10 +181,10 @@
     <value>Vous venez d'accéder au portail de création des Job.</value>
   </data>
   <data name="jobRemove_chooseJob_errorChoice" xml:space="preserve">
-    <value>Veuillez entrez un nombre dans la limite de la liste de job</value>
+    <value>Veuillez entrer un nombre dans la limite de la liste de job.</value>
   </data>
   <data name="jobRemove_chooseJob_WichJob" xml:space="preserve">
-    <value>Quel job souhaitez vous supprimer ?</value>
+    <value>Quel job souhaitez-vous supprimer ?</value>
   </data>
   <data name="jobRemove_endMessage_success" xml:space="preserve">
     <value>Le job a été supprimé !</value>
@@ -199,7 +199,7 @@
     <value>Vous venez d'accéder au portail de suppression des Job.</value>
   </data>
   <data name="jobRun_chooseJob_dest" xml:space="preserve">
-    <value>Chemin destination du Job : </value>
+    <value>Chemin de destination du Job : </value>
   </data>
   <data name="jobRun_chooseJob_errorEnterValidId" xml:space="preserve">
     <value>Ce n'est pas un identifiant de Job valide.</value>
@@ -208,7 +208,7 @@
     <value>ID du Job : </value>
   </data>
   <data name="jobRun_chooseJob_listJobs" xml:space="preserve">
-    <value>Liste des Jobs</value>
+    <value>Liste des Jobs :</value>
   </data>
   <data name="jobRun_chooseJob_name" xml:space="preserve">
     <value>Nom du Job : </value>
@@ -247,28 +247,28 @@
     <value>Voulez-vous exécuter tous les Job séquentiellement ('s') ou seulement un Job('o') ?</value>
   </data>
   <data name="jobUpdate_AskUpdate_WichJob" xml:space="preserve">
-    <value>Quel job souhaitez vous modifier ?</value>
+    <value>Quel job souhaitez-vous modifier ?</value>
   </data>
   <data name="JobUpdate_ErrorMessage_Choice" xml:space="preserve">
-    <value>Veuillez entrez un nombre dans la limite de la liste de job</value>
+    <value>Veuillez entrer un nombre dans la limite de la liste de job.</value>
   </data>
   <data name="jobUpdate_exit_exitMenu" xml:space="preserve">
-    <value>Appuyez sur 'Entrer' pour revenir au menu principale</value>
+    <value>Appuyez sur 'Entrée' pour revenir au menu principal</value>
   </data>
   <data name="jobUpdate_ShowAll_EnterMessage" xml:space="preserve">
-    <value>Vous venez d'entrer dans le menu de modification de job</value>
+    <value>Vous venez d'entrer dans le menu de modification de job.</value>
   </data>
   <data name="jobUpdate_ShowAll_ListOfJobs" xml:space="preserve">
     <value>Liste de jobs : </value>
   </data>
   <data name="jobUpdate_showJob_destPath" xml:space="preserve">
-    <value>Chemin de destination du job = </value>
+    <value>Chemin de destination du job :</value>
   </data>
   <data name="jobUpdate_showJob_nameJob" xml:space="preserve">
-    <value>Nom du job = </value>
+    <value>Nom du job :</value>
   </data>
   <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
-    <value>Chemin source du job = </value>
+    <value>Chemin source du job :</value>
   </data>
   <data name="jobUpdate_updateJob_choiceDiffOrFull" xml:space="preserve">
     <value>Merci de choisir entre une sauvegarde différentielle ou complète (entrer 'd' ou 'f') :</value>
@@ -286,7 +286,7 @@
     <value>Le chemin de source n'est pas valide.</value>
   </data>
   <data name="jobView_exit_exitMenu" xml:space="preserve">
-    <value>Appuyez sur 'Enter' pour quitter le menu de visualisation.</value>
+    <value>Appuyez sur 'Entrée' pour quitter le menu de visualisation.</value>
   </data>
   <data name="jobView_showAll_enterringJobView" xml:space="preserve">
     <value>Vous venez d'accéder au portail de visualisation des Jobs.</value>
@@ -307,9 +307,9 @@
     <value>Choisir une langue : 1. Français, 2. Anglais</value>
   </data>
   <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
-    <value>Merci d'entrer un choix valide</value>
+    <value>Merci d'entrer un choix valide.</value>
   </data>
   <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
-    <value>Vous êtes dans l'interface de paramètres </value>
+    <value>Vous êtes dans l'interface de paramètres.</value>
   </data>
 </root>
