@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EasySaveLib.Settings" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="numberJob" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="dataStorageFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./data/</Value>
+    </Setting>
+    <Setting Name="language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">english</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

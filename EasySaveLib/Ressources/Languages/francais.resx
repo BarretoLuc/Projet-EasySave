@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="home_showMenu_errorEnterValidOption" xml:space="preserve">
+    <value>Merci de rentrer une option valide.</value>
+  </data>
+  <data name="home_showMenu_jc" xml:space="preserve">
+    <value>'jc' =&gt; Pour créer un nouveau Job.</value>
+  </data>
+  <data name="home_showMenu_je" xml:space="preserve">
+    <value>'je' =&gt; Pour exécuter un Job.</value>
+  </data>
+  <data name="home_showMenu_jr" xml:space="preserve">
+    <value>'jr' =&gt; Pour supprimer un Job.</value>
+  </data>
+  <data name="home_showMenu_ju" xml:space="preserve">
+    <value>'ju' =&gt; Pour modifier un job</value>
+  </data>
+  <data name="home_showMenu_jv" xml:space="preserve">
+    <value>'jv' =&gt; Pour voir tous les Job.</value>
+  </data>
+  <data name="home_showMenu_quitProgram" xml:space="preserve">
+    <value>Appuyez sur 'q' pour quitter le programme.</value>
+  </data>
+  <data name="home_showMenu_s" xml:space="preserve">
+    <value>'s' =&gt; Menu paramètres</value>
+  </data>
+  <data name="home_showMenu_selectOption" xml:space="preserve">
+    <value>Merci de sélectionner l'option que vous souhaitez : </value>
+  </data>
+  <data name="home_showMenu_welcome" xml:space="preserve">
+    <value>Bienvenue sur EasySave !</value>
+  </data>
+  <data name="jobCreate_newJob_enterDestPath" xml:space="preserve">
+    <value>Entrer le chemin de destination du nouveau Job : </value>
+  </data>
+  <data name="jobCreate_newJob_enterDifferentialOrFull" xml:space="preserve">
+    <value>Veuillez choisir si le travail doit être sauvegardé en différentiel ou en entier (Entrez 'd' ou 'f') : </value>
+  </data>
+  <data name="jobCreate_newJob_enterName" xml:space="preserve">
+    <value>Entrer le nom du nouveau Job : </value>
+  </data>
+  <data name="jobCreate_newJob_enterSourcePath" xml:space="preserve">
+    <value>Entrer le chemin de source du nouveau Job : </value>
+  </data>
+  <data name="jobCreate_newJob_errorEnterDifferentialOrFull" xml:space="preserve">
+    <value>L'option saisie n'est pas valide.</value>
+  </data>
+  <data name="jobCreate_newJob_errorEnterValidDestPath" xml:space="preserve">
+    <value>Le chemin de la destination n'est pas valide.</value>
+  </data>
+  <data name="jobCreate_newJob_errorEnterValidName" xml:space="preserve">
+    <value>Entrez un nom qui n'est pas null ou vide.</value>
+  </data>
+  <data name="jobCreate_newJob_errorEnterValidSourcePath" xml:space="preserve">
+    <value>Le chemin de la source n'est pas valide.</value>
+  </data>
+  <data name="jobCreate_newJob_exitMenu" xml:space="preserve">
+    <value>Saisissez 'q' pour quitter l'interface de création des Job.</value>
+  </data>
+  <data name="jobCreate_newJob_menuJobCreation" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de création des Job.</value>
+  </data>
+  <data name="jobCreate_show_enterringJobCreation" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de création des Job.</value>
+  </data>
+  <data name="jobRemove_chooseJob_errorChoice" xml:space="preserve">
+    <value>Veuillez entrer un nombre dans la limite de la liste de job.</value>
+  </data>
+  <data name="jobRemove_chooseJob_WichJob" xml:space="preserve">
+    <value>Quel job souhaitez-vous supprimer ?</value>
+  </data>
+  <data name="jobRemove_endMessage_success" xml:space="preserve">
+    <value>Le job a été supprimé !</value>
+  </data>
+  <data name="jobRemove_error_jobListEmpty" xml:space="preserve">
+    <value>Vous n'avez pas encore de Job !</value>
+  </data>
+  <data name="jobRemove_showJobs_id" xml:space="preserve">
+    <value>Job numéro : </value>
+  </data>
+  <data name="jobRemove_showJobs_title" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de suppression des Job.</value>
+  </data>
+  <data name="jobRun_chooseJob_dest" xml:space="preserve">
+    <value>Chemin de destination du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_errorEnterValidId" xml:space="preserve">
+    <value>Ce n'est pas un identifiant de Job valide.</value>
+  </data>
+  <data name="jobRun_chooseJob_id" xml:space="preserve">
+    <value>ID du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_listJobs" xml:space="preserve">
+    <value>Liste des Jobs :</value>
+  </data>
+  <data name="jobRun_chooseJob_name" xml:space="preserve">
+    <value>Nom du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_requestId" xml:space="preserve">
+    <value>Veuillez entrer l'identifiant de Job que vous souhaitez : </value>
+  </data>
+  <data name="jobRun_chooseJob_source" xml:space="preserve">
+    <value>Chemin source du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_type" xml:space="preserve">
+    <value>Type du Job : </value>
+  </data>
+  <data name="jobRun_chooseJob_typeDiff" xml:space="preserve">
+    <value>Différentiel</value>
+  </data>
+  <data name="jobRun_chooseJob_typeFull" xml:space="preserve">
+    <value>Complet</value>
+  </data>
+  <data name="jobRun_progress_jobProgress" xml:space="preserve">
+    <value>Job en cours de traitement : </value>
+  </data>
+  <data name="jobRun_show_enterringJobRun" xml:space="preserve">
+    <value>Vous venez d'accéder au portail d'exécution des Job.</value>
+  </data>
+  <data name="jobRun_show_errorEnterValidOption" xml:space="preserve">
+    <value>Cette option n'est pas valide (entrez 's', 'o' ou 'q').</value>
+  </data>
+  <data name="jobRun_show_exitMenu" xml:space="preserve">
+    <value>Saisissez 'q' pour quitter l'interface d'exécution des Job.</value>
+  </data>
+  <data name="jobRun_show_requestOption" xml:space="preserve">
+    <value>Veuillez saisir votre option : </value>
+  </data>
+  <data name="jobRun_show_selectOption" xml:space="preserve">
+    <value>Voulez-vous exécuter tous les Job séquentiellement ('s') ou seulement un Job('o') ?</value>
+  </data>
+  <data name="jobUpdate_AskUpdate_WichJob" xml:space="preserve">
+    <value>Quel job souhaitez-vous modifier ?</value>
+  </data>
+  <data name="JobUpdate_ErrorMessage_Choice" xml:space="preserve">
+    <value>Veuillez entrer un nombre dans la limite de la liste de job.</value>
+  </data>
+  <data name="jobUpdate_exit_exitMenu" xml:space="preserve">
+    <value>Appuyez sur 'Entrée' pour revenir au menu principal</value>
+  </data>
+  <data name="jobUpdate_ShowAll_EnterMessage" xml:space="preserve">
+    <value>Vous venez d'entrer dans le menu de modification de job.</value>
+  </data>
+  <data name="jobUpdate_ShowAll_ListOfJobs" xml:space="preserve">
+    <value>Liste de jobs : </value>
+  </data>
+  <data name="jobUpdate_showJob_destPath" xml:space="preserve">
+    <value>Chemin de destination du job :</value>
+  </data>
+  <data name="jobUpdate_showJob_nameJob" xml:space="preserve">
+    <value>Nom du job :</value>
+  </data>
+  <data name="jobUpdate_showJob_sourcePath" xml:space="preserve">
+    <value>Chemin source du job :</value>
+  </data>
+  <data name="jobUpdate_updateJob_choiceDiffOrFull" xml:space="preserve">
+    <value>Merci de choisir entre une sauvegarde différentielle ou complète (entrer 'd' ou 'f') :</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorDestPathUnvalid" xml:space="preserve">
+    <value>Le chemin de destination n'est pas valide.</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorInvalidOption" xml:space="preserve">
+    <value>Option non valide</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorNameNotNullOrEmpty" xml:space="preserve">
+    <value>Merci d'entrer un nom qui n'est ni nul ni vide</value>
+  </data>
+  <data name="jobUpdate_updateJob_errorSourcePathUnvalid" xml:space="preserve">
+    <value>Le chemin de source n'est pas valide.</value>
+  </data>
+  <data name="jobView_exit_exitMenu" xml:space="preserve">
+    <value>Appuyez sur 'Entrée' pour quitter le menu de visualisation.</value>
+  </data>
+  <data name="jobView_showAll_enterringJobView" xml:space="preserve">
+    <value>Vous venez d'accéder au portail de visualisation des Jobs.</value>
+  </data>
+  <data name="jobView_showAll_listJob" xml:space="preserve">
+    <value>Liste des Job : </value>
+  </data>
+  <data name="jobView_show_destPath" xml:space="preserve">
+    <value>Le chemin destination est : </value>
+  </data>
+  <data name="jobView_show_nameJob" xml:space="preserve">
+    <value>Le nom du Job est : </value>
+  </data>
+  <data name="jobView_show_sourcePath" xml:space="preserve">
+    <value>Le chemin source est : </value>
+  </data>
+  <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
+    <value>Choisir une langue : 1. Français, 2. Anglais</value>
+  </data>
+  <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
+    <value>Merci d'entrer un choix valide.</value>
+  </data>
+  <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
+    <value>Vous êtes dans l'interface de paramètres.</value>
+  </data>
+</root>
