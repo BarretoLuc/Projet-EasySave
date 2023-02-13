@@ -628,7 +628,25 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Merci d&apos;entrer un choix valide..
+        ///   Recherche une chaîne localisée semblable à Choisir un format à modifier : 1. Json, 2. Xml ou &apos;q&apos; pour sortir des paramètres..
+        /// </summary>
+        internal static string settings_showMenu_choiceLogFormat {
+            get {
+                return ResourceManager.GetString("settings_showMenu_choiceLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choisissez ce que vous voulez modifier (1. Langage, 2. Format des Logs) :.
+        /// </summary>
+        internal static string settings_showMenu_choiceSettings {
+            get {
+                return ResourceManager.GetString("settings_showMenu_choiceSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Merci d&apos;entrer un choix valide.
         /// </summary>
         internal static string settings_showMenu_errorUnvalidChoice {
             get {
@@ -637,7 +655,43 @@ namespace EasySaveLib.Ressources.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous êtes dans l&apos;interface de paramètres..
+        ///   Recherche une chaîne localisée semblable à Langue actuelle : .
+        /// </summary>
+        internal static string settings_showMenu_stateLanguage {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Format des logs actuel : .
+        /// </summary>
+        internal static string settings_showMenu_stateLog {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Json activé : .
+        /// </summary>
+        internal static string settings_showMenu_stateLogJson {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLogJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Xml activé : .
+        /// </summary>
+        internal static string settings_showMenu_stateLogXml {
+            get {
+                return ResourceManager.GetString("settings_showMenu_stateLogXml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous êtes dans l&apos;interface de paramètres .
         /// </summary>
         internal static string settings_showMenu_welcomeMessage {
             get {

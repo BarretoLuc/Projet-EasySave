@@ -58,5 +58,29 @@ namespace EasySaveLib.Settings {
                 this["language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool logJson {
+            get {
+                return ((bool)(this["logJson"]));
+            }
+            set {
+                this["logJson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool logXml {
+            get {
+                return ((bool)(this["logXml"]));
+            }
+            set {
+                this["logXml"] = value;
+            }
+        }
     }
 }

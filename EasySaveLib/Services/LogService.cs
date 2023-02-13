@@ -1,5 +1,6 @@
 ﻿using Serilog;
 using Serilog.Formatting.Compact;
+using Serilog.Formatting.Log4Net;
 using Serilog.Events;
 
 namespace EasySaveLib.Services
@@ -8,7 +9,7 @@ namespace EasySaveLib.Services
     {
         public LogService()
         {
-            IniLogger();
+            LogActualisation();
         }
 
         ~LogService()
@@ -16,14 +17,32 @@ namespace EasySaveLib.Services
             Log.CloseAndFlush();
         }
 
-        /// <summary>
-        ///     Initialize the logger.
-        /// </summary>
-        private void IniLogger()
+        public void LogActualisation()
+        {
+            Log.CloseAndFlush();
+            if (Settings.Settings.Default.logJson)
+            {
+                IniLoggerJson();
+            }
+            if (Settings.Settings.Default.logXml)
+            {
+                IniLoggerXml();
+            }
+        }
+
+        private void IniLoggerJson()
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .WriteTo.File(new CompactJsonFormatter(), Settings.Settings.Default.dataStorageFolder + "Logs/information.json", restrictedToMinimumLevel: LogEventLevel.Information,fileSizeLimitBytes: 20000, rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                .WriteTo.File(new CompactJsonFormatter(), Settings.Settings.Default.dataStorageFolder + "Logs/log.json", restrictedToMinimumLevel: LogEventLevel.Information,fileSizeLimitBytes: 20000, rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                .CreateLogger();
+        }
+
+        private void IniLoggerXml()
+        {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(new Log4NetTextFormatter(), Settings.Settings.Default.dataStorageFolder + "Logs/log.xml", restrictedToMinimumLevel: LogEventLevel.Information, fileSizeLimitBytes: 20000, rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
                 .CreateLogger();
         }
 

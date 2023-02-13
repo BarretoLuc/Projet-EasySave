@@ -306,8 +306,26 @@
   <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
     <value>Choisir une langue : 1. Français, 2. Anglais</value>
   </data>
+  <data name="settings_showMenu_choiceLogFormat" xml:space="preserve">
+    <value>Choisir un format à modifier : 1. Json, 2. Xml ou 'q' pour sortir des paramètres.</value>
+  </data>
+  <data name="settings_showMenu_choiceSettings" xml:space="preserve">
+    <value>Choisissez ce que vous voulez modifier (1. Langage, 2. Format des Logs) :</value>
+  </data>
   <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
     <value>Merci d'entrer un choix valide.</value>
+  </data>
+  <data name="settings_showMenu_stateLanguage" xml:space="preserve">
+    <value>Langue actuelle : </value>
+  </data>
+  <data name="settings_showMenu_stateLog" xml:space="preserve">
+    <value>Format des logs actuel : </value>
+  </data>
+  <data name="settings_showMenu_stateLogJson" xml:space="preserve">
+    <value>Json activé : </value>
+  </data>
+  <data name="settings_showMenu_stateLogXml" xml:space="preserve">
+    <value>Xml activé : </value>
   </data>
   <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
     <value>Vous êtes dans l'interface de paramètres.</value>

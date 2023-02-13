@@ -306,8 +306,26 @@
   <data name="settings_showMenu_choiceLanguage" xml:space="preserve">
     <value>Choose a langage : 1. French, 2. English</value>
   </data>
+  <data name="settings_showMenu_choiceLogFormat" xml:space="preserve">
+    <value>Choose a format to modify: 1. Json, 2. Xml or 'q' to exit the settings.</value>
+  </data>
+  <data name="settings_showMenu_choiceSettings" xml:space="preserve">
+    <value>Choose what you want to change (1. Language, 2. Log Format) : </value>
+  </data>
   <data name="settings_showMenu_errorUnvalidChoice" xml:space="preserve">
     <value>Please enter a valid choice</value>
+  </data>
+  <data name="settings_showMenu_stateLanguage" xml:space="preserve">
+    <value>Current language : </value>
+  </data>
+  <data name="settings_showMenu_stateLog" xml:space="preserve">
+    <value>Current log format : </value>
+  </data>
+  <data name="settings_showMenu_stateLogJson" xml:space="preserve">
+    <value>Json enabled : </value>
+  </data>
+  <data name="settings_showMenu_stateLogXml" xml:space="preserve">
+    <value>Xml enabled : </value>
   </data>
   <data name="settings_showMenu_welcomeMessage" xml:space="preserve">
     <value>You have enterred the Settings interface</value>

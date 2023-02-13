@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Reflection;
+using Serilog;
 
 namespace EasySaveLib.Controllers
 {
@@ -23,7 +24,35 @@ namespace EasySaveLib.Controllers
         {
             Storage.ChangeLanguage(lang);
         }
+        
+        public void ChooseLogJson()
+        {
+            LogService log = new LogService();
+            if (Settings.Settings.Default.logJson)
+            {
+                Settings.Settings.Default.logJson = false;
+            }
+            else
+            {
+                Settings.Settings.Default.logJson = true;
+            }
+            Settings.Settings.Default.Save();
+            log.LogActualisation();
+        }
+        public void ChooseLogXml()
+        {
+            LogService log = new LogService();
+            if (Settings.Settings.Default.logXml)
+            {
+                Settings.Settings.Default.logXml = false;
+            }
+            else
+            {
+                Settings.Settings.Default.logXml = true;
+            }
+            Settings.Settings.Default.Save();
+            log.LogActualisation();
+        }
     }
-    
 }
 
