@@ -22,7 +22,8 @@ namespace EasySaveLib.Services
             switch (file.State)
             {
                 case State.Waiting:
-                    Copy(job, file);
+                    if (job.IsEncrypted) CopyEncrypt(job, file);
+                    else Copy(job, file);
                     break;
                 case State.Moved:
                     Moove(job, file);
@@ -35,7 +36,8 @@ namespace EasySaveLib.Services
                     break;
                 case State.Finished:
                     if (job.IsDifferential) break;
-                    Copy(job, file);
+                    if (job.IsEncrypted) CopyEncrypt(job, file);
+                    else Copy(job, file);
                     break;
                 default:
                     break;
@@ -68,6 +70,19 @@ namespace EasySaveLib.Services
             string destinationPath = file.Path.Replace(job.Source, job.Destination);
             if (!Directory.Exists(destinationPath)) Directory.CreateDirectory(destinationPath);
             File.Copy(file.FullPath, destinationPath + file.Name);
+        }
+
+        private void CopyEncrypt(JobModel job, FileModel file)
+        {
+            string destinationPath = file.Path.Replace(job.Source, job.Destination);
+            if (!Directory.Exists(destinationPath)) Directory.CreateDirectory(destinationPath);
+            Process process = new Process();
+            process.StartInfo.FileName = Settings.Settings.Default.pathCryptoSoft;
+            Console.WriteLine(file.FullPath + " " + destinationPath + file.Name + ".xor" + " pass");
+            process.StartInfo.Arguments = file.FullPath + " " + destinationPath + file.Name + ".xor" + " pass";
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process.Start();
+            process.WaitForExit();
         }
     }
 }

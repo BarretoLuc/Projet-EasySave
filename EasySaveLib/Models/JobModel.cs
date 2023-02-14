@@ -11,7 +11,7 @@ namespace EasySaveLib.Models
         public string Name { get; set; }
         public string Source { get; set; }
         public string Destination { get; set; }
-        public bool? IsEncrypted { get; set; }
+        public bool IsEncrypted { get; set; }
         public bool IsDifferential { get; set; }
         public List<FileModel>? AllFiles { get; set; }
 
@@ -20,13 +20,15 @@ namespace EasySaveLib.Models
             string name,
             string source,
             string destination,
-            bool IsDifferential = false
+            bool IsDifferential = false,
+            bool IsEncrypted = false
         )
         {
             Name = name;
             Source = source;
             Destination = destination;
             this.IsDifferential = IsDifferential;
+            this.IsEncrypted = IsEncrypted;
         }
 
         public void ConvertPath()
