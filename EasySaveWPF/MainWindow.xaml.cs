@@ -84,5 +84,12 @@ namespace EasySaveWPF
             Controller.ShowJobUpdate(view);
             Main.Content = view;
         }
+
+        private void ButtonAccessSettingsForm_Click(object sender, RoutedEventArgs e)
+        {
+            var SettingsForm = new SettingsWindow();
+            SettingsForm.Show();
+            this.Close();
+        }
     }
 }
