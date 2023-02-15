@@ -85,5 +85,12 @@ namespace EasySaveWPF
         {
             Main.Content = new JobUpdatePage();
         }
+
+        private void ButtonAccessSettingsForm_Click(object sender, RoutedEventArgs e)
+        {
+            var SettingsForm = new SettingsWindow();
+            SettingsForm.Show();
+            this.Close();
+        }
     }
 }

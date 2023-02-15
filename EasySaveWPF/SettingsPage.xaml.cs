@@ -30,5 +30,28 @@ namespace EasySaveWPF
         public void showMenu()
         {
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int numberJobs = 0;
+            string savePath = "";
+            string dataStorageFolder = "";
+            string language = "";
+            bool json = (bool)cbLogJson.IsChecked;
+            bool xml = (bool)cbLogJson.IsChecked;
+            string pathCryptoSoft = "";
+
+            if (Int32.TryParse(tbNumberJob.Text, out int tbNumberJobInt))
+                numberJobs = tbNumberJobInt;
+            if (tbSavePath.Text != null)
+                savePath = tbSavePath.Text;
+            if (tbDataStorageFolder.Text != null)
+                dataStorageFolder = tbDataStorageFolder.Text;
+            if (language != null)
+                dropBoxLanguage.Text = language;
+            if (tbCryptoPath.Text != null)
+                pathCryptoSoft = tbCryptoPath.Text;
+
+            Controller.ChangeSettings(numberJobs, dataStorageFolder, savePath, language, json, xml, pathCryptoSoft);
+        }
     }
 }
