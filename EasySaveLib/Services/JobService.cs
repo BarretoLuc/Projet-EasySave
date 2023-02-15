@@ -6,19 +6,26 @@ namespace EasySaveLib.Services
     {
         public List<FileModel> GetListActionFiles(JobModel jobModel)
         {
-            var filesSource = WalkIntoDirectory(jobModel.Source);
+            List<FileModel> filesSource = WalkIntoDirectory(jobModel.Source);
 
-            if (!jobModel.IsDifferential) return filesSource;
-
-            var filesDestination = WalkIntoDirectory(jobModel.Destination);
+            //if (!jobModel.IsDifferential) return filesSource;
 
             ComputeHash(filesSource);
-            ComputeHash(filesDestination);
-            
-            return GetFilesToCopy(filesSource, filesDestination);
+
+            List<FileModel> filesDestination;
+            if (jobModel.AllFiles?.Count == 0)
+            {
+                filesDestination = WalkIntoDirectory(jobModel.Destination);
+                ComputeHash(filesDestination);
+            } else
+            {
+                filesDestination = jobModel.AllFiles.Where(file => file.State != State.Deleted).ToList();
+            }
+
+            return GetFilesToCopy(filesSource, filesDestination, jobModel);
         }
 
-        private List<FileModel> GetFilesToCopy(List<FileModel> filesSource, List<FileModel> filesDestination)
+        private List<FileModel> GetFilesToCopy(List<FileModel> filesSource, List<FileModel> filesDestination, JobModel jobModel)
         {
             var filesToCopy = new List<FileModel>();
             foreach (var fileSource in filesSource)
@@ -60,6 +67,11 @@ namespace EasySaveLib.Services
             foreach (var fileDestination in filesDestination)
             {
                 fileDestination.State = State.Deleted;
+                if (jobModel.IsEncrypted)
+                {
+                    fileDestination.Path = fileDestination.Path.Replace(jobModel.Source, jobModel.Destination);
+                    if (!fileDestination.Name.Contains(".xor")) fileDestination.Name += ".xor";
+                }
                 filesToCopy.Add(fileDestination);
             }
 
