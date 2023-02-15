@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasySaveConsole.Vues
+namespace EasySaveWPF
 {
     internal class AbstractViewImpl<T> : IAbstractView<T>
     {
@@ -13,6 +13,6 @@ namespace EasySaveConsole.Vues
         {
         }
 
-        public T Controller { get ; set ; }
+        public T Controller { get; set; }
     }
 }
