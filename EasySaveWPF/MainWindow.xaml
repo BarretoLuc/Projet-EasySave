@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasySaveWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="EasySave" Height="460" Width="820">
     <Grid>
-
+        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button Content="View job" MinWidth="100" Click="JobViewClick"/>
+            <Button Content="Create job" MinWidth="100" Margin="10,0,0,0" Click="JobCreateClick"/>
+            <Button Content="Run job" MinWidth="100" Margin="10,0,0,0" Click="JobRunClick"/>
+            <Button Content="Update job" MinWidth="100" Margin="10,0,0,0" Click="JobUpdateClick"/>
+            <Button Content="Remove job" MinWidth="100" Margin="10,0,0,0" Click="JobRemoveClick"/>
+            <Button Content="Settings" MinWidth="100" Margin="10,0,0,0" Click="SettingsClick"/>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

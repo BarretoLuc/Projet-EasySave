@@ -12,17 +12,78 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasySaveLib.Controllers;
+using EasySaveLib.Vues;
+using EasySaveLib.Models;
+using System.Threading;
 
 namespace EasySaveWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
     {
+        public HomeController Controller { get; set; }
         public MainWindow()
+        {   
+        }
+        public void showMenu()
         {
             InitializeComponent();
+            InitializeData();
+        }
+        private void InitializeData()
+        {
+
+        }
+        public void Exit()
+        {
+           
+        }
+
+        public void Show(JobModel job)
+        {
+            
+        }
+
+        public void ShowAll(List<JobModel> listjob)
+        {
+            //dgJob.ItemsSource = listjob;
+            foreach (JobModel job in listjob)
+            {
+                Show(job);
+            }
+        }
+
+        private void JobViewClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new JobViewPage();
+        }
+        
+        private void JobCreateClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new JobCreatePage();
+        }
+
+        private void JobRemoveClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new JobRemovePage();
+        }
+        
+        private void SettingsClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SettingsPage();
+        }
+
+        private void JobRunClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new JobRunPage();
+        }
+
+        private void JobUpdateClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new JobUpdatePage();
         }
     }
 }
