@@ -4,21 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveWPF"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Job view">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="Job view" Height="400">
 
-    <Grid>
-        <ProgressBar HorizontalAlignment="Center" Height="20" Margin="0,44,0,0" VerticalAlignment="Top" Width="780"/>
-        <ProgressBar HorizontalAlignment="Center" Height="20" Margin="0,84,0,0" VerticalAlignment="Top" Width="780"/>
-        <Label Content="Source path" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Height="20" Width="720" FontSize="8" Background="Transparent"/>
-        <Label Content="Total: x GB of x GB" HorizontalAlignment="Left" Margin="20,64,0,0" VerticalAlignment="Top" Height="20" Width="720" FontSize="8" Background="Transparent"/>
-        <Label Content="x of x" HorizontalAlignment="Left" Margin="740,24,0,0" VerticalAlignment="Top" Height="20" Width="60" FontSize="8" Background="Transparent"/>
-        <Label Content="Time left : x s" HorizontalAlignment="Left" Margin="740,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,-2.117" Height="20" Width="60" FontSize="8" Background="Transparent"/>
-        <Button Content="Create job" HorizontalAlignment="Left" Margin="720,404,0,0" VerticalAlignment="Top"/>
-        <Button Content="Delete job" HorizontalAlignment="Left" Margin="637,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.769,4.511"/>
-        <Button Content="Edit job" HorizontalAlignment="Left" Margin="571,404,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="dgJob"  d:ItemsSource="{d:SampleData ItemCount=4}" Margin="20,144,420,80" AutoGenerateColumns="False">
+    <Grid Margin="0,0,0,-20">
+        <DataGrid Name="dgJob"  d:ItemsSource="{d:SampleData ItemCount=4}" Margin="20,50,20,260" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"/>
                 <DataGridTextColumn Header="Source path"/>
@@ -26,9 +16,9 @@
                 <DataGridTextColumn Header="Type"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="420,124,20,60"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Margin="20,404,0,0" VerticalAlignment="Top"/>
-        <Label Content="List of job :" HorizontalAlignment="Left" Margin="20,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.447,0.194" Height="20" FontSize="8" Width="60"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,200,20,40"/>
+        <Label Content="List of job :" Margin="20,21,650,370" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
+        <Label Content="List of file :" Margin="20,171,650,220" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
 
     </Grid>
 </Page>

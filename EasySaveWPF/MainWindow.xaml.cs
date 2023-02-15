@@ -25,42 +25,23 @@ namespace EasySaveWPF
     public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
     {
         public HomeController Controller { get; set; }
+        
         public MainWindow()
-        {   
+        {
         }
+        
         public void showMenu()
         {
             InitializeComponent();
-            InitializeData();
-        }
-        private void InitializeData()
-        {
-
-        }
-        public void Exit()
-        {
-           
-        }
-
-        public void Show(JobModel job)
-        {
-            
-        }
-
-        public void ShowAll(List<JobModel> listjob)
-        {
-            //dgJob.ItemsSource = listjob;
-            foreach (JobModel job in listjob)
-            {
-                Show(job);
-            }
         }
 
         private void JobViewClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new JobViewPage();
+            JobViewPage view = new JobViewPage();
+            Controller.ShowJobViews(view);
+            Main.Content = view;
         }
-        
+
         private void JobCreateClick(object sender, RoutedEventArgs e)
         {
             Main.Content = new JobCreatePage();

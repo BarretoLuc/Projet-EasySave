@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasySaveWPF"
         mc:Ignorable="d"
-        Title="EasySave" Height="460" Width="820">
+        Title="EasySave" Height="480" Width="800" MinHeight="480" MinWidth="800">
     <Grid>
         <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Button Content="View job" MinWidth="100" Click="JobViewClick"/>
-            <Button Content="Create job" MinWidth="100" Margin="10,0,0,0" Click="JobCreateClick"/>
-            <Button Content="Run job" MinWidth="100" Margin="10,0,0,0" Click="JobRunClick"/>
-            <Button Content="Update job" MinWidth="100" Margin="10,0,0,0" Click="JobUpdateClick"/>
-            <Button Content="Remove job" MinWidth="100" Margin="10,0,0,0" Click="JobRemoveClick"/>
-            <Button Content="Settings" MinWidth="100" Margin="10,0,0,0" Click="SettingsClick"/>
+            <Button Content="View job" MinWidth="100" Margin="0,5,0,0" Click="JobViewClick"/>
+            <Button Content="Create job" MinWidth="100" Margin="10,5,0,0" Click="JobCreateClick"/>
+            <Button Content="Run job" MinWidth="100" Margin="10,5,0,0" Click="JobRunClick"/>
+            <Button Content="Update job" MinWidth="100" Margin="10,5,0,0" Click="JobUpdateClick"/>
+            <Button Content="Remove job" MinWidth="100" Margin="10,5,0,0" Click="JobRemoveClick"/>
+            <Button Content="Settings" MinWidth="100" Margin="10,5,0,0" Click="SettingsClick"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>

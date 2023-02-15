@@ -1,5 +1,6 @@
 ﻿using EasySaveLib.Controllers;
 using EasySaveLib.Vues;
+using EasySaveLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,19 @@ namespace EasySaveWPF
         public JobViewController Controller { get; set; }
         public JobViewPage()
         {
+
+        }
+
+        public void Show(JobModel job)
+        {
+        }
+        public void ShowAll(List<JobModel> listJob)
+        {
             InitializeComponent();
+            dgJob.Items.Add(listJob[0]);
+        }
+        public void Exit()
+        { 
         }
     }
 }
