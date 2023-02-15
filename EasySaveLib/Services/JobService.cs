@@ -47,6 +47,12 @@ namespace EasySaveLib.Services
                     fileDestination.State = State.Moved;
                     fileDestination.NewPath = fileSource.RelativePath;
                     fileDestination.NewName = fileSource.Name;
+                    if (jobModel.IsEncrypted)
+                    {
+                        fileDestination.Path = fileDestination.Path.Replace(jobModel.Source, jobModel.Destination);
+                        if (!fileDestination.NewName.Contains(".xor")) fileDestination.NewName += ".xor";
+                        if (!fileDestination.Name.Contains(".xor")) fileDestination.Name += ".xor";
+                    }
                     filesToCopy.Add(fileDestination);
                     continue;
                 }
