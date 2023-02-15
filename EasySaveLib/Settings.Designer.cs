@@ -94,5 +94,17 @@ namespace EasySaveLib.Settings {
                 this["pathCryptoSoft"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("notepad;calc")]
+        public string softwareStop {
+            get {
+                return ((string)(this["softwareStop"]));
+            }
+            set {
+                this["softwareStop"] = value;
+            }
+        }
     }
 }
