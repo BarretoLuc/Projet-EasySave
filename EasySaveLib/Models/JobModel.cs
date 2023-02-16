@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,11 @@ namespace EasySaveLib.Models
         public string Destination { get; set; }
         public bool IsEncrypted { get; set; }
         public bool IsDifferential { get; set; }
+        
+        [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
+        public JobStatsEnum? State { get; set; }
         public List<FileModel>? AllFiles { get; set; }
+        
 
 
         public JobModel(
@@ -21,7 +26,8 @@ namespace EasySaveLib.Models
             string source,
             string destination,
             bool IsDifferential = false,
-            bool IsEncrypted = false
+            bool IsEncrypted = false,
+            JobStatsEnum? State = null
         )
         {
             Name = name;
@@ -29,6 +35,7 @@ namespace EasySaveLib.Models
             Destination = destination;
             this.IsDifferential = IsDifferential;
             this.IsEncrypted = IsEncrypted;
+            this.State = State ?? JobStatsEnum.NotStarted;
         }
 
         public void ConvertPath()
