@@ -15,6 +15,7 @@
                 <DataGridTextColumn Header="Destination path" Binding="{Binding Destination}"/>
                 <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential}"/>
                 <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="dgFile" Margin="20,200,20,40" AutoGenerateColumns="False" IsReadOnly="True" >

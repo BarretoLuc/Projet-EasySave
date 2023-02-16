@@ -4,11 +4,23 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveWPF"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="JobRunPage">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="JobRunPage" Height="400">
 
-    <Grid>
-        
+    <Grid Margin="0,0,0,-20">
+        <DataGrid Name="dgJob" Margin="20,50,20,200" AutoGenerateColumns="False" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Choose a job :" Margin="20,21,650,370" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
+        <Button Content="Execute" Margin="20,240,660,0" VerticalAlignment="Top" Height="60" Click="ExecuteClick"/>
+        <ProgressBar Margin="160,260,20,140"/>
+
     </Grid>
 </Page>
