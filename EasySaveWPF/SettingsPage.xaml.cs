@@ -1,4 +1,5 @@
 ﻿using EasySaveLib.Controllers;
+using EasySaveLib.Settings;
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
@@ -23,35 +24,24 @@ namespace EasySaveWPF
     public partial class SettingsPage : Page, IAbstractView<SettingsController>, ISettings
     {
         public SettingsController Controller { get; set; }
+
         public SettingsPage()
         {
-            InitializeComponent();
+            Controller = new SettingsController(this, new EasySaveLib.Services.DataStorageService());
         }
         public void showMenu()
         {
+            InitializeComponent();
         }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int numberJobs = 0;
-            string savePath = "";
-            string dataStorageFolder = "";
-            string language = "";
-            bool json = (bool)cbLogJson.IsChecked;
-            bool xml = (bool)cbLogJson.IsChecked;
-            string pathCryptoSoft = "";
+            Settings.Default.Save();
+        }
 
-            if (Int32.TryParse(tbNumberJob.Text, out int tbNumberJobInt))
-                numberJobs = tbNumberJobInt;
-            if (tbSavePath.Text != null)
-                savePath = tbSavePath.Text;
-            if (tbDataStorageFolder.Text != null)
-                dataStorageFolder = tbDataStorageFolder.Text;
-            if (language != null)
-                dropBoxLanguage.Text = language;
-            if (tbCryptoPath.Text != null)
-                pathCryptoSoft = tbCryptoPath.Text;
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
 
-            Controller.ChangeSettings(numberJobs, dataStorageFolder, savePath, language, json, xml, pathCryptoSoft);
         }
     }
 }

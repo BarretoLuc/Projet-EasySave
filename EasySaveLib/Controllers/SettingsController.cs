@@ -54,19 +54,22 @@ namespace EasySaveLib.Controllers
             log.LogActualisation();
         }
 
-        public void ChangeSettings(int numberJobs, string dataStorageFolder, string savePath ,string language, bool json, bool xml, string pathCryptoSoft)
-        {
-            if (numberJobs != 0)
-                Settings.Settings.Default.numberJob = numberJobs;
-            Settings.Settings.Default.numberJob = numberJobs;
-            Settings.Settings.Default.dataStorageFolder = dataStorageFolder;
-            Settings.Settings.Default.language = savePath;
-            Settings.Settings.Default.language = language;
-            Settings.Settings.Default.logJson = json;
-            Settings.Settings.Default.logXml = xml;
-            Settings.Settings.Default.pathCryptoSoft = pathCryptoSoft;
-            Settings.Settings.Default.Save();
-        }
+        //public void ChangeSettings(int numberJobs, string dataStorageFolder ,string language, bool json, bool xml, string pathCryptoSoft)
+        //{
+        //    if (numberJobs != 0)
+        //        Settings.Settings.Default.numberJob = numberJobs;
+        //    if (dataStorageFolder != "")
+        //        Settings.Settings.Default.dataStorageFolder = dataStorageFolder;
+        //    if (language != "")
+        //        Settings.Settings.Default.language = language;
+        //    if (json != null)
+        //        Settings.Settings.Default.logJson = json;
+        //    if (xml != null)
+        //        Settings.Settings.Default.logXml = xml;
+        //    if (pathCryptoSoft != "")
+        //        Settings.Settings.Default.pathCryptoSoft = pathCryptoSoft;
+        //    Settings.Settings.Default.Save();
+        //}
 
     }
 }
