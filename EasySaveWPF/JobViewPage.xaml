@@ -8,17 +8,25 @@
       Title="Job view" Height="400">
 
     <Grid Margin="0,0,0,-20">
-        <DataGrid Name="dgJob"  d:ItemsSource="{d:SampleData ItemCount=4}" Margin="20,50,20,260" AutoGenerateColumns="False">
+        <DataGrid Name="dgJob" Margin="20,50,20,260" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Single" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name"/>
-                <DataGridTextColumn Header="Source path"/>
-                <DataGridTextColumn Header="Destination path"/>
-                <DataGridTextColumn Header="Type"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,200,20,40"/>
+        <DataGrid Name="dgFile" Margin="20,200,20,40" AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Relative path" Binding="{Binding RelativePath}"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="List of job :" Margin="20,21,650,370" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
         <Label Content="List of file :" Margin="20,171,650,220" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
-
     </Grid>
 </Page>

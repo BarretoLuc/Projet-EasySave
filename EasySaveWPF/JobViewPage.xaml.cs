@@ -24,6 +24,7 @@ namespace EasySaveWPF
     public partial class JobViewPage : Page, IAbstractView<JobViewController>, IJobView
     {
         public JobViewController Controller { get; set; }
+        private List<JobModel> ListJob;
         public JobViewPage()
         {
 
@@ -35,10 +36,19 @@ namespace EasySaveWPF
         public void ShowAll(List<JobModel> listJob)
         {
             InitializeComponent();
-            dgJob.Items.Add(listJob[0]);
+            ListJob = listJob;
+            dgJob.ItemsSource = ListJob;
+            //dgFile.ItemsSource = listJob[].AllFiles;
         }
+
         public void Exit()
         { 
+        }
+
+        private void JobSelected(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgJob.SelectedIndex != -1)
+                dgFile.ItemsSource = ListJob[dgJob.SelectedIndex].AllFiles;
         }
     }
 }
