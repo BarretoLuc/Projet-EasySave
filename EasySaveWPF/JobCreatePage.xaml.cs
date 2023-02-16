@@ -1,4 +1,5 @@
 ﻿using EasySaveLib.Controllers;
+using EasySaveLib.Models;
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,16 @@ namespace EasySaveWPF
         {
         }
         public void NewJob() 
-        { 
+        {
+            string Name = tbNameJob.Text;
+            string Source = tbSource.Text;
+
+            //Controller.CreateJob()
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewJob();
         }
     }
 }
