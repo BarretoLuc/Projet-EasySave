@@ -16,6 +16,7 @@ using EasySaveLib.Controllers;
 using EasySaveLib.Vues;
 using EasySaveLib.Models;
 using System.Threading;
+using System.Diagnostics.Metrics;
 
 namespace EasySaveWPF
 {
@@ -24,10 +25,17 @@ namespace EasySaveWPF
     /// </summary>
     public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
     {
-        public HomeController Controller { get; set; }
+        public  HomeController Controller { get; set; }
         
+        static Mutex mutex = new Mutex(true, "EasySave");
         public MainWindow()
         {
+            if (mutex.WaitOne(TimeSpan.Zero, true))
+            {
+            HomeController controller = new HomeController(this);
+            controller.init();
+            mutex.ReleaseMutex();
+            }
         }
         
         public void showMenu()
@@ -44,27 +52,37 @@ namespace EasySaveWPF
 
         private void JobCreateClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new JobCreatePage();
+            JobCreatePage view = new JobCreatePage();
+            Controller.AccessSave(view);
+            Main.Content = view;
         }
 
         private void JobRemoveClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new JobRemovePage();
+            JobRemovePage view = new JobRemovePage();
+            Controller.ShowJobRemove(view);
+            Main.Content = view;
         }
         
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new SettingsPage();
+            SettingsPage view = new SettingsPage();
+            Controller.ShowSettings(view);
+            Main.Content = view;
         }
 
         private void JobRunClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new JobRunPage();
+            JobRunPage view = new JobRunPage();
+            Controller.ShowJobRun(view);
+            Main.Content = view;
         }
 
         private void JobUpdateClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new JobUpdatePage();
+            JobUpdatePage view = new JobUpdatePage();
+            Controller.ShowJobUpdate(view);
+            Main.Content = view;
         }
     }
 }
