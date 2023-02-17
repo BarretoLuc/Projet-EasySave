@@ -8,7 +8,19 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="JobUpdatePage">
 
-    <Grid>
-        
+    <Grid Margin="0,0,0,-20">
+        <DataGrid Name="dgJob" Margin="20,50,20,260" AutoGenerateColumns="False" SelectionMode="Single" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="List of job :" Margin="20,21,650,370" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
+        <Button x:Name="applyUpdateButton" Content="Apply Update" HorizontalAlignment="Center" Margin="0,244,0,0" VerticalAlignment="Top" Height="156" Width="760" FontSize="48" Click="applyUpdateButton_Click"/>
     </Grid>
+
 </Page>
