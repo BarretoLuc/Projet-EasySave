@@ -36,6 +36,7 @@ namespace EasySaveWPF
         }
         public void Progress(JobModel job)
         {
+            pbExecute.Value++;
         }
         public JobModel ChooseJob(List<JobModel> jobs)
         {
@@ -50,7 +51,7 @@ namespace EasySaveWPF
             
             if (dgJob.SelectedItems.Count == 1)
                 Controller.ExecuteOneJob(ListJob[dgJob.SelectedIndex]);
-            else if (dgJob.SelectedCells.Count > 1)
+            else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
                 {

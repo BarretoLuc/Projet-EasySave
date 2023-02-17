@@ -20,7 +20,7 @@
         </DataGrid>
         <Label Content="Choose a job :" Margin="20,21,650,370" RenderTransformOrigin="-0.447,0.194" FontSize="14"/>
         <Button Content="Execute" Margin="20,240,660,0" VerticalAlignment="Top" Height="60" Click="ExecuteClick"/>
-        <ProgressBar Margin="160,260,20,140"/>
+        <ProgressBar Name="pbExecute" Margin="160,260,20,140"/>
 
     </Grid>
 </Page>

@@ -30,6 +30,8 @@ namespace EasySaveConsole.Vues
                 Console.WriteLine(Controller.GetTranslation("jobView_show_destPath") + job.Destination);
             }
             Console.WriteLine("-----------------------------------\n\n");
+
+            Controller.RemoveSelection();
         }
 
         public int ChooseJob(int listJobLength)
