@@ -20,7 +20,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="number of job" HorizontalAlignment="Left" Margin="22,64,0,0" VerticalAlignment="Top" FontSize="10"/>
+        <Label Content="Number of Job" HorizontalAlignment="Left" Margin="22,64,0,0" VerticalAlignment="Top" FontSize="10"/>
         <Label Content="Data storage folder" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" FontSize="10"/>
         <Label Content="Language" HorizontalAlignment="Left" Margin="22,175,0,0" VerticalAlignment="Top" FontSize="10"/>
         <Label Content="Log in json format" HorizontalAlignment="Left" Margin="23,216,0,0" VerticalAlignment="Top" FontSize="10"/>
