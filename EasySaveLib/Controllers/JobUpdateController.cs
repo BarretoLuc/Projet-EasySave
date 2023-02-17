@@ -46,6 +46,11 @@ namespace EasySaveLib.Controllers
         {
             Storage.JobList[choice - 1] = job;     
         }
+
+        public void SaveJob()
+        {
+            StateService.SaveJob(Storage.JobList);
+        }
         
     }
 }

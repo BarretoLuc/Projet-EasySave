@@ -9,6 +9,29 @@
       Title="JobCreatePage">
 
     <Grid>
-        
+        <Label Content="Name" HorizontalAlignment="Left" Margin="280,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNameJob" HorizontalAlignment="Left" Margin="400,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Source path" HorizontalAlignment="Left" Margin="280,98,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSource" HorizontalAlignment="Left" Margin="400,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Destination path" HorizontalAlignment="Left" Margin="280,137,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDestination" HorizontalAlignment="Left" Margin="400,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="280,190,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbDifferential" Content="Differential" HorizontalAlignment="Left" Margin="400,182,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
+        <RadioButton x:Name="rbTotal" Content="Total" HorizontalAlignment="Left" Margin="400,204,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
+        <Label Content="Job Creation Menu&#xD;&#xA;" HorizontalAlignment="Left" Margin="284,4,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="289,32,0,0" Stroke="Black" VerticalAlignment="Top" Width="231" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="CreateJobButton" Content="Create job" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="Encrypt" HorizontalAlignment="Left" Margin="280,237,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbEncrypt" HorizontalAlignment="Left" Margin="400,243,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

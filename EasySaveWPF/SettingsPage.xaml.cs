@@ -1,4 +1,5 @@
 ﻿using EasySaveLib.Controllers;
+using EasySaveLib.Settings;
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// CECI EST LA VERSION A GARDER 
+
 namespace EasySaveWPF
 {
     /// <summary>
@@ -23,11 +26,22 @@ namespace EasySaveWPF
     public partial class SettingsPage : Page, IAbstractView<SettingsController>, ISettings
     {
         public SettingsController Controller { get; set; }
+
         public SettingsPage()
+        {
+            Controller = new SettingsController(this, new EasySaveLib.Services.DataStorageService());
+        }
+        public void showMenu()
         {
             InitializeComponent();
         }
-        public void showMenu()
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
         }
     }

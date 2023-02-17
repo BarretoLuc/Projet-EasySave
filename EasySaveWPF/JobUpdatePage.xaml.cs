@@ -24,12 +24,15 @@ namespace EasySaveWPF
     public partial class JobUpdatePage : Page, IAbstractView<JobUpdateController>, IJobUpdate
     {
         public JobUpdateController Controller { get; set; }
+        private List<JobModel> ListJob;
         public JobUpdatePage()
         {
-            InitializeComponent();
         }
-        public void ShowAll(List<JobModel> jobs)
+        public void ShowAll(List<JobModel> listJob)
         {
+            InitializeComponent();
+            ListJob = listJob;
+            dgJob.ItemsSource = ListJob;
         }
         public void Show()
         {
@@ -48,6 +51,11 @@ namespace EasySaveWPF
         }
         public void ShowError(string key) 
         { 
+        }
+
+        private void applyUpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.SaveJob();
         }
     }
 }
