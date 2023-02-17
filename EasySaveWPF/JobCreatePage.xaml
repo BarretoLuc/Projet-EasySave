@@ -15,9 +15,9 @@
         <TextBox x:Name="tbSource" HorizontalAlignment="Left" Margin="400,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Destination path" HorizontalAlignment="Left" Margin="280,219,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbDestination" HorizontalAlignment="Left" Margin="400,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Destination path" HorizontalAlignment="Left" Margin="280,272,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Differential" HorizontalAlignment="Left" Margin="400,264,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
-        <RadioButton Content="Total" HorizontalAlignment="Left" Margin="400,286,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="280,272,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbDifferential" Content="Differential" HorizontalAlignment="Left" Margin="400,264,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
+        <RadioButton x:Name="rbTotal" Content="Total" HorizontalAlignment="Left" Margin="400,286,0,0" VerticalAlignment="Top" GroupName="groupMethod"/>
         <Label Content="Job Creation Menu&#xD;&#xA;" HorizontalAlignment="Left" Margin="284,86,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Rectangle HorizontalAlignment="Left" Height="1" Margin="289,114,0,0" Stroke="Black" VerticalAlignment="Top" Width="151" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
@@ -29,7 +29,9 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Button x:Name="CreateJobButton" Content="Create job" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="CreateJobButton" Content="Create job" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="Encrypt" HorizontalAlignment="Left" Margin="280,319,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbEncrypt" HorizontalAlignment="Left" Margin="400,325,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

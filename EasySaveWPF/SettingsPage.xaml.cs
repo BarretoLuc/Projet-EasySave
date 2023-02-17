@@ -16,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+// CECI EST LA VERSION A GARDER 
+
 namespace EasySaveWPF
 {
     /// <summary>

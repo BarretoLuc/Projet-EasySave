@@ -1,4 +1,5 @@
-﻿<Page x:Class="EasySaveWPF.SettingsPage"
+﻿<!--CECI EST LA VERSION A GARDER-->
+<Page x:Class="EasySaveWPF.SettingsPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -31,7 +32,7 @@
         <CheckBox x:Name="cbLogJson" HorizontalAlignment="Left" Margin="159,220,0,0" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=logJson}"/>
         <CheckBox x:Name="cbLogXml" HorizontalAlignment="Left" Margin="159,261,0,0" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=logXml}"/>
         <Button x:Name="applySettingsButton" Content="Apply settings" HorizontalAlignment="Left" Margin="225,306,0,0" VerticalAlignment="Top" Width="66" Height="17" Click="Button_Click" FontSize="9" Background="#FFDDDDDD" BorderBrush="#FFDDDDDD"/>
-        <RadioButton x:Name="francais" Content="Français" HorizontalAlignment="Left" Margin="159,172,0,0" VerticalAlignment="Top" GroupName="language" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=logJson}"/>
-        <RadioButton Content="English" HorizontalAlignment="Left" Margin="159,192,0,0" VerticalAlignment="Top" GroupName="language"/>
+        <RadioButton Content="English" HorizontalAlignment="Left" Margin="159,175,0,0" VerticalAlignment="Top" GroupName="language"/>
+        <RadioButton Content="Français" HorizontalAlignment="Left" Margin="159,192,0,0" VerticalAlignment="Top" GroupName="language" IsChecked="True"/>
     </Grid>
 </Page>
