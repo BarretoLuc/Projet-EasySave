@@ -38,7 +38,6 @@ namespace EasySaveWPF
             InitializeComponent();
             ListJob = listJob;
             dgJob.ItemsSource = ListJob;
-            //dgFile.ItemsSource = listJob[].AllFiles;
         }
 
         public void Exit()

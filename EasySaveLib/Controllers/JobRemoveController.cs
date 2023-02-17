@@ -26,6 +26,9 @@ namespace EasySaveLib.Controllers
                 return;
             }
             View.ShowJobs(Storage.JobList);
+        }
+        public void RemoveSelection()
+        {
             int jobId = View.ChooseJob(Storage.JobList.Count);
             if (jobId != 0)
             {

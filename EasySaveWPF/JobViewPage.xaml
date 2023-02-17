@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EasySaveWPF"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="Job view" Height="400">
+      Title="JobViewPage" Height="400">
 
     <Grid Margin="0,0,0,-20">
         <DataGrid Name="dgJob" Margin="20,50,20,260" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Single" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" >
@@ -15,6 +15,7 @@
                 <DataGridTextColumn Header="Destination path" Binding="{Binding Destination}"/>
                 <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential}"/>
                 <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="dgFile" Margin="20,200,20,40" AutoGenerateColumns="False" IsReadOnly="True" >

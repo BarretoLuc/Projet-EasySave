@@ -24,16 +24,29 @@ namespace EasySaveWPF
     public partial class JobRemovePage : Page, IAbstractView<JobRemoveController>, IJobRemove
     {
         public JobRemoveController Controller { get; set; }
+        private List<JobModel> ListJobShow;
         public JobRemovePage()
         {
-            InitializeComponent();
         }
         public void ShowJobs(List<JobModel> jobs)
         {
+            InitializeComponent();
+            ListJobShow = jobs;
+            dgJob.ItemsSource = ListJobShow;
         }
-        public int ChooseJob(int id)
+        public int ChooseJob(int listJobLength)
         {
+            if (dgJob.SelectedItems.Count <= 0)
+                return 0;
             
+            else if (dgJob.SelectedItems.Count == 1)
+            {
+                if (dgJob.SelectedIndex != -1)
+                {
+                    int id = dgJob.SelectedIndex;
+                    return id+1;
+                }
+            }
             return 0;
         }
         public void ShowError(string error)
@@ -42,6 +55,12 @@ namespace EasySaveWPF
         public void EndMessage(bool success)
         {
         }
-        
+
+        private void RemoveClick(object sender, RoutedEventArgs e)
+        {
+            Controller.RemoveSelection();
+            dgJob.ItemsSource = null;
+            dgJob.ItemsSource = ListJobShow;
+        }
     }
 }
