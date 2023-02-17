@@ -32,7 +32,7 @@
         <CheckBox x:Name="cbLogJson" HorizontalAlignment="Left" Margin="159,220,0,0" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=logJson}"/>
         <CheckBox x:Name="cbLogXml" HorizontalAlignment="Left" Margin="159,261,0,0" VerticalAlignment="Top" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=logXml}"/>
         <Button x:Name="applySettingsButton" Content="Apply settings" HorizontalAlignment="Left" Margin="225,306,0,0" VerticalAlignment="Top" Width="66" Height="17" Click="Button_Click" FontSize="9" Background="#FFDDDDDD" BorderBrush="#FFDDDDDD"/>
-        <RadioButton Content="English" HorizontalAlignment="Left" Margin="159,175,0,0" VerticalAlignment="Top" GroupName="language"/>
-        <RadioButton Content="Français" HorizontalAlignment="Left" Margin="159,192,0,0" VerticalAlignment="Top" GroupName="language" IsChecked="True"/>
+        <RadioButton x:Name="rbEn" Content="English" HorizontalAlignment="Left" Margin="159,175,0,0" VerticalAlignment="Top" GroupName="language"/>
+        <RadioButton x:Name="rbFr" Content="Français" HorizontalAlignment="Left" Margin="159,192,0,0" VerticalAlignment="Top" GroupName="language" IsChecked="True"/>
     </Grid>
 </Page>

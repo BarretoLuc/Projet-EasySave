@@ -34,10 +34,23 @@ namespace EasySaveWPF
         public void showMenu()
         {
             InitializeComponent();
+            InitRadioButton();
         }
-        
+
+        private void InitRadioButton()
+        {
+            if (Settings.Default.language == "francais")
+                rbFr.IsChecked = true;
+            else
+                rbEn.IsChecked = true;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if ((bool)rbFr.IsChecked)
+                Settings.Default.language = "francais";
+            else
+                Settings.Default.language = "english";
             Settings.Default.Save();
         }
 
