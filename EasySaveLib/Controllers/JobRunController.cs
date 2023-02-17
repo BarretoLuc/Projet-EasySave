@@ -57,7 +57,7 @@ namespace EasySaveLib.Controllers
                     job.State = JobStatsEnum.Pause;
                     StateService.SaveJob(Storage.JobList);
                     return;
-                } else ThreadPool.QueueUserWorkItem((a) => { CopyService.ExecuteAction(job, file); });
+                } else ThreadPool.QueueUserWorkItem((a) => { CopyService.ExecuteAction(job, file, Storage); });
             }
             job.State = JobStatsEnum.Finished;
             StateService.SaveJob(Storage.JobList);
