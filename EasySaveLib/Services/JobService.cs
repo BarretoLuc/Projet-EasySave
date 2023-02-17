@@ -13,7 +13,7 @@ namespace EasySaveLib.Services
             ComputeHash(filesSource);
 
             List<FileModel> filesDestination;
-            if (jobModel.AllFiles?.Count == 0)
+            if (jobModel.AllFiles == null || jobModel.AllFiles?.Count == 0)
             {
                 filesDestination = WalkIntoDirectory(jobModel.Destination);
                 ComputeHash(filesDestination);
@@ -30,7 +30,7 @@ namespace EasySaveLib.Services
             var filesToCopy = new List<FileModel>();
             foreach (var fileSource in filesSource)
             {
-                var fileDestination = filesDestination.Find(x => x.Hash == fileSource.Hash);
+                FileModel? fileDestination = filesDestination.Find(x => x.Hash == fileSource.Hash);
 
                 if (fileDestination == null)
                 {
