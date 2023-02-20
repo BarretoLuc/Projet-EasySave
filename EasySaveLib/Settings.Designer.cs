@@ -82,5 +82,29 @@ namespace EasySaveLib.Settings {
                 this["logXml"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("./ext/CryptoSoft.exe")]
+        public string pathCryptoSoft {
+            get {
+                return ((string)(this["pathCryptoSoft"]));
+            }
+            set {
+                this["pathCryptoSoft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("notepad;calc")]
+        public string softwareStop {
+            get {
+                return ((string)(this["softwareStop"]));
+            }
+            set {
+                this["softwareStop"] = value;
+            }
+        }
     }
 }

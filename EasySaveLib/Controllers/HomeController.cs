@@ -22,7 +22,7 @@ namespace EasySaveLib.Controllers
         }
         public void AccessSave(IJobCreate jobCreate)
         {
-            JobCreateController jobController = new JobCreateController(jobCreate,Storage);
+            JobCreateController jobController = new JobCreateController(jobCreate, Storage);
             jobController.init();
         }
 

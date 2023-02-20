@@ -17,5 +17,11 @@
     <Setting Name="logXml" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="pathCryptoSoft" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./ext/CryptoSoft.exe</Value>
+    </Setting>
+    <Setting Name="softwareStop" Type="System.String" Scope="User">
+      <Value Profile="(Default)">notepad;calc</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

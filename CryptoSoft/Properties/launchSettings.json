@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CryptoSoft": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\valouu\\Downloads\\Office-x64_2k21_Ent_ltsc_fr.iso C:\\Users\\valouu\\Documents\\ES\\Office-x64_2k21_Ent_ltsc_fr.iso.xor 456"
+    }
+  }
+}
