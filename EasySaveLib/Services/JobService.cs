@@ -7,12 +7,14 @@ namespace EasySaveLib.Services
         private CopyService CopyService { get; set; }
         private StateService StateService { get; set; }
         private SoftwareRunningService SoftwareRunningService { get; set; }
+        private PriorityExtensionsServices PriorityExtensions { get; set; }
 
         public JobService()
         {
             CopyService = new CopyService();
             StateService = new StateService();
             SoftwareRunningService = new SoftwareRunningService();
+            PriorityExtensions = new PriorityExtensionsServices();
         }
 
         public void ExecuteJob(JobModel job, DataStorageService Storage)
@@ -20,6 +22,7 @@ namespace EasySaveLib.Services
             // Si le job n'est pas en pause, calculer les actions à effectuer
             if (job.State == JobStatsEnum.NotStarted || job.State == JobStatsEnum.Finished)
                 job.AllFiles = GetListActionFiles(job);
+            job.AllFiles = PriorityExtensions.SortExtensions(job.AllFiles);
             job.State = JobStatsEnum.Running;
             StateService.SaveJob(Storage.JobList);
             // extract and execute file to delete
