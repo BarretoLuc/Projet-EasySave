@@ -4,7 +4,44 @@ namespace EasySaveLib.Services
 {
     public class JobService
     {
-        public List<FileModel> GetListActionFiles(JobModel jobModel)
+        private CopyService CopyService { get; set; }
+        private StateService StateService { get; set; }
+        private SoftwareRunningService SoftwareRunningService { get; set; }
+
+        public JobService()
+        {
+            CopyService = new CopyService();
+            StateService = new StateService();
+            SoftwareRunningService = new SoftwareRunningService();
+        }
+
+        public void ExecuteJob(JobModel job, DataStorageService Storage)
+        {
+            // Si le job n'est pas en pause, calculer les actions à effectuer
+            if (job.State == JobStatsEnum.NotStarted || job.State == JobStatsEnum.Finished)
+                job.AllFiles = GetListActionFiles(job);
+            job.State = JobStatsEnum.Running;
+            StateService.SaveJob(Storage.JobList);
+            // extract and execute file to delete
+            List<FileModel> filesToDelete = job.AllFiles.Where(file => file.State == State.Deleted).ToList();
+            foreach (FileModel file in filesToDelete) CopyService.ExecuteAction(job, file, Storage);
+            // extract and execute file no delete
+            List<FileModel> filesToCopy = job.AllFiles.Where(file => file.State != State.Deleted).ToList();
+            foreach (FileModel file in filesToCopy)
+            {
+                if (SoftwareRunningService.IsRunningSoftware())
+                {
+                    job.State = JobStatsEnum.Pause;
+                    StateService.SaveJob(Storage.JobList);
+                    return;
+                }
+                else CopyService.ExecuteAction(job, file, Storage);
+            }
+            job.State = JobStatsEnum.Finished;
+            StateService.SaveJob(Storage.JobList);
+        }
+
+        private List<FileModel> GetListActionFiles(JobModel jobModel)
         {
             List<FileModel> filesSource = WalkIntoDirectory(jobModel.Source);
 
@@ -17,7 +54,8 @@ namespace EasySaveLib.Services
             {
                 filesDestination = WalkIntoDirectory(jobModel.Destination);
                 ComputeHash(filesDestination);
-            } else
+            }
+            else
             {
                 filesDestination = jobModel.AllFiles.Where(file => file.State != State.Deleted).ToList();
             }
@@ -40,7 +78,7 @@ namespace EasySaveLib.Services
                 }
 
                 filesDestination.Remove(fileDestination);
-                
+
                 // check relative path
                 if (fileSource.RelativePath != fileDestination.RelativePath)
                 {
