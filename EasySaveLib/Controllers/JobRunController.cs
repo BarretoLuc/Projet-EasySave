@@ -15,6 +15,7 @@ namespace EasySaveLib.Controllers
         public CopyService CopyService { get; set; }
         private StateService StateService { get; set; }
         private SoftwareRunningService SoftwareRunningService { get; set; }
+        private PriorityExtensionsServices PriorityExtensions { get; set; }
 
         public JobRunController(IJobRun View, DataStorageService StorageService) : base(View, StorageService)
         {
@@ -22,6 +23,7 @@ namespace EasySaveLib.Controllers
             JobService = new JobService();
             StateService = new StateService();
             SoftwareRunningService = new SoftwareRunningService();
+            PriorityExtensions = new PriorityExtensionsServices();
         }
 
         public override void init()
@@ -36,10 +38,11 @@ namespace EasySaveLib.Controllers
                 ExecuteOneJob(job);
             }
         }
-
+        
 
         public void ExecuteOneJob(JobModel job)
         {
+            job.AllFiles = PriorityExtensions.SortExtensions(job.AllFiles);
             View.Progress(job);
             // Si le job n'est pas en pause, calculer les actions à effectuer
             if (job.State == JobStatsEnum.NotStarted || job.State == JobStatsEnum.Finished)

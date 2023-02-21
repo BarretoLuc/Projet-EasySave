@@ -106,5 +106,17 @@ namespace EasySaveLib.Settings {
                 this["softwareStop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("txt")]
+        public string PriorityExtensions {
+            get {
+                return ((string)(this["PriorityExtensions"]));
+            }
+            set {
+                this["PriorityExtensions"] = value;
+            }
+        }
     }
 }

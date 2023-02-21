@@ -23,5 +23,8 @@
     <Setting Name="softwareStop" Type="System.String" Scope="User">
       <Value Profile="(Default)">notepad;calc</Value>
     </Setting>
+    <Setting Name="PriorityExtensions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">txt</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
