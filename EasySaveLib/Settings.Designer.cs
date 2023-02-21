@@ -109,7 +109,7 @@ namespace EasySaveLib.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".txt;.rar")]
         public string PriorityExtensions {
             get {
                 return ((string)(this["PriorityExtensions"]));
