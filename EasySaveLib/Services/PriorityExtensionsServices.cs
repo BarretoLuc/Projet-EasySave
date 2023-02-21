@@ -26,13 +26,28 @@ namespace EasySaveLib.Services
         public List<FileModel> SortExtensions(List<FileModel> AllFiles)
         {
             string[] allowedExtensions = GetExtensions();
-            foreach (var extensions in allowedExtensions)
+            var AllFilesReOrder = new List<FileModel>();
+            var OtherFiles = new List<FileModel>();
+            string fileExtension;
+            foreach (var files in AllFiles)
             {
-                AllFiles.OrderBy(p => Path.GetExtension(p.Name));
-                //AllFiles.Sort
+                foreach (var extensions in allowedExtensions)
+                {
+                    fileExtension = Path.GetExtension(files.Name);
+                    if (fileExtension == extensions)
+                        AllFilesReOrder.Add(files);
+                    else
+                        OtherFiles.Add(files);
+                }
             }
 
-            return AllFiles;
+            foreach (var item in OtherFiles)
+            {
+                AllFilesReOrder.Add(item);
+            }
+
+
+            return AllFilesReOrder;
         }
         
         

@@ -42,11 +42,11 @@ namespace EasySaveLib.Controllers
 
         public void ExecuteOneJob(JobModel job)
         {
-            job.AllFiles = PriorityExtensions.SortExtensions(job.AllFiles);
             View.Progress(job);
             // Si le job n'est pas en pause, calculer les actions à effectuer
             if (job.State == JobStatsEnum.NotStarted || job.State == JobStatsEnum.Finished)
                 job.AllFiles = JobService.GetListActionFiles(job);
+            job.AllFiles = PriorityExtensions.SortExtensions(job.AllFiles);
             StateService.SaveJob(Storage.JobList);
             // extract and execute file to delete
             List<FileModel> filesToDelete = job.AllFiles.Where(file => file.State == State.Deleted).ToList();
