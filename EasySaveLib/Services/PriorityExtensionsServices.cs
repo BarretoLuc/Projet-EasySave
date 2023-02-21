@@ -34,8 +34,7 @@ namespace EasySaveLib.Services
             {
                 foreach (string extensions in allowedExtensions)
                 {
-                    fileExtension = Path.GetExtension(AllFiles[i].Name);
-                    if (fileExtension == extensions)
+                    if (AllFiles[i].Name.Contains(extensions))
                     {
                         AllFilesReOrder.Add(AllFiles[i]);
                         AllFiles.Remove(AllFiles[i]);
