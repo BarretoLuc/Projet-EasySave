@@ -1,4 +1,5 @@
-﻿using EasySaveLib.Services;
+﻿using EasySaveLib.Models;
+using EasySaveLib.Services;
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace EasySaveLib.Controllers
         public HomeController(IHome View) : base(View, new DataStorageService()) 
         {
             new LogService();
+            ResetStateJob();
+        }
+
+        private void ResetStateJob()
+        {
+            foreach (JobModel job in Storage.JobList)
+                if (job.State == JobStatsEnum.Running)
+                    job.State = JobStatsEnum.Pause;
         }
 
         public override void init()
