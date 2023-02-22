@@ -23,6 +23,7 @@ namespace EasySaveWPF
         private UpdateModel UpdateModel;
         private RemoveModel RemoveModel;
         public SettingsWindow Settings;
+        private JobCreate CreateView;
 
         private List<JobModel> ListJob;
 
@@ -83,7 +84,18 @@ namespace EasySaveWPF
 
         private void StopClick(object sender, RoutedEventArgs e)
         {
+            if (dgJob.SelectedItems.Count <= 0)
+                return;
 
+            if (dgJob.SelectedItems.Count == 1)
+                RunModel.Controller.PauseOneJob(ListJob[dgJob.SelectedIndex]);
+            else if (dgJob.SelectedItems.Count > 1)
+            {
+                foreach (JobModel item in dgJob.SelectedItems)
+                {
+                    RunModel.Controller.PauseOneJob(item);
+                }
+            }
         }
 
         private void StartClick(object sender, RoutedEventArgs e)
@@ -129,7 +141,9 @@ namespace EasySaveWPF
 
         private void CreateClick(object sender, RoutedEventArgs e)
         {
-
+            this.IsEnabled = false;
+            CreateView = new JobCreate(this);
+            Controller.AccessSave(CreateView);
         }
     }
 }

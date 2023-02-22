@@ -63,5 +63,9 @@ namespace EasySaveLib.Controllers
             StateService.SaveJob(Storage.JobList);
         }
 
+        public void PauseOneJob(JobModel jobModel)
+        {
+            jobModel.State = JobStatsEnum.Pause;
+        }
     }
 }
