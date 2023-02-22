@@ -2,8 +2,6 @@
 using EasySaveLib.Vues;
 using EasySaveLib.Controllers;
 using EasySaveLib.Models;
-using System.Windows.Controls;
-using System.Windows;
 
 namespace EasySaveWPF.ModelViews
 {

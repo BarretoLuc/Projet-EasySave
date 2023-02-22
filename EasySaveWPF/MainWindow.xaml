@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasySaveWPF"
         mc:Ignorable="d"
-        Title="EasySave" Height="640" Width="1040" MinHeight="540" MinWidth="960" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,0">
+        Title="EasySave" Height="580" Width="1040" MinHeight="540" MinWidth="960" ResizeMode="NoResize" Closing="ClosingClick">
+    <Grid Margin="0,0,0,-60">
         <Grid.RowDefinitions>
             <RowDefinition Height="61*"/>
             <RowDefinition Height="60*"/>
-            <RowDefinition Height="35*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Label Content="List of job :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Bottom"/>
         <Label Content="List of file :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" Grid.Row="1" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110"/>
-        <ProgressBar Margin="20,0,0,100" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.Row="2" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="640"/>
-        <Button Content="Start" Margin="680,20,280,100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" RenderTransformOrigin="1,-1.222" Width="80" Click="StartClick"/>
-        <DataGrid Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" CellEditEnding="OnUpdating" ItemsSource="{Binding Source=ListJob}">
+        <ProgressBar Margin="40,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720"/>
+        <Button Content="Start" Margin="800,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" RenderTransformOrigin="1,-1.222" Click="StartClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
+        <DataGrid x:Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Source=ListJob}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
@@ -35,8 +36,11 @@
                 <DataGridTextColumn Header="State" Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Stop" Margin="800,20,160,100" Grid.Row="2" Click="StopClick"/>
+        <Button Content="Stop" Margin="900,20,0,0" Grid.Row="2" Click="StopClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
         <Button Content="Settings" HorizontalAlignment="Left" Margin="900,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.64,21.295" Width="80" Click="SettingsClick"/>
+        <Button Content="Save job" HorizontalAlignment="Left" Margin="800,24,0,0" VerticalAlignment="Top" Width="80" Click="SaveJobClick"/>
+        <Button Content="Remove job" HorizontalAlignment="Left" Margin="700,24,0,0" VerticalAlignment="Top" Width="80" Click="RemoveClick"/>
+        <Button Content="Create job" HorizontalAlignment="Left" Margin="600,24,0,0" VerticalAlignment="Top" Width="80" Click="CreateClick"/>
 
     </Grid>
 </Window>

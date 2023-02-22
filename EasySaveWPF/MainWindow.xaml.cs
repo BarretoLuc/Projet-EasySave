@@ -21,6 +21,7 @@ namespace EasySaveWPF
         private ViewModel ViewModel;
         private RunModel RunModel;
         private UpdateModel UpdateModel;
+        private RemoveModel RemoveModel;
 
         private List<JobModel> ListJob;
 
@@ -43,11 +44,29 @@ namespace EasySaveWPF
             Controller.ShowJobRun(RunModel);
             UpdateModel = new UpdateModel(this);
             Controller.ShowJobUpdate(UpdateModel);
+            RemoveModel = new RemoveModel(this);
+            Controller.ShowJobRemove(RemoveModel);
         }
         public void ShowAllJob(List<JobModel> listJob)
         {
             ListJob = listJob;
             dgJob.ItemsSource = ListJob;
+        }
+
+        public int ChooseJobRemove(int listJobLength)
+        {
+            if (dgJob.SelectedItems.Count <= 0)
+                return 0;
+
+            else if (dgJob.SelectedItems.Count == 1)
+            {
+                if (dgJob.SelectedIndex != -1)
+                {
+                    int id = dgJob.SelectedIndex;
+                    return id + 1;
+                }
+            }
+            return 0;
         }
 
         public void Progress()
@@ -87,9 +106,26 @@ namespace EasySaveWPF
 
         }
 
-        private void OnUpdating(object sender, DataGridCellEditEndingEventArgs e)
+        private void SaveJobClick(object sender, RoutedEventArgs e)
         {
             UpdateModel.Controller.SaveJob();
+        }
+
+        private void RemoveClick(object sender, RoutedEventArgs e)
+        {
+            RemoveModel.Controller.RemoveSelection();
+            dgJob.ItemsSource = null;
+            dgJob.ItemsSource = ListJob;
+        }
+
+        private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            UpdateModel.Controller.SaveJob();
+        }
+
+        private void CreateClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
