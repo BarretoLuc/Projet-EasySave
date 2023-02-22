@@ -12,10 +12,10 @@
         <DataGrid Name="dgJob" Margin="20,50,20,260" AutoGenerateColumns="False" SelectionMode="Single" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=TwoWay}"/>
-                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=TwoWay}"/>
-                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=Default}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=OneTime}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=OneWayToSource}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=OneWay}"/>
                 <DataGridTextColumn Header="State" Binding="{Binding State}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>

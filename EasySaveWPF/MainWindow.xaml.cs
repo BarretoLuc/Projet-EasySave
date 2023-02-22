@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using EasySaveLib.Controllers;
 using EasySaveLib.Vues;
 using EasySaveLib.Models;
 using System.Threading;
-using System.Diagnostics.Metrics;
+using EasySaveWPF.ModelViews;
 
 namespace EasySaveWPF
 {
@@ -25,64 +15,81 @@ namespace EasySaveWPF
     /// </summary>
     public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
     {
-        public  HomeController Controller { get; set; }
-        
         static Mutex mutex = new Mutex(true, "EasySave");
+        public HomeController Controller { get; set; }
+
+        private ViewModel ViewModel;
+        private RunModel RunModel;
+        private UpdateModel UpdateModel;
+
+        private List<JobModel> ListJob;
+
         public MainWindow()
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
-            HomeController controller = new HomeController(this);
-            controller.init();
-            mutex.ReleaseMutex();
+                HomeController controller = new HomeController(this);
+                controller.init();
+                mutex.ReleaseMutex();
             }
         }
-        
+
         public void showMenu()
         {
             InitializeComponent();
+            ViewModel = new ViewModel(this);
+            Controller.ShowJobViews(ViewModel);
+            RunModel = new RunModel(this);
+            Controller.ShowJobRun(RunModel);
+            UpdateModel = new UpdateModel(this);
+            Controller.ShowJobUpdate(UpdateModel);
+        }
+        public void ShowAllJob(List<JobModel> listJob)
+        {
+            ListJob = listJob;
+            dgJob.ItemsSource = ListJob;
         }
 
-        private void JobViewClick(object sender, RoutedEventArgs e)
+        public void Progress()
         {
-            JobViewPage view = new JobViewPage();
-            Controller.ShowJobViews(view);
-            Main.Content = view;
+            //pbExecute.Value++;
         }
 
-        private void JobCreateClick(object sender, RoutedEventArgs e)
+        private void JobSelected(object sender, SelectionChangedEventArgs e)
         {
-            JobCreatePage view = new JobCreatePage();
-            Controller.AccessSave(view);
-            Main.Content = view;
+            if (dgJob.SelectedIndex != -1)
+                dgFile.ItemsSource = ListJob[dgJob.SelectedIndex].AllFiles;
         }
 
-        private void JobRemoveClick(object sender, RoutedEventArgs e)
+        private void StopClick(object sender, RoutedEventArgs e)
         {
-            JobRemovePage view = new JobRemovePage();
-            Controller.ShowJobRemove(view);
-            Main.Content = view;
+
         }
-        
+
+        private void StartClick(object sender, RoutedEventArgs e)
+        {
+            if (dgJob.SelectedItems.Count <= 0)
+                return;
+
+            if (dgJob.SelectedItems.Count == 1)
+                RunModel.Controller.ExecuteOneJob(ListJob[dgJob.SelectedIndex]);
+            else if (dgJob.SelectedItems.Count > 1)
+            {
+                foreach (JobModel item in dgJob.SelectedItems)
+                {
+                    RunModel.Controller.ExecuteOneJob(item);
+                }
+            }
+        }
+
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
-            SettingsPage view = new SettingsPage();
-            Controller.ShowSettings(view);
-            Main.Content = view;
+
         }
 
-        private void JobRunClick(object sender, RoutedEventArgs e)
+        private void OnUpdating(object sender, DataGridCellEditEndingEventArgs e)
         {
-            JobRunPage view = new JobRunPage();
-            Controller.ShowJobRun(view);
-            Main.Content = view;
-        }
-
-        private void JobUpdateClick(object sender, RoutedEventArgs e)
-        {
-            JobUpdatePage view = new JobUpdatePage();
-            Controller.ShowJobUpdate(view);
-            Main.Content = view;
+            UpdateModel.Controller.SaveJob();
         }
     }
 }

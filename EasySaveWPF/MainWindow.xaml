@@ -5,16 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EasySaveWPF"
         mc:Ignorable="d"
-        Title="EasySave" Height="480" Width="800" MinHeight="480" MinWidth="800">
-    <Grid>
-        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Button Content="View job" MinWidth="100" Margin="0,5,0,0" Click="JobViewClick"/>
-            <Button Content="Create job" MinWidth="100" Margin="10,5,0,0" Click="JobCreateClick"/>
-            <Button Content="Run job" MinWidth="100" Margin="10,5,0,0" Click="JobRunClick"/>
-            <Button Content="Update job" MinWidth="100" Margin="10,5,0,0" Click="JobUpdateClick"/>
-            <Button Content="Remove job" MinWidth="100" Margin="10,5,0,0" Click="JobRemoveClick"/>
-            <Button Content="Settings" MinWidth="100" Margin="10,5,0,0" Click="SettingsClick"/>
-        </StackPanel>
-        <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
+        Title="EasySave" Height="640" Width="1040" MinHeight="540" MinWidth="960" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <Label Content="List of job :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Bottom"/>
+        <Label Content="List of file :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" Grid.Row="1" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110"/>
+        <ProgressBar Margin="20,0,0,100" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.Row="2" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="640"/>
+        <Button Content="Start" Margin="680,20,280,100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" RenderTransformOrigin="1,-1.222" Width="80" Click="StartClick"/>
+        <DataGrid Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" CellEditEnding="OnUpdating" ItemsSource="{Binding Source=ListJob}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="State" IsReadOnly="True" Binding="{Binding State}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="dgFile" Margin="20,60,20,20" AutoGenerateColumns="False" IsReadOnly="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Row="1" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Relative path" Binding="{Binding RelativePath}"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Stop" Margin="800,20,160,100" Grid.Row="2" Click="StopClick"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Margin="900,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.64,21.295" Width="80" Click="SettingsClick"/>
+
     </Grid>
 </Window>
