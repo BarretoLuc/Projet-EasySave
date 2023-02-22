@@ -22,6 +22,7 @@ namespace EasySaveWPF
         private RunModel RunModel;
         private UpdateModel UpdateModel;
         private RemoveModel RemoveModel;
+        public SettingsWindow Settings;
 
         private List<JobModel> ListJob;
 
@@ -103,7 +104,10 @@ namespace EasySaveWPF
 
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
-
+            this.IsEnabled = false;
+            Settings = new SettingsWindow(this);
+            Controller.ShowSettings(Settings);
+            Settings.Show();
         }
 
         private void SaveJobClick(object sender, RoutedEventArgs e)
