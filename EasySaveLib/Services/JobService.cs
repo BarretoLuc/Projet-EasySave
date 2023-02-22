@@ -103,7 +103,9 @@ namespace EasySaveLib.Services
                     continue;
                 }
 
-                fileSource.State = State.Finished;
+                if (jobModel.IsDifferential) fileSource.State = State.Finished;
+                else fileSource.State = State.Waiting;
+
                 filesToCopy.Add(fileSource);
             }
 

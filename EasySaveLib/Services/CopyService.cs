@@ -33,9 +33,6 @@ namespace EasySaveLib.Services
                     Rename(job, file);
                     break;
                 case State.Finished:
-                    if (job.IsDifferential) break;
-                    if (job.IsEncrypted) CopyEncrypt(job, file);
-                    else Copy(job, file);
                     break;
                 default:
                     break;
