@@ -83,7 +83,18 @@ namespace EasySaveWPF
 
         private void StopClick(object sender, RoutedEventArgs e)
         {
+            if (dgJob.SelectedItems.Count <= 0)
+                return;
 
+            if (dgJob.SelectedItems.Count == 1)
+                RunModel.Controller.PauseOneJob(ListJob[dgJob.SelectedIndex]);
+            else if (dgJob.SelectedItems.Count > 1)
+            {
+                foreach (JobModel item in dgJob.SelectedItems)
+                {
+                    RunModel.Controller.PauseOneJob(item);
+                }
+            }
         }
 
         private void StartClick(object sender, RoutedEventArgs e)
