@@ -22,6 +22,7 @@ namespace EasySaveWPF
         private RunModel RunModel;
         private UpdateModel UpdateModel;
         private RemoveModel RemoveModel;
+        private JobCreate CreateView;
 
         private List<JobModel> ListJob;
 
@@ -125,7 +126,9 @@ namespace EasySaveWPF
 
         private void CreateClick(object sender, RoutedEventArgs e)
         {
-
+            this.IsEnabled = false;
+            CreateView = new JobCreate(this);
+            Controller.AccessSave(CreateView);
         }
     }
 }
