@@ -7,13 +7,15 @@ using EasySaveLib.Vues;
 using EasySaveLib.Models;
 using System.Threading;
 using EasySaveWPF.ModelViews;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace EasySaveWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
+    public partial class MainWindow : Window, IAbstractView<HomeController>, IHome, INotifyPropertyChanged
     {
         static Mutex mutex = new Mutex(true, "EasySave");
         public HomeController Controller { get; set; }
@@ -25,6 +27,7 @@ namespace EasySaveWPF
         private JobCreate CreateView;
 
         private List<JobModel> ListJob;
+        public ObservableCollection<List<JobModel>> ListJobObserver { get; set; }
 
         public MainWindow()
         {
@@ -36,6 +39,21 @@ namespace EasySaveWPF
             }
         }
 
+        event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                ((INotifyPropertyChanged)ListJob).PropertyChanged += value;
+                dgJob.ItemsSource = null;
+                dgJob.ItemsSource = ListJob;
+            }
+
+            remove
+            {
+                ((INotifyPropertyChanged)ListJob).PropertyChanged -= value;
+            }
+        }
+        
         public void showMenu()
         {
             InitializeComponent();
@@ -74,7 +92,7 @@ namespace EasySaveWPF
         {
             //pbExecute.Value++;
         }
-
+        
         private void JobSelected(object sender, SelectionChangedEventArgs e)
         {
             if (dgJob.SelectedIndex != -1)
@@ -112,7 +130,6 @@ namespace EasySaveWPF
                 }
             }
         }
-
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
 
