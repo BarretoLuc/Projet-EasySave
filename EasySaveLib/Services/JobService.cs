@@ -29,13 +29,13 @@ namespace EasySaveLib.Services
             List<FileModel> filesToCopy = job.AllFiles.Where(file => file.State != State.Deleted).ToList();
             foreach (FileModel file in filesToCopy)
             {
-                if (SoftwareRunningService.IsRunningSoftware())
+                if (SoftwareRunningService.IsRunningSoftware()) job.State = JobStatsEnum.Pause;
+                if (job.State == JobStatsEnum.Pause)
                 {
-                    job.State = JobStatsEnum.Pause;
                     StateService.SaveJob(Storage.JobList);
                     return;
                 }
-                else CopyService.ExecuteAction(job, file, Storage);
+                CopyService.ExecuteAction(job, file, Storage);
             }
             job.State = JobStatsEnum.Finished;
             StateService.SaveJob(Storage.JobList);
