@@ -23,5 +23,8 @@
     <Setting Name="softwareStop" Type="System.String" Scope="User">
       <Value Profile="(Default)">notepad;calc</Value>
     </Setting>
+    <Setting Name="fileLargeTransfert" Type="System.UInt64" Scope="User">
+      <Value Profile="(Default)">10000000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

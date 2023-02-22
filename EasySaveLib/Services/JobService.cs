@@ -35,7 +35,9 @@ namespace EasySaveLib.Services
                     StateService.SaveJob(Storage.JobList);
                     return;
                 }
+                Semaphore? semaphorefileLargeTransfert = WaitFileSize(file);
                 CopyService.ExecuteAction(job, file, Storage);
+                if (semaphorefileLargeTransfert != null) semaphorefileLargeTransfert.Release();
             }
             job.State = JobStatsEnum.Finished;
             StateService.SaveJob(Storage.JobList);
@@ -160,6 +162,21 @@ namespace EasySaveLib.Services
         private ulong FileSize(FileModel fileModel)
         {
             return (ulong)(new FileInfo(fileModel.FullPath)).Length;
+        }
+
+        private Semaphore? WaitFileSize(FileModel file)
+        {
+            if (file.Size < Settings.Settings.Default.fileLargeTransfert) return null;
+
+            Semaphore? semaphorefileLargeTransfert;
+            if (!Semaphore.TryOpenExisting("fileLargeTransfert", out semaphorefileLargeTransfert))
+            {
+                semaphorefileLargeTransfert = new Semaphore(1, 1, "fileLargeTransfert");
+            }
+
+            semaphorefileLargeTransfert.WaitOne();
+
+            return semaphorefileLargeTransfert;
         }
     }
 }
