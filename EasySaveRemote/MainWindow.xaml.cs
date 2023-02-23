@@ -36,8 +36,9 @@ namespace EasySaveRemote
 
         public void RefreshJob()
         {
+            ListJob = ClientRemoteService.GetJobs();
             dgJob.ItemsSource = null;
-            dgJob.ItemsSource = ClientRemoteService.GetJobs();
+            dgJob.ItemsSource = ListJob;
         }
 
         private void JobSelected(object sender, SelectionChangedEventArgs e)
@@ -72,13 +73,13 @@ namespace EasySaveRemote
 
             if (dgJob.SelectedItems.Count == 1)
             {
-                ClientRemoteService.ExecuteJob(ListJob[dgJob.SelectedIndex]);
+                ClientRemoteService.StartJob(ListJob[dgJob.SelectedIndex]);
             }
             else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
                 {
-                    ClientRemoteService.ExecuteJob(item);
+                    ClientRemoteService.StartJob(item);
                 }
             }
             RefreshJob();
