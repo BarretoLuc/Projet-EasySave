@@ -1,0 +1,43 @@
+﻿<Window x:Class="EasySaveRemote.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasySaveRemote"
+        mc:Ignorable="d"
+        Title="EasySave" Height="580" Width="1040" MinHeight="540" MinWidth="960" ResizeMode="NoResize" Closing="ClosingClick">
+    <Grid Margin="0,0,0,-60">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="List of job :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" HorizontalAlignment="Left" Width="110" Height="40" VerticalAlignment="Bottom"/>
+        <Label Content="List of file :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" Grid.Row="1" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110"/>
+        <ProgressBar Margin="40,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720"/>
+        <Button Content="Start" Margin="800,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" RenderTransformOrigin="1,-1.222" Click="StartClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
+        <DataGrid x:Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Source=ListJob}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=TwoWay}"/>
+                <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="State" IsReadOnly="True" Binding="{Binding State, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="dgFile" Margin="20,60,20,20" AutoGenerateColumns="False" IsReadOnly="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Row="1" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Relative path" Binding="{Binding RelativePath}"/>
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Stop" Margin="900,20,0,0" Grid.Row="2" Click="StopClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Refresh job" HorizontalAlignment="Left" Margin="880,24,0,0" VerticalAlignment="Top" Width="80" Click="RefreshClick"/>
+
+    </Grid>
+</Window>
