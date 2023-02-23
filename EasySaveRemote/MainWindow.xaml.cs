@@ -23,8 +23,6 @@ namespace EasySaveRemote
     /// </summary>
     public partial class MainWindow : Window
     {
-        static Mutex mutex = new Mutex(true, "EasySave");
-
         private List<JobModel> ListJob;
 
         private ClientRemoteService ClientRemoteService;
