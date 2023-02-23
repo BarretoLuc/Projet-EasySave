@@ -32,11 +32,13 @@ namespace EasySaveLib.Services
         public void StartJob(JobModel job)
         {
             Send(Stream, "START " + job.Name);
+            Receive(Stream);
         }
 
         public void PauseJob(JobModel job)
         {
             Send(Stream, "PAUSE " + job.Name);
+            Receive(Stream);
         }
     }
 }
