@@ -27,6 +27,7 @@ namespace EasySaveLib.Controllers
         public override void init()
         {
             Storage.JobList = (new StateService()).LoadJob();
+            ThreadPool.QueueUserWorkItem((a) => { new ServerRemoteService(Storage).StartServer(); });
             View.showMenu();
         }
         public void AccessSave(IJobCreate jobCreate)
