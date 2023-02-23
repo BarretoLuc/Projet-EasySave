@@ -18,12 +18,12 @@ namespace EasySaveLib.Controllers
             JobService = new JobService();
         }
 
-        public void CreateJob(string name, string sourcepath, string destinationpath, bool isDifferential)
+        public void CreateJob(string name, string sourcepath, string destinationpath, bool isDifferential, bool isEncrypt)
         {
             if (Settings.Settings.Default.numberJob <= Storage.JobList.Count)
                 return;
             
-            var newJob = new JobModel(name, sourcepath, destinationpath, isDifferential);
+            var newJob = new JobModel(name, sourcepath, destinationpath, isDifferential, isEncrypt);
             Storage.AddJobList(newJob);
         }
         

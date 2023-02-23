@@ -157,6 +157,7 @@ namespace EasySaveWPF
 
         private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            RefreshJob();
             UpdateModel.Controller.SaveJob();
         }
 

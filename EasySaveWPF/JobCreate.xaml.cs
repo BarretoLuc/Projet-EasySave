@@ -40,7 +40,7 @@ namespace EasySaveWPF
             if ((bool)cbEncrypt.IsChecked)
                 isEncrypt = true;
 
-            Controller.CreateJob(name, source, destination, isDifferentiel);
+            Controller.CreateJob(name, source, destination, isDifferentiel, isEncrypt);
         }
         private void ResetText()
         {
