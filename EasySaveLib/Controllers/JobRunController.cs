@@ -37,6 +37,7 @@ namespace EasySaveLib.Controllers
             ThreadPool.QueueUserWorkItem((a) =>
             {
                 JobService.ExecuteJob(job, Storage);
+                //View.RefreshJob();
             });
         }
 

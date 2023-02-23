@@ -57,6 +57,7 @@ namespace EasySaveWPF
         {
             NewJob();
             ResetText();
+            MainWindow.RefreshJob();
         }
 
         private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)
