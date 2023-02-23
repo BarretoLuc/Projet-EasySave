@@ -4,7 +4,49 @@ namespace EasySaveLib.Services
 {
     public class JobService
     {
-        public List<FileModel> GetListActionFiles(JobModel jobModel)
+        private CopyService CopyService { get; set; }
+        private StateService StateService { get; set; }
+        private SoftwareRunningService SoftwareRunningService { get; set; }
+        private PriorityExtensionsServices PriorityExtensions { get; set; }
+
+        public JobService()
+        {
+            CopyService = new CopyService();
+            StateService = new StateService();
+            SoftwareRunningService = new SoftwareRunningService();
+            PriorityExtensions = new PriorityExtensionsServices();
+        }
+
+        public void ExecuteJob(JobModel job, DataStorageService Storage)
+        {
+            // Si le job n'est pas en pause, calculer les actions à effectuer
+            if (job.State == JobStatsEnum.NotStarted || job.State == JobStatsEnum.Finished)
+                job.AllFiles = GetListActionFiles(job);
+            job.AllFiles = PriorityExtensions.SortExtensions(job.AllFiles);
+            job.State = JobStatsEnum.Running;
+            StateService.SaveJob(Storage.JobList);
+            // extract and execute file to delete
+            List<FileModel> filesToDelete = job.AllFiles.Where(file => file.State == State.Deleted).ToList();
+            foreach (FileModel file in filesToDelete) CopyService.ExecuteAction(job, file, Storage);
+            // extract and execute file no delete
+            List<FileModel> filesToCopy = job.AllFiles.Where(file => file.State != State.Deleted).ToList();
+            foreach (FileModel file in filesToCopy)
+            {
+                if (SoftwareRunningService.IsRunningSoftware()) job.State = JobStatsEnum.Pause;
+                if (job.State == JobStatsEnum.Pause)
+                {
+                    StateService.SaveJob(Storage.JobList);
+                    return;
+                }
+                Semaphore? semaphorefileLargeTransfert = WaitFileSize(file);
+                CopyService.ExecuteAction(job, file, Storage);
+                if (semaphorefileLargeTransfert != null) semaphorefileLargeTransfert.Release();
+            }
+            job.State = JobStatsEnum.Finished;
+            StateService.SaveJob(Storage.JobList);
+        }
+
+        private List<FileModel> GetListActionFiles(JobModel jobModel)
         {
             List<FileModel> filesSource = WalkIntoDirectory(jobModel.Source);
 
@@ -17,7 +59,8 @@ namespace EasySaveLib.Services
             {
                 filesDestination = WalkIntoDirectory(jobModel.Destination);
                 ComputeHash(filesDestination);
-            } else
+            }
+            else
             {
                 filesDestination = jobModel.AllFiles.Where(file => file.State != State.Deleted).ToList();
             }
@@ -40,7 +83,7 @@ namespace EasySaveLib.Services
                 }
 
                 filesDestination.Remove(fileDestination);
-                
+
                 // check relative path
                 if (fileSource.RelativePath != fileDestination.RelativePath)
                 {
@@ -65,7 +108,9 @@ namespace EasySaveLib.Services
                     continue;
                 }
 
-                fileSource.State = State.Finished;
+                if (jobModel.IsDifferential) fileSource.State = State.Finished;
+                else fileSource.State = State.Waiting;
+
                 filesToCopy.Add(fileSource);
             }
 
@@ -120,6 +165,21 @@ namespace EasySaveLib.Services
         private ulong FileSize(FileModel fileModel)
         {
             return (ulong)(new FileInfo(fileModel.FullPath)).Length;
+        }
+
+        private Semaphore? WaitFileSize(FileModel file)
+        {
+            if (file.Size < Settings.Settings.Default.fileLargeTransfert) return null;
+
+            Semaphore? semaphorefileLargeTransfert;
+            if (!Semaphore.TryOpenExisting("fileLargeTransfert", out semaphorefileLargeTransfert))
+            {
+                semaphorefileLargeTransfert = new Semaphore(1, 1, "fileLargeTransfert");
+            }
+
+            semaphorefileLargeTransfert.WaitOne();
+
+            return semaphorefileLargeTransfert;
         }
     }
 }

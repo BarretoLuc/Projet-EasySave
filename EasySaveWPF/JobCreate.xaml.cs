@@ -1,9 +1,7 @@
 ﻿using EasySaveLib.Controllers;
-using EasySaveLib.Models;
 using EasySaveLib.Vues;
 using System;
 using System.Collections.Generic;
-using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,26 +12,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace EasySaveWPF
 {
     /// <summary>
-    /// Logique d'interaction pour JobCreatePage.xaml
+    /// Logique d'interaction pour JobCreate.xaml
     /// </summary>
-    public partial class JobCreatePage : Page, IAbstractView<JobCreateController>, IJobCreate
+    public partial class JobCreate : Window, IAbstractView<JobCreateController>, IJobCreate
     {
+        private MainWindow MainWindow;
         public JobCreateController Controller { get; set; }
-
-        public JobCreatePage()
+        public JobCreate(MainWindow mainWindow)
         {
+            MainWindow = mainWindow;
             InitializeComponent();
         }
-        public void Show()
-        {
-        }
-        public void NewJob() 
+        public void NewJob()
         {
             string name = tbNameJob.Text;
             string source = tbSource.Text;
@@ -44,13 +39,12 @@ namespace EasySaveWPF
                 isDifferentiel = true;
             if ((bool)cbEncrypt.IsChecked)
                 isEncrypt = true;
-            
-            Controller.CreateJob(name, source, destination, isDifferentiel);
+
+            Controller.CreateJob(name, source, destination, isDifferentiel, isEncrypt);
         }
-        
         private void ResetText()
         {
-            
+
             tbNameJob.Text = "";
             tbSource.Text = "";
             tbDestination.Text = "";
@@ -58,11 +52,17 @@ namespace EasySaveWPF
             rbDifferential.IsChecked = false;
             rbTotal.IsChecked = false;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void CreateClick(object sender, RoutedEventArgs e)
         {
             NewJob();
             ResetText();
+            MainWindow.RefreshJob();
+        }
+
+        private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow.IsEnabled = true;
         }
     }
 }

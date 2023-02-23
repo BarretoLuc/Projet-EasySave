@@ -5,13 +5,11 @@ namespace EasySaveLib.Services
 {
     public class CopyService
     {
-        public JobService JobService { get; set; }
         private Stopwatch Stopwatch { get; set; }
         private StateService StateService { get; set; }
 
         public CopyService()
         {
-            JobService = new JobService();
             Stopwatch = new Stopwatch();
             StateService = new StateService();
         }
@@ -35,9 +33,6 @@ namespace EasySaveLib.Services
                     Rename(job, file);
                     break;
                 case State.Finished:
-                    if (job.IsDifferential) break;
-                    if (job.IsEncrypted) CopyEncrypt(job, file);
-                    else Copy(job, file);
                     break;
                 default:
                     break;
@@ -62,14 +57,14 @@ namespace EasySaveLib.Services
         private void Moove(JobModel job, FileModel file)
         {
             if (!Directory.Exists(job.Destination + file.NewPath)) Directory.CreateDirectory(job.Destination + file.NewPath);
-            File.Move(file.FullPath, job.Destination + file.NewPath + file.NewName);
+            File.Move(file.FullPath, job.Destination + file.NewPath + file.NewName, overwrite: true);
         }
 
         private void Copy(JobModel job, FileModel file)
         {
             string destinationPath = file.Path.Replace(job.Source, job.Destination);
             if (!Directory.Exists(destinationPath)) Directory.CreateDirectory(destinationPath);
-            File.Copy(file.FullPath, destinationPath + file.Name);
+            File.Copy(file.FullPath, destinationPath + file.Name, overwrite: true);
         }
 
         private void CopyEncrypt(JobModel job, FileModel file)

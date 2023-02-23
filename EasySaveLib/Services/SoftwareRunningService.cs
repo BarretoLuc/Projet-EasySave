@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace EasySaveLib.Services
 {
-    internal class SoftwareRunningService
+    public class SoftwareRunningService
     {
         public bool IsRunningSoftware()
         {
@@ -20,8 +20,8 @@ namespace EasySaveLib.Services
             }
             return false;
         }
-
-        private string[] GetSoftware()
+        
+        public string[] GetSoftware()
         {   
             return Settings.Settings.Default.softwareStop.Split(';');
         }

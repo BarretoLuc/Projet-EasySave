@@ -106,5 +106,29 @@ namespace EasySaveLib.Settings {
                 this["softwareStop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".txt;.rar")]
+        public string PriorityExtensions {
+            get {
+                return ((string)(this["PriorityExtensions"]));
+            }
+            set {
+                this["PriorityExtensions"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000000")]
+        public ulong fileLargeTransfert {
+            get {
+                return ((ulong)(this["fileLargeTransfert"]));
+            }
+            set {
+                this["fileLargeTransfert"] = value;
+            }
+        }
     }
 }

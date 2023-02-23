@@ -28,6 +28,15 @@ namespace EasySaveLib.Services
         
         public void SaveJob(List<JobModel> jobList)
         {
+
+            //Semaphore? semaphorefileLargeTransfert;
+            //if (!Semaphore.TryOpenExisting("saveJson", out semaphorefileLargeTransfert))
+            //{
+            //    semaphorefileLargeTransfert = new Semaphore(1, 1, "saveJson");
+            //}
+
+            //semaphorefileLargeTransfert.WaitOne();
+
             string path = Settings.Settings.Default.dataStorageFolder + "job.json";
 
             var json = Serializer.Serialize(jobList);

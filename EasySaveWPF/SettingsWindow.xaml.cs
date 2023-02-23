@@ -1,6 +1,6 @@
 ﻿using EasySaveLib.Controllers;
-using EasySaveLib.Settings;
 using EasySaveLib.Vues;
+using EasySaveLib.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,28 +13,35 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-// CECI EST LA VERSION A GARDER 
+using EasySaveLib.Settings;
 
 namespace EasySaveWPF
 {
     /// <summary>
-    /// Logique d'interaction pour SettingsPage.xaml
+    /// Logique d'interaction pour SettingsWindow.xaml
     /// </summary>
-    public partial class SettingsPage : Page, IAbstractView<SettingsController>, ISettings
+    public partial class SettingsWindow : Window, IAbstractView<SettingsController>, ISettings
     {
         public SettingsController Controller { get; set; }
-
-        public SettingsPage()
+        public MainWindow MainWindow { get; set; }
+        public string[] software;  
+        public SettingsWindow(MainWindow mainWindow)
         {
-            Controller = new SettingsController(this, new EasySaveLib.Services.DataStorageService());
+            MainWindow = mainWindow;
         }
+
+        public string[] GetSoftware()
+        {
+            return software;
+        }
+
         public void showMenu()
         {
             InitializeComponent();
             InitRadioButton();
+            var softwareServices = new SoftwareRunningService();
+            software = softwareServices.GetSoftware();
         }
 
         private void InitRadioButton()
@@ -45,17 +52,20 @@ namespace EasySaveWPF
                 rbEn.IsChecked = true;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ApplySettingsButton_Click(object sender, RoutedEventArgs e)
         {
             if ((bool)rbFr.IsChecked)
                 Settings.Default.language = "francais";
             else
                 Settings.Default.language = "english";
             Settings.Default.Save();
+            MainWindow.IsEnabled = true;
+            this.Close();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            MainWindow.IsEnabled = true;
         }
     }
 }
