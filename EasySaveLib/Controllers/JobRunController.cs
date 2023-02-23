@@ -37,8 +37,17 @@ namespace EasySaveLib.Controllers
             ThreadPool.QueueUserWorkItem((a) =>
             {
                 JobService.ExecuteJob(job, Storage);
-                //View.RefreshJob();
             });
+
+            //Thread refresh = new Thread(() => 
+            //{
+            //    while (true)
+            //    {
+            //        View.RefreshGrid();
+            //        Thread.Sleep(3000);
+            //    }
+            //});
+            //refresh.Start();
         }
 
         public void PauseOneJob(JobModel jobModel)

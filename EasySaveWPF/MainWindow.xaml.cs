@@ -45,6 +45,18 @@ namespace EasySaveWPF
             dgJob.ItemsSource = ListJob;
         }
 
+        public void RefreshGrid()
+        {
+        //    try
+        //    {
+        //        dgJob.ItemsSource = null;
+        //        dgJob.ItemsSource = ListJob;
+        //    }
+        //    catch (System.InvalidOperationException)
+        //    {
+        //    }
+        }
+
         public void showMenu()
         {
             InitializeComponent();

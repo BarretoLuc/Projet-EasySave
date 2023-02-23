@@ -25,9 +25,9 @@ namespace EasySaveWPF.ModelViews
             JobModel jobModel = new JobModel("", "", "");
             return jobModel;
         }
-        public void RefreshJob() 
+        public void RefreshGrid() 
         {
-            MainWindow.RefreshJob();
+            MainWindow.RefreshGrid();
         }
     }
 }
