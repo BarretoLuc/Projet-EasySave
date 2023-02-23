@@ -55,13 +55,13 @@ namespace EasySaveRemote
 
             if (dgJob.SelectedItems.Count == 1)
             {
-                //Controller.PauseOneJob(ListJob[dgJob.SelectedIndex]);   
+                ClientRemoteService.PauseJob(ListJob[dgJob.SelectedIndex]);
             }
             else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
                 {
-                    //Controller.PauseOneJob(item);
+                    ClientRemoteService.PauseJob(item);
                 }
             }
             RefreshJob();
@@ -74,13 +74,13 @@ namespace EasySaveRemote
 
             if (dgJob.SelectedItems.Count == 1)
             {
-                //Controller.ExecuteOneJob(ListJob[dgJob.SelectedIndex]);
+                ClientRemoteService.ExecuteJob(ListJob[dgJob.SelectedIndex]);
             }
             else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
                 {
-                    //Controller.ExecuteOneJob(item);
+                    ClientRemoteService.ExecuteJob(item);
                 }
             }
             RefreshJob();
