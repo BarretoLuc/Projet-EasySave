@@ -39,7 +39,6 @@ namespace EasySaveLib.Services
                         AllFilesReOrder.Add(AllFiles[i]);
                         AllFiles.Remove(AllFiles[i]);
                         count -= 1;
-                        i--;
                     }
                 }
             }

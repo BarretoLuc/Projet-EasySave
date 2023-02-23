@@ -27,8 +27,6 @@ namespace EasySaveWPF
         private SettingsWindow Settings;
         private JobCreate CreateView;
         
-        private List<JobModel> ListJob;
-
         public MainWindow()
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
@@ -42,7 +40,7 @@ namespace EasySaveWPF
         public void RefreshJob()
         {
             dgJob.ItemsSource = null;
-            dgJob.ItemsSource = ListJob;
+            dgJob.ItemsSource = Controller.Storage.JobList;
         }
 
         public void RefreshGrid()
@@ -72,7 +70,7 @@ namespace EasySaveWPF
         
         public void ShowAllJob(List<JobModel> listJob)
         {
-            ListJob = listJob;
+            //ListJob = listJob;
             RefreshJob();
         }
 
@@ -100,7 +98,7 @@ namespace EasySaveWPF
         private void JobSelected(object sender, SelectionChangedEventArgs e)
         {
             if (dgJob.SelectedIndex != -1)
-                dgFile.ItemsSource = ListJob[dgJob.SelectedIndex].AllFiles;
+                dgFile.ItemsSource = Controller.Storage.JobList[dgJob.SelectedIndex].AllFiles;
         }
 
         private void StopClick(object sender, RoutedEventArgs e)
@@ -109,7 +107,7 @@ namespace EasySaveWPF
                 return;
 
             if (dgJob.SelectedItems.Count == 1)
-                RunModel.Controller.PauseOneJob(ListJob[dgJob.SelectedIndex]);
+                RunModel.Controller.PauseOneJob(Controller.Storage.JobList[dgJob.SelectedIndex]);
             else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
@@ -126,7 +124,7 @@ namespace EasySaveWPF
                 return;
 
             if (dgJob.SelectedItems.Count == 1)
-                RunModel.Controller.ExecuteOneJob(ListJob[dgJob.SelectedIndex]);
+                RunModel.Controller.ExecuteOneJob(Controller.Storage.JobList[dgJob.SelectedIndex]);
             else if (dgJob.SelectedItems.Count > 1)
             {
                 foreach (JobModel item in dgJob.SelectedItems)
