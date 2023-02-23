@@ -57,7 +57,7 @@ namespace EasySaveLib.Services
         private void Moove(JobModel job, FileModel file)
         {
             if (!Directory.Exists(job.Destination + file.NewPath)) Directory.CreateDirectory(job.Destination + file.NewPath);
-            File.Move(file.FullPath, job.Destination + file.NewPath + file.NewName);
+            File.Move(file.FullPath, job.Destination + file.NewPath + file.NewName, overwrite: true);
         }
 
         private void Copy(JobModel job, FileModel file)
