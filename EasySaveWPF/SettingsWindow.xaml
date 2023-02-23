@@ -25,7 +25,7 @@
         <Label Content="Add software" HorizontalAlignment="Left" Margin="22,325,0,0" VerticalAlignment="Top" FontSize="10"/>
         <TextBox x:Name="tbSoftware" HorizontalAlignment="Left" Margin="159,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" Text="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=softwareStop}"/>
         <Label Content="Add priority extensions" HorizontalAlignment="Left" Margin="20,367,0,0" VerticalAlignment="Top" FontSize="10"/>
-        <TextBox x:Name="tbExtensions" HorizontalAlignment="Left" Margin="159,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox x:Name="tbExtensions" HorizontalAlignment="Left" Margin="159,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" Text="{Binding Source={x:Static properties:Settings.Default}, Mode=TwoWay,Path=PriorityExtensions}"/>
         <Button x:Name="ApplySettingsButton" Content="Apply settings" HorizontalAlignment="Center" Margin="0,419,0,0" VerticalAlignment="Top" Width="204" Height="23" Click="ApplySettingsButton_Click"/>
 
 
