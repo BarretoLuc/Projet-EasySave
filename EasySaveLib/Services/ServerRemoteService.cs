@@ -39,19 +39,32 @@ namespace EasySaveLib.Services
             while (true)
             {
                 string[] req = ParseRequest(Receive(stream));
-                Send(stream, GetResponse(req[0]));
+                Send(stream, GetResponse(req));
                 Console.WriteLine("");
             }
             client.Close();
         }
 
-        private string GetResponse(string method)
+        private string GetResponse(string[] req)
         {
             String res = String.Empty;
-            switch (method)
+            switch (req[0])
             {
                 case "GET_JOBS":
                     res += new SerializerService().Serialize<List<JobModel>>(Storage.JobList);
+                    break;
+
+                case "START":
+                    foreach (JobModel job in Storage.JobList)
+                    {
+                        if (job.Name == req[1])
+                        {
+                            ThreadPool.QueueUserWorkItem((a) => { new JobService().ExecuteJob(job, Storage); });
+                            res = "true";
+                        }
+                        break;
+                    }
+                    if (res != "true") res = "false";
                     break;
 
                 default:

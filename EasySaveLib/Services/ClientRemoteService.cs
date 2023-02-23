@@ -28,5 +28,15 @@ namespace EasySaveLib.Services
             string res = Receive(Stream);
             return new SerializerService().Deserialize<List<JobModel>>(res);
         }
+
+        public void StartJob(JobModel job)
+        {
+            Send(Stream, "START " + job.Name);
+        }
+
+        public void PauseJob(JobModel job)
+        {
+            Send(Stream, "PAUSE " + job.Name);
+        }
     }
 }
