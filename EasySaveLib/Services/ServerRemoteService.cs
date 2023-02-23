@@ -67,6 +67,19 @@ namespace EasySaveLib.Services
                     if (res != "true") res = "false";
                     break;
 
+                case "PAUSE":
+                    foreach (JobModel job in Storage.JobList)
+                    {
+                        if (job.Name == req[1])
+                        {
+                            job.State = JobStatsEnum.Pause;
+                            res = "true";
+                        }
+                        break;
+                    }
+                    if (res != "true") res = "false";
+                    break;
+
                 default:
                     break;
             }
