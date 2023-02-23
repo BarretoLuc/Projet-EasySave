@@ -15,7 +15,7 @@ namespace EasySaveWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IAbstractView<HomeController>, IHome, INotifyPropertyChanged
+    public partial class MainWindow : Window, IAbstractView<HomeController>, IHome
     {
         static Mutex mutex = new Mutex(true, "EasySave");
         public HomeController Controller { get; set; }
@@ -24,11 +24,10 @@ namespace EasySaveWPF
         private RunModel RunModel;
         private UpdateModel UpdateModel;
         private RemoveModel RemoveModel;
-        public SettingsWindow Settings;
+        private SettingsWindow Settings;
         private JobCreate CreateView;
-
+        
         private List<JobModel> ListJob;
-        public ObservableCollection<List<JobModel>> ListJobObserver { get; set; }
 
         public MainWindow()
         {
@@ -39,22 +38,13 @@ namespace EasySaveWPF
                 mutex.ReleaseMutex();
             }
         }
-
-        event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
-        {
-            add
-            {
-                ((INotifyPropertyChanged)ListJob).PropertyChanged += value;
-                dgJob.ItemsSource = null;
-                dgJob.ItemsSource = ListJob;
-            }
-
-            remove
-            {
-                ((INotifyPropertyChanged)ListJob).PropertyChanged -= value;
-            }
-        }
         
+        public void RefreshJob()
+        {
+            dgJob.ItemsSource = null;
+            dgJob.ItemsSource = ListJob;
+        }
+
         public void showMenu()
         {
             InitializeComponent();
@@ -67,10 +57,11 @@ namespace EasySaveWPF
             RemoveModel = new RemoveModel(this);
             Controller.ShowJobRemove(RemoveModel);
         }
+        
         public void ShowAllJob(List<JobModel> listJob)
         {
             ListJob = listJob;
-            dgJob.ItemsSource = ListJob;
+            RefreshJob();
         }
 
         public int ChooseJobRemove(int listJobLength)
@@ -114,6 +105,7 @@ namespace EasySaveWPF
                     RunModel.Controller.PauseOneJob(item);
                 }
             }
+            RefreshJob();
         }
 
         private void StartClick(object sender, RoutedEventArgs e)
@@ -130,7 +122,9 @@ namespace EasySaveWPF
                     RunModel.Controller.ExecuteOneJob(item);
                 }
             }
+            RefreshJob();
         }
+        
         private void SettingsClick(object sender, RoutedEventArgs e)
         {
             this.IsEnabled = false;
@@ -142,13 +136,13 @@ namespace EasySaveWPF
         private void SaveJobClick(object sender, RoutedEventArgs e)
         {
             UpdateModel.Controller.SaveJob();
+            RefreshJob();
         }
 
         private void RemoveClick(object sender, RoutedEventArgs e)
         {
             RemoveModel.Controller.RemoveSelection();
-            dgJob.ItemsSource = null;
-            dgJob.ItemsSource = ListJob;
+            RefreshJob();
         }
 
         private void ClosingClick(object sender, System.ComponentModel.CancelEventArgs e)

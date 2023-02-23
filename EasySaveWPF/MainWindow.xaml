@@ -17,14 +17,14 @@
         <Label Content="List of file :" Margin="20,0,0,180" RenderTransformOrigin="-0.447,0.194" VerticalContentAlignment="Bottom" Grid.Row="1" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110"/>
         <ProgressBar Margin="40,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720"/>
         <Button Content="Start" Margin="800,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2" RenderTransformOrigin="1,-1.222" Click="StartClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
-        <DataGrid x:Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Source=ListJobObserver}">
+        <DataGrid x:Name="dgJob" Margin="20,64,20,20" AutoGenerateColumns="False" SelectionChanged="JobSelected" SelectionMode="Extended" CanUserSortColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Source=ListJob}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Source path" Binding="{Binding Source, Mode=TwoWay}"/>
                 <DataGridTextColumn Header="Destination path" Binding="{Binding Destination, Mode=TwoWay}"/>
                 <DataGridCheckBoxColumn Header="Is Differential" Binding="{Binding IsDifferential, Mode=TwoWay}"/>
                 <DataGridCheckBoxColumn Header="Is Encrypted" Binding="{Binding IsEncrypted, Mode=TwoWay}"/>
-                <DataGridTextColumn Header="State" IsReadOnly="True" Binding="{Binding State}"/>
+                <DataGridTextColumn Header="State" IsReadOnly="True" Binding="{Binding State, Mode=OneWay}"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="dgFile" Margin="20,60,20,20" AutoGenerateColumns="False" IsReadOnly="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Row="1" >
@@ -38,7 +38,7 @@
         </DataGrid>
         <Button Content="Stop" Margin="900,20,0,0" Grid.Row="2" Click="StopClick" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80"/>
         <Button Content="Settings" HorizontalAlignment="Left" Margin="900,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.64,21.295" Width="80" Click="SettingsClick"/>
-        <Button Content="Save job" HorizontalAlignment="Left" Margin="800,24,0,0" VerticalAlignment="Top" Width="80" Click="SaveJobClick"/>
+        <Button Content="Refresh job" HorizontalAlignment="Left" Margin="800,24,0,0" VerticalAlignment="Top" Width="80" Click="SaveJobClick"/>
         <Button Content="Remove job" HorizontalAlignment="Left" Margin="700,24,0,0" VerticalAlignment="Top" Width="80" Click="RemoveClick"/>
         <Button Content="Create job" HorizontalAlignment="Left" Margin="600,24,0,0" VerticalAlignment="Top" Width="80" Click="CreateClick"/>
 
